@@ -1,6 +1,7 @@
 - type: marking
   id: LizardFrillsAquatic1
   bodyPart: HeadSide
+  markingCategory: HeadSide
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_aquatic
@@ -8,6 +9,7 @@
 - type: marking
   id: LizardFrillsShort1
   bodyPart: HeadSide
+  markingCategory: HeadSide
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_short
@@ -15,6 +17,7 @@
 - type: marking
   id: LizardFrillsSimple1
   bodyPart: HeadSide
+  markingCategory: HeadSide
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_simple
@@ -22,6 +25,7 @@
 - type: marking
   id: LizardFrillsDivinity1
   bodyPart: HeadSide
+  markingCategory: HeadSide
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_divinity
@@ -29,6 +33,7 @@
 - type: marking
   id: LizardFrillsBig1
   bodyPart: HeadSide
+  markingCategory: HeadSide
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_big
@@ -36,6 +41,7 @@
 - type: marking
   id: LizardFrillsAxolotl1
   bodyPart: HeadSide
+  markingCategory: HeadSide
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_axolotl
@@ -43,6 +49,7 @@
 - type: marking
   id: LizardFrillsHood1
   bodyPart: HeadSide
+  markingCategory: HeadSide
   sprites:
   - sprite: Mobs/Customization/reptilian_parts.rsi
     state: frills_hood_primary
