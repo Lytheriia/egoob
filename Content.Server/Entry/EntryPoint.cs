@@ -82,7 +82,6 @@ namespace Content.Server.Entry
         [Dependency] private readonly ServerUpdateManager _updateManager = default!;
 
         [Dependency] private readonly LastRolledAntagManager _lastAntagManager = default!; // Goobstation
-        [Dependency] private readonly ChatProtectionSystem _chatProtection = default!; // Orion
 
         public override void PreInit()
         {
@@ -138,7 +137,6 @@ namespace Content.Server.Entry
             _job.Initialize();
             _rateLimit.Initialize();
             _lastAntagManager.Initialize(); // Goobstation
-            _chatProtection.Initialize(); // Orion
         }
 
         public override void PostInit()

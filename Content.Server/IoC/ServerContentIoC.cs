@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._Goobstation.Antag;
+using Content.Server._Orion.ServerProtection;
 using Content.Server._Orion.ServerProtection.Chat;
+using Content.Server._Orion.ServerProtection.Emoting;
 using Content.Server._RMC14.LinkAccount; // RMC - Patreon
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -87,6 +89,8 @@ internal static class ServerContentIoC
         deps.Register<DiscordChatLink>();
         deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity
         deps.Register<LinkAccountManager>(); // RMC - Patreon
+        deps.Register<ServerProtectionPunishmentSystem>(); // Orion
         deps.Register<ChatProtectionSystem>(); // Orion
+        deps.Register<EmoteProtectionSystem>(); // Orion
     }
 }
