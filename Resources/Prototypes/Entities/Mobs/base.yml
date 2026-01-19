@@ -66,6 +66,7 @@
   - type: MobMover
   - type: MovementSpeedModifier
   - type: LagCompensation
+  - type: DirectionalEmoteTarget # Orion
 
 - type: entity
   save: false
