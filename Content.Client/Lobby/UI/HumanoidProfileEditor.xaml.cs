@@ -40,6 +40,10 @@ using Robust.Shared.Utility;
 using Direction = Robust.Shared.Maths.Direction;
 using Content.Goobstation.Common.CCVar; // Goob Station - Barks
 using Content.Goobstation.Common.Barks; // Goob Station - Barks
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Physics;
+using Content.Shared._DV.Traits; // DV - Traits
+
 namespace Content.Client.Lobby.UI
 {
     [GenerateTypedNameReferences]
@@ -172,6 +176,8 @@ namespace Content.Client.Lobby.UI
             {
                 Save?.Invoke();
             };
+
+            Traits.OnTraitsChanged += OnTraitsSelectionChanged; // DeltaV
 
             #region Left
 
@@ -455,7 +461,7 @@ namespace Content.Client.Lobby.UI
 
             TabContainer.SetTabTitle(2, Loc.GetString("humanoid-profile-editor-antags-tab"));
 
-            RefreshTraits();
+            // RefreshTraits(); // DeltaV
 
             #region Markings
 
@@ -498,6 +504,57 @@ namespace Content.Client.Lobby.UI
             IsDirty = false;
         }
 
+        // Begin DeltaV - Traits Integration
+        /// <summary>
+        /// Called when trait selection changes in the TraitsTab.
+        /// Updates the profile with the new trait selection.
+        /// </summary>
+        private void OnTraitsSelectionChanged(HashSet<ProtoId<TraitPrototype>> traits)
+        {
+            if (Profile is null)
+                return;
+
+            // Remove all existing traits - iterate directly over readonly collection
+            foreach (var existingTrait in Profile.TraitPreferences)
+            {
+                Profile = Profile.WithoutTraitPreference(existingTrait, _prototypeManager);
+            }
+
+            // Add newly selected traits
+            foreach (var trait in traits)
+            {
+                Profile = Profile.WithTraitPreference(trait.Id, _prototypeManager);
+            }
+
+            SetDirty();
+        }
+
+        /// <summary>
+        /// Updates the traits tab with the current profile's selected traits.
+        /// </summary>
+        private void UpdateTraitsSelection()
+        {
+            if (Profile is null)
+            {
+                Traits.SetSelectedTraits(new HashSet<ProtoId<TraitPrototype>>());
+                return;
+            }
+
+            // Convert profile's trait preferences (strings) to ProtoId<TraitPrototype>
+            var selectedTraits = new HashSet<ProtoId<TraitPrototype>>(Profile.TraitPreferences.Count);
+            foreach (var traitId in Profile.TraitPreferences)
+            {
+                // Validate that the trait still exists in prototypes
+                if (_prototypeManager.HasIndex(traitId))
+                {
+                    selectedTraits.Add(new ProtoId<TraitPrototype>(traitId));
+                }
+            }
+
+            Traits.SetSelectedTraits(selectedTraits);
+        }
+        // End DeltaV - Traits Integration
+
         /// <summary>
         /// Refreshes the flavor text editor status.
         /// </summary>
@@ -532,123 +589,122 @@ namespace Content.Client.Lobby.UI
         /// <summary>
         /// Refreshes traits selector
         /// </summary>
-        public void RefreshTraits()
-        {
-            TraitsList.RemoveAllChildren();
-
-            var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
-            TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
-
-            if (traits.Count < 1)
-            {
-                TraitsList.AddChild(new Label
-                {
-                    Text = Loc.GetString("humanoid-profile-editor-no-traits"),
-                    FontColorOverride = Color.Gray,
-                });
-                return;
-            }
-
-            // Setup model
-            Dictionary<string, List<string>> traitGroups = new();
-            List<string> defaultTraits = new();
-            traitGroups.Add(TraitCategoryPrototype.Default, defaultTraits);
-
-            foreach (var trait in traits)
-            {
-                // Begin Goobstation: ported from DeltaV - Species trait exclusion
-                if (Profile?.Species is { } selectedSpecies && (trait.ExcludedSpecies.Contains(selectedSpecies) ||
-                    trait.IncludedSpecies.Count > 0 && !trait.IncludedSpecies.Contains(selectedSpecies)))
-                {
-                    Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
-                    continue;
-                }
-                // End Goobstation: ported from DeltaV - Species trait exclusion
-
-                if (trait.Category == null)
-                {
-                    defaultTraits.Add(trait.ID);
-                    continue;
-                }
-
-                if (!_prototypeManager.HasIndex(trait.Category))
-                    continue;
-
-                var group = traitGroups.GetOrNew(trait.Category);
-                group.Add(trait.ID);
-            }
-
-            // Create UI view from model
-            foreach (var (categoryId, categoryTraits) in traitGroups)
-            {
-                TraitCategoryPrototype? category = null;
-
-                if (categoryId != TraitCategoryPrototype.Default)
-                {
-                    category = _prototypeManager.Index<TraitCategoryPrototype>(categoryId);
-                    // Label
-                    TraitsList.AddChild(new Label
-                    {
-                        Text = Loc.GetString(category.Name),
-                        Margin = new Thickness(0, 10, 0, 0),
-                        StyleClasses = { StyleClass.LabelHeading },
-                    });
-                }
-
-                List<TraitPreferenceSelector?> selectors = new();
-                var selectionCount = 0;
-
-                foreach (var traitProto in categoryTraits)
-                {
-                    var trait = _prototypeManager.Index<TraitPrototype>(traitProto);
-                    var selector = new TraitPreferenceSelector(trait);
-
-                    selector.Preference = Profile?.TraitPreferences.Contains(trait.ID) == true;
-                    if (selector.Preference)
-                        selectionCount += trait.Cost;
-
-                    selector.PreferenceChanged += preference =>
-                    {
-                        if (preference)
-                        {
-                            Profile = Profile?.WithTraitPreference(trait.ID, _prototypeManager);
-                        }
-                        else
-                        {
-                            Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
-                        }
-
-                        SetDirty();
-                        RefreshTraits(); // If too many traits are selected, they will be reset to the real value.
-                    };
-                    selectors.Add(selector);
-                }
-
-                // Selection counter
-                if (category is { MaxTraitPoints: >= 0 })
-                {
-                    TraitsList.AddChild(new Label
-                    {
-                        Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount), ("max", category.MaxTraitPoints)),
-                        FontColorOverride = Color.Gray
-                    });
-                }
-
-                foreach (var selector in selectors)
-                {
-                    if (selector == null)
-                        continue;
-
-                    if (category is { MaxTraitPoints: >= 0 } &&
-                        selector.Cost + selectionCount > category.MaxTraitPoints)
-                    {
-                        selector.Checkbox.Label.FontColorOverride = Color.Red;
-                    }
-
-                    TraitsList.AddChild(selector);
-                }
-            }
-        }
+        // public void RefreshTraits()
+        // {
+        //     TraitsList.RemoveAllChildren();
+        //
+        //     var traits = _prototypeManager.EnumeratePrototypes<TraitPrototype>().OrderBy(t => Loc.GetString(t.Name)).ToList();
+        //     TabContainer.SetTabTitle(3, Loc.GetString("humanoid-profile-editor-traits-tab"));
+        //
+        //     if (traits.Count < 1)
+        //     {
+        //         TraitsList.AddChild(new Label
+        //         {
+        //             Text = Loc.GetString("humanoid-profile-editor-no-traits"),
+        //             FontColorOverride = Color.Gray,
+        //         });
+        //         return;
+        //     }
+        //
+        //     // Setup model
+        //     Dictionary<string, List<string>> traitGroups = new();
+        //     List<string> defaultTraits = new();
+        //     traitGroups.Add(TraitCategoryPrototype.Default, defaultTraits);
+        //
+        //     foreach (var trait in traits)
+        //     {
+        //         // Begin DeltaV Additions - Species trait exclusion
+        //         if (Profile?.Species is { } selectedSpecies && trait.ExcludedSpecies.Contains(selectedSpecies))
+        //         {
+        //             Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
+        //             continue;
+        //         }
+        //         // End DeltaV Additions
+        //
+        //         if (trait.Category == null)
+        //         {
+        //             defaultTraits.Add(trait.ID);
+        //             continue;
+        //         }
+        //
+        //         if (!_prototypeManager.HasIndex(trait.Category))
+        //             continue;
+        //
+        //         var group = traitGroups.GetOrNew(trait.Category);
+        //         group.Add(trait.ID);
+        //     }
+        //
+        //     // Create UI view from model
+        //     foreach (var (categoryId, categoryTraits) in traitGroups)
+        //     {
+        //         TraitCategoryPrototype? category = null;
+        //
+        //         if (categoryId != TraitCategoryPrototype.Default)
+        //         {
+        //             category = _prototypeManager.Index<TraitCategoryPrototype>(categoryId);
+        //             // Label
+        //             TraitsList.AddChild(new Label
+        //             {
+        //                 Text = Loc.GetString(category.Name),
+        //                 Margin = new Thickness(0, 10, 0, 0),
+        //                 StyleClasses = { StyleClass.LabelHeading },
+        //             });
+        //         }
+        //
+        //         List<TraitPreferenceSelector?> selectors = new();
+        //         var selectionCount = 0;
+        //
+        //         foreach (var traitProto in categoryTraits)
+        //         {
+        //             var trait = _prototypeManager.Index<TraitPrototype>(traitProto);
+        //             var selector = new TraitPreferenceSelector(trait);
+        //
+        //             selector.Preference = Profile?.TraitPreferences.Contains(trait.ID) == true;
+        //             if (selector.Preference)
+        //                 selectionCount += trait.Cost;
+        //
+        //             selector.PreferenceChanged += preference =>
+        //             {
+        //                 if (preference)
+        //                 {
+        //                     Profile = Profile?.WithTraitPreference(trait.ID, _prototypeManager);
+        //                 }
+        //                 else
+        //                 {
+        //                     Profile = Profile?.WithoutTraitPreference(trait.ID, _prototypeManager);
+        //                 }
+        //
+        //                 SetDirty();
+        //                 RefreshTraits(); // If too many traits are selected, they will be reset to the real value.
+        //             };
+        //             selectors.Add(selector);
+        //         }
+        //
+        //         // Selection counter
+        //         if (category is { MaxTraitPoints: >= 0 })
+        //         {
+        //             TraitsList.AddChild(new Label
+        //             {
+        //                 Text = Loc.GetString("humanoid-profile-editor-trait-count-hint", ("current", selectionCount) ,("max", category.MaxTraitPoints)),
+        //                 FontColorOverride = Color.Gray
+        //             });
+        //         }
+        //
+        //         foreach (var selector in selectors)
+        //         {
+        //             if (selector == null)
+        //                 continue;
+        //
+        //             if (category is { MaxTraitPoints: >= 0 } &&
+        //                 selector.Cost + selectionCount > category.MaxTraitPoints)
+        //             {
+        //                 selector.Checkbox.Label.FontColorOverride = Color.Red;
+        //             }
+        //
+        //             TraitsList.AddChild(selector);
+        //         }
+        //     }
+        // }
 
         /// <summary>
         /// Refreshes the species selector.
@@ -717,7 +773,7 @@ namespace Content.Client.Lobby.UI
 
                 if (!_requirements.IsAllowed(
                         antag,
-                        (HumanoidCharacterProfile?)_preferencesManager.Preferences?.SelectedCharacter,
+                        (HumanoidCharacterProfile?) _preferencesManager.Preferences?.SelectedCharacter,
                         out var reason))
                 {
                     selector.LockRequirements(reason);
@@ -855,11 +911,14 @@ namespace Content.Client.Lobby.UI
             UpdateHeightWidthSliders(); // Goobstation: port EE height/width sliders
             UpdateWeight(); // Goobstation: port EE height/width sliders
 
+
+            UpdateTraitsSelection(); // DeltaV - Traits
+
             RefreshAntags();
             RefreshJobs();
             RefreshLoadouts();
             RefreshSpecies();
-            RefreshTraits();
+            // RefreshTraits(); // DeltaV
             RefreshFlavorText();
             ReloadPreview();
 
@@ -1179,35 +1238,35 @@ namespace Content.Client.Lobby.UI
             switch (strategy.InputType)
             {
                 case SkinColorationStrategyInput.Unary:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
+
+                        var color = strategy.FromUnary(Skin.Value);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                        break;
                     }
-
-                    var color = strategy.FromUnary(Skin.Value);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-
-                    break;
-                }
                 case SkinColorationStrategyInput.Color:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
+
+                        Markings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+
+                        break;
                     }
-
-                    var color = strategy.ClosestSkinColor(_rgbSkinColorSelector.Color);
-
-                    Markings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-
-                    break;
-                }
             }
 
             ReloadProfilePreview();
@@ -1288,7 +1347,7 @@ namespace Content.Client.Lobby.UI
             UpdateHeightWidthSliders();
             UpdateWeight();
             // end Goobstation: port EE height/width sliders
-            RefreshTraits(); // Goobstation: ported from DeltaV - Species trait exclusion
+            // RefreshTraits(); // Goobstation: ported from DeltaV - Species trait exclusion
         }
 
         private void SetName(string newName)
@@ -1417,29 +1476,29 @@ namespace Content.Client.Lobby.UI
             switch (strategy.InputType)
             {
                 case SkinColorationStrategyInput.Unary:
-                {
-                    if (!Skin.Visible)
                     {
-                        Skin.Visible = true;
-                        RgbSkinColorContainer.Visible = false;
+                        if (!Skin.Visible)
+                        {
+                            Skin.Visible = true;
+                            RgbSkinColorContainer.Visible = false;
+                        }
+
+                        Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    Skin.Value = strategy.ToUnary(Profile.Appearance.SkinColor);
-
-                    break;
-                }
                 case SkinColorationStrategyInput.Color:
-                {
-                    if (!RgbSkinColorContainer.Visible)
                     {
-                        Skin.Visible = false;
-                        RgbSkinColorContainer.Visible = true;
+                        if (!RgbSkinColorContainer.Visible)
+                        {
+                            Skin.Visible = false;
+                            RgbSkinColorContainer.Visible = true;
+                        }
+
+                        _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    _rgbSkinColorSelector.Color = strategy.ClosestSkinColor(Profile.Appearance.SkinColor);
-
-                    break;
-                }
             }
         }
 

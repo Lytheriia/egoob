@@ -2,6 +2,8 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
+using Content.Shared._DV.Traits;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Traits;
 using JetBrains.Annotations;
