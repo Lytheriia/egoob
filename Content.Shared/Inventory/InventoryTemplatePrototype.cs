@@ -68,4 +68,8 @@ public sealed partial class SlotDefinition
     ///     Entity blacklist for CanEquip checks.
     /// </summary>
     [DataField("blacklist")] public EntityWhitelist? Blacklist = null;
+
+    // Erida start
+    [DataField("secondInventorySlots")] public List<string> SecondInventorySlots = [];
+    // Erida end
 }
