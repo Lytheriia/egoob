@@ -23,6 +23,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Input;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
+using Robust.Shared.Toolshed.TypeParsers;
 using Robust.Shared.Utility;
 using static Content.Client.Inventory.ClientInventorySystem;
 
@@ -47,6 +48,13 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
     private SlotButton? _inventoryButton;
 
     private SlotControl? _lastHovered;
+
+    // Erida start
+    // Yeah its sheetcode, but its better than rewriting 70% of system
+    private List<SlotControl> _secondInventoryButtons = [];
+    private List<SlotData> _secondSlotData = [];
+    private bool _showSecondInventory = true;
+    // Erida end
 
     public override void Initialize()
     {
@@ -103,6 +111,18 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         return button;
     }
 
+    // Erida start
+    private void SwitchSecondInventory(GUIBoundKeyEventArgs args, SlotControl control)
+    {
+        _showSecondInventory = !_showSecondInventory;
+
+        foreach (var button in _secondInventoryButtons)
+            button.Visible = _showSecondInventory;
+
+        UpdateInventoryHotbar(_playerInventory);
+    }
+    // Erida end
+
     public void RegisterInventoryBarContainer(ItemSlotButtonContainer inventoryHotbar)
     {
         _inventoryHotbar = inventoryHotbar;
@@ -141,6 +161,11 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
             return;
         }
 
+        // Erida start
+        var inventoryCopy = clientInv.SlotData;
+        var isHaveSecondInventory = inventoryCopy.ContainsKey("toggle");
+        // Erida end
+
         foreach (var (_, data) in clientInv.SlotData)
         {
             if (!data.ShowInWindow || !_slotGroups.TryGetValue(data.SlotGroup, out var container))
@@ -151,6 +176,16 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
                 button = CreateSlotButton(data);
                 container.AddButton(button);
             }
+            // Erida start
+            else
+            {
+                if (isHaveSecondInventory && inventoryCopy["toggle"].SlotDef.SecondInventorySlots.Contains(data.SlotName))
+                {
+                    _secondInventoryButtons.Add(button);
+                    _secondSlotData.Add(data);
+                }
+            }
+            // Erida end
 
             var showStorage = _entities.HasComponent<StorageComponent>(data.HeldEntity);
             var update = new SlotSpriteUpdate(data.HeldEntity, data.SlotGroup, data.SlotName, showStorage);
@@ -160,7 +195,19 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
         if (_inventoryHotbar == null)
             return;
 
-        var clothing = clientInv.SlotData.Where(p => !p.Value.HasSlotGroup).ToList();
+        // Erida start
+        if (isHaveSecondInventory)
+        {
+            if (!_showSecondInventory)
+                foreach (var button in _secondInventoryButtons)
+                    inventoryCopy.Remove(button.SlotName);
+            else
+                foreach (var data in _secondSlotData)
+                    inventoryCopy.TryAdd(data.SlotName, data);
+        }
+
+        var clothing = inventoryCopy.Where(p => !p.Value.HasSlotGroup).ToList();
+        // Erida end
 
         if (_inventoryButton != null)
             _inventoryButton.Visible = clothing.Count != 0;
@@ -279,6 +326,12 @@ public sealed class InventoryUIController : UIController, IOnStateEntered<Gamepl
 
         if (args.Function == EngineKeyFunctions.UIClick)
         {
+            // Erida start
+            if (control.SlotName == "toggle")
+            {
+                SwitchSecondInventory(args, control);
+            }
+            // Erida end
             _inventorySystem.UIInventoryActivate(control.SlotName);
             args.Handle();
             return;
