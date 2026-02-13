@@ -115,10 +115,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
     {
-		// Goob Station - Identity Fix
-		// Fix for incorrect pronouns PR #5999
+        // Goob Station - Identity Fix
+        // Fix for incorrect pronouns PR #5999
         var identity = ("user", Identity.Entity(uid, EntityManager));
-        var species = ("species", GetSpeciesRepresentation(component.Species).ToLower());
+        var species = ("species", GetSpeciesRepresentation(component.Species, component.CustomSpecies).ToLower());
         var age = ("age", GetAgeRepresentation(component.Species, component.Age));
 
         // WWDP EDIT
@@ -219,18 +219,18 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         ref bool dirty)
     {
 #if DEBUG
-        if (source is {} s)
+        if (source is { } s)
         {
             DebugTools.AssertNotEqual(s, SlotFlags.NONE);
             // Check that only a single bit in the bitflag is set
-            var powerOfTwo = BitOperations.RoundUpToPowerOf2((uint)s);
-            DebugTools.AssertEqual((uint)s, powerOfTwo);
+            var powerOfTwo = BitOperations.RoundUpToPowerOf2((uint) s);
+            DebugTools.AssertEqual((uint) s, powerOfTwo);
         }
 #endif
 
         if (visible)
         {
-            if (source is not {} slot)
+            if (source is not { } slot)
             {
                 dirty |= ent.Comp.PermanentlyHidden.Remove(layer);
             }
@@ -661,15 +661,18 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
-    public string GetSpeciesRepresentation(string speciesId)
+    public string GetSpeciesRepresentation(string speciesId, string customSpecies) // Erida added customSpecies
     {
-        if (_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
+        if (!_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
         {
-            return Loc.GetString(species.Name);
+            Log.Error("Tried to get representation of unknown species: {speciesId}");
+            return Loc.GetString("humanoid-appearance-component-unknown-species");
         }
 
-        Log.Error("Tried to get representation of unknown species: {speciesId}");
-        return Loc.GetString("humanoid-appearance-component-unknown-species");
+        if (string.IsNullOrEmpty(customSpecies))
+            return Loc.GetString(species.Name);
+        else
+            return customSpecies;
     }
 
     public string GetAgeRepresentation(string species, int age)

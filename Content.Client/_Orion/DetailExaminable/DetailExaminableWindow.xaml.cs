@@ -135,7 +135,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         PreviewTabs.SetTabVisible(2, showGyr);
         PreviewTabs.SetTabVisible(3, showNsfw);
 
-        var species = Loc.GetString($"species-name-{state.Species.ToString().ToLower()}");
+        var species = string.IsNullOrEmpty(state.CustomSpecies) ? Loc.GetString($"species-name-{state.Species.ToString().ToLower()}") : state.CustomSpecies; // Erida
         var sex = Loc.GetString($"humanoid-profile-editor-sex-{state.Sex.ToString().ToLower()}-text");
         var gender = Loc.GetString($"humanoid-profile-editor-pronouns-{state.Gender.ToString().ToLower()}-text");
 

@@ -168,6 +168,10 @@ namespace Content.Shared.Preferences
 
         [DataField] // Goob Station - Barks
         public ProtoId<BarkPrototype> BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
+        // Erida-start
+        [DataField]
+        public string CustomSpecies { get; set; } = string.Empty;
+        // Erida end
 
         [DataField]
         public int Age { get; set; } = 18;
@@ -243,6 +247,7 @@ namespace Content.Shared.Preferences
             string species,
             float height, // Goobstation: port EE height/width sliders
             float width, // Goobstation: port EE height/width sliders
+            string customspecies, // Erida edit
             int age,
             Sex sex,
             Gender gender,
@@ -273,6 +278,7 @@ namespace Content.Shared.Preferences
             Species = species;
             Height = height; // Goobstation: port EE height/width sliders
             Width = width; // Goobstation: port EE height/width sliders
+            CustomSpecies = customspecies; // Erida edit
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -320,6 +326,7 @@ namespace Content.Shared.Preferences
                 other.Species,
                 other.Height, // Goobstation: port EE height/width sliders
                 other.Width, // Goobstation: port EE height/width sliders
+                other.CustomSpecies, // Erida edit
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -496,6 +503,13 @@ namespace Content.Shared.Preferences
             return new(this) { NsfwTagsFlavorText = nsfwTagsFlavorText };
         }
         // Orion-End
+
+        // Erida start
+        public HumanoidCharacterProfile WithCustomSpecies(string customspecies)
+        {
+            return new(this) { CustomSpecies = customspecies };
+        }
+        // Erida end
 
         public HumanoidCharacterProfile WithAge(int age)
         {
@@ -707,6 +721,7 @@ namespace Content.Shared.Preferences
             if (Height != other.Height) return false; // Goobstation: port EE height/width sliders
             if (Width != other.Width) return false; // Goobstation: port EE height/width sliders
             if (BarkVoice != other.BarkVoice) return false; // Goob Station - Barks
+            if (CustomSpecies != other.CustomSpecies) return false; // Erida edit
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
@@ -879,6 +894,17 @@ namespace Content.Shared.Preferences
 
             tags = FormatTags(tags);
 
+            var customSpeciesMaxLength = configManager.GetCVar(CCVars.MaxCustomSpeciesLength);
+            string customSpecies;
+            if (CustomSpecies.Length > customSpeciesMaxLength)
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies)[..customSpeciesMaxLength];
+            }
+            else
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies);
+            }
+
             string links;
             var maxLinksLength = configManager.GetCVar(CCVars.LinksLength);
             if (LinksFlavorText.Length > maxLinksLength)
@@ -1005,6 +1031,7 @@ namespace Content.Shared.Preferences
             NsfwLinksFlavorText = nsfwlinks;
             NsfwTagsFlavorText = nsfwtags;
             // Orion-End
+            CustomSpecies = customSpecies; // Erida edit
             Age = age;
             Height = height; // Goobstation: port EE height/width sliders
             Width = width; // Goobstation: port EE height/width sliders
@@ -1142,6 +1169,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Species);
             hashCode.Add(Height); // Goobstation: port EE height/width sliders
             hashCode.Add(Width); // Goobstation: port EE height/width sliders
+            hashCode.Add(CustomSpecies); // Erida edit
             hashCode.Add(Age);
             hashCode.Add((int) Sex);
             hashCode.Add((int) Gender);

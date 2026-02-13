@@ -284,6 +284,7 @@ namespace Content.Server.Database
                 profile.Species,
                 profile.Height, // Goobstation: port EE height/width sliders
                 profile.Width, // Goobstation: port EE height/width sliders
+                profile.CustomSpecies, // Erida
                 profile.Age,
                 sex,
                 gender,
@@ -336,6 +337,7 @@ namespace Content.Server.Database
             profile.Species = humanoid.Species;
             profile.Height = humanoid.Height; // Goobstation: port EE height/width sliders
             profile.Width = humanoid.Width; // Goobstation: port EE height/width sliders
+            profile.CustomSpecies = humanoid.CustomSpecies; // Erida edit
             profile.Age = humanoid.Age;
             profile.Sex = humanoid.Sex.ToString();
             profile.Gender = humanoid.Gender.ToString();
@@ -1622,8 +1624,8 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return new BanNoteRecord(
                 ban.Id,
                 ban.Type,
-                [..ban.Rounds!.Select(br => MakeRoundRecord(br.Round!))],
-                [..playerRecords],
+                [.. ban.Rounds!.Select(br => MakeRoundRecord(br.Round!))],
+                [.. playerRecords],
                 ban.PlaytimeAtNote,
                 ban.Reason,
                 ban.Severity,
@@ -1639,7 +1641,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                         ban.Unban.UnbanningAdmin.Value,
                         await dbContext.Player.SingleOrDefaultAsync(p => p.UserId == ban.Unban.UnbanningAdmin.Value)),
                 NormalizeDatabaseTime(ban.Unban?.UnbanTime),
-                [..ban.Roles!.Select(br => new BanRoleDef(br.RoleType, br.RoleId))]);
+                [.. ban.Roles!.Select(br => new BanRoleDef(br.RoleType, br.RoleId))]);
         }
 
         // These two are here because they get converted into notes later
@@ -2207,7 +2209,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .Select(s => s.PollId)
                 .ToListAsync(cancel);
 
-            return [..ids];
+            return [.. ids];
         }
 
         public async Task<int> GetPollSeenCountAsync(int pollId, CancellationToken cancel = default)
@@ -2275,7 +2277,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 results.Add(await selector(item));
             }
 
-            return [..results];
+            return [.. results];
         }
     }
 }

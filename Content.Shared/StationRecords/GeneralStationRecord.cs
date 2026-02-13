@@ -44,6 +44,9 @@ public sealed record GeneralStationRecord
     [DataField]
     public string Species = string.Empty;
 
+    [DataField]
+    public string CustomSpecies = string.Empty;
+
     /// <summary>
     ///     Gender identity tied to this station record.
     /// </summary>

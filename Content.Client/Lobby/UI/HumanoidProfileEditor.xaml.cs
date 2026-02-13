@@ -64,6 +64,7 @@ namespace Content.Client.Lobby.UI
 
         // CCvar.
         private int _maxNameLength;
+        private int _maxCustomSpeciesLength; // Erida
         private bool _allowFlavorText;
 
         private FlavorText.FlavorText? _flavorText;
@@ -158,6 +159,7 @@ namespace Content.Client.Lobby.UI
             _sprite = _entManager.System<SpriteSystem>();
 
             _maxNameLength = _cfgManager.GetCVar(CCVars.MaxNameLength);
+            _maxCustomSpeciesLength = _cfgManager.GetCVar(CCVars.MaxCustomSpeciesLength); // Erida
             _allowFlavorText = _cfgManager.GetCVar(CCVars.FlavorText);
 
             ImportButton.OnPressed += args =>
@@ -292,6 +294,22 @@ namespace Content.Client.Lobby.UI
 
             #endregion Height and Width
             // end Goobstation: port EE height/width sliders
+
+            // Erida-start
+            IsCustomSpecies.OnPressed += _ =>
+            {
+                CustomSpeciesContainer.Visible = !CustomSpeciesContainer.Visible;
+                if (!IsCustomSpecies.Pressed)
+                    SetCustomSpecies(string.Empty);
+            };
+
+            CustomSpeciesEdit.IsValid = args => args.Length <= _maxCustomSpeciesLength;
+            CustomSpeciesEdit.OnTextChanged += args =>
+            {
+                string formattedMessage = FormattedMessage.RemoveMarkupPermissive(args.Text);
+                if (!string.IsNullOrEmpty(formattedMessage))
+                    SetCustomSpecies(formattedMessage);
+            };
 
             #region Skin
 
@@ -1193,6 +1211,8 @@ namespace Content.Client.Lobby.UI
 
 
             UpdateTraitsSelection(); // DeltaV - Traits
+            UpdateCustomSpeciesEdit(); // Erida edit
+
 
             RefreshAntags();
             RefreshJobs();
@@ -1722,6 +1742,15 @@ namespace Content.Client.Lobby.UI
             // RefreshTraits(); // Goobstation: ported from DeltaV - Species trait exclusion
         }
 
+
+        // Erida-start
+        private void SetCustomSpecies(string newSpecies)
+        {
+            Profile = Profile?.WithCustomSpecies(newSpecies);
+            IsDirty = true;
+        }
+        // Erida-end
+
         private void SetName(string newName)
         {
             Profile = Profile?.WithName(newName);
@@ -1823,6 +1852,21 @@ namespace Content.Client.Lobby.UI
         {
             AgeEdit.Text = Profile?.Age.ToString() ?? "";
         }
+
+        // Erida start
+        private void UpdateCustomSpeciesEdit()
+        {
+            IsCustomSpecies.Pressed = false;
+            CustomSpeciesContainer.Visible = false;
+
+            CustomSpeciesEdit.Text = Profile?.CustomSpecies ?? string.Empty;
+            if (!string.IsNullOrEmpty(Profile?.CustomSpecies))
+            {
+                IsCustomSpecies.Pressed = true;
+                CustomSpeciesContainer.Visible = true;
+            }
+        }
+        // Erida end
 
         /// <summary>
         /// Updates selected job priorities to the profile's.

@@ -92,4 +92,14 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<float> ICSSDSleepTime =
         CVarDef.Create("ic.ssd_sleep_time", 600f, CVar.SERVER);
+
+    // Erida-start
+
+    /// <summary>
+    ///      Sets the maximum Custom Species length.
+    /// </summary>
+    public static readonly CVarDef<int> MaxCustomSpeciesLength =
+        CVarDef.Create("ic.custom_species_length", 16, CVar.SERVER | CVar.REPLICATED);
+
+    // Erida-end
 }
