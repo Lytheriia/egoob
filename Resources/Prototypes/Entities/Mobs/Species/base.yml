@@ -276,6 +276,7 @@
   components:
   - type: Absorbable # Goobstation - changelings
   - type: WraithAbsorbable # Goobstation - wraith
+  - type: SSDAutoSendToCryostorage # Erida-edit
   - type: Barotrauma
     damage:
       types:
