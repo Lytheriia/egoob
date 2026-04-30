@@ -34,6 +34,8 @@ rcd-component-windows-and-grilles = Окна и решётки
 rcd-component-airlocks = Шлюзы
 rcd-component-electrical = Электроприборы
 rcd-component-lighting = Освещение
+rcd-component-floor-corners-plating = Угловые полы
+rcd-component-floor-corners-lattice = преоброзование решёток в угловые решётки
 
 ### Prototype names (note: constructable items will be puralized)
 
@@ -48,4 +50,11 @@ rcd-component-pumpsvalves = Контроль труб
 
 rcd-component-cannot-build-identical-entity = Эта постройка уже есть тут!
 
-
+rcd-component-PlatingCornerNE = угловое корпусное покрытие Северо Восток
+rcd-component-PlatingCornerNW = угловое корпусное покрытие Северо Запад
+rcd-component-PlatingCornerSW = угловое корпусное покрытие Юго Запад
+rcd-component-PlatingCornerSE = угловое корпусное покрытие Юго Восток
+rcd-component-LatticeCornerNE = угловое решётчетое покрытие Северо Восток
+rcd-component-LatticeCornerNW = угловое решётчетое покрытие Северо Запад
+rcd-component-LatticeCornerSW = угловое решётчетое покрытие Юго Запад
+rcd-component-LatticeCornerSE = угловое решётчетое покрытие Юго Восток
