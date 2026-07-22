@@ -23,3 +23,24 @@
   name: trait-category-medical
   priority: 40
   accentColor: "#ef4444"  # Red
+
+- type: traitCategory
+  id: Species
+  name: trait-category-species
+  priority: 50
+  accentColor: "#f28213"  # orange
+  maxTraits: 1
+
+- type: traitCategory
+  id: Language
+  name: trait-category-language
+  priority: 25
+  accentColor: "#1356f2"  # blue
+  maxTraits: 2
+  maxPoints: 3
+
+- type: traitCategory
+  id: Meta
+  name: trait-category-meta
+  priority: 60
+  accentColor: "#eab308"  # Yellow
