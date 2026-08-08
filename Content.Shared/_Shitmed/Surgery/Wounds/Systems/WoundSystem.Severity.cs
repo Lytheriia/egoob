@@ -22,8 +22,8 @@ public sealed partial class WoundSystem
         WoundComponent? wound = null,
         WoundableComponent? woundable = null)
     {
-        if (!Resolve(uid, ref wound)
-            || !Resolve(wound.HoldingWoundable, ref woundable))
+        if (!Resolve(uid, ref wound, false)
+            || !Resolve(wound.HoldingWoundable, ref woundable, false))
             return;
 
         var old = wound.WoundSeverityPoint;
@@ -217,7 +217,7 @@ public sealed partial class WoundSystem
         WoundableComponent? woundableComp = null)
     {
         if (!Resolve(wound, ref component, false)
-            || !Resolve(woundable, ref woundableComp))
+            || !Resolve(woundable, ref woundableComp, false))
             return;
 
         var nearestSeverity = component.WoundSeverity;

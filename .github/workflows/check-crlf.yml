@@ -1,10 +1,4 @@
-# SPDX-License-Identifier: MIT
-
 name: CRLF Check
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 on:
   pull_request:
@@ -13,9 +7,9 @@ on:
 jobs:
   build:
     name: CRLF Check
-    if: github.event.pull_request.draft == false
+    if: github.actor != 'Erida-change-bot' && github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4.2.2
+    - uses: actions/checkout@v7.0.0
     - name: Check for CRLF
-      run: Tools/check_crlf.py
+      run: Tools/Wizards/check_crlf.py

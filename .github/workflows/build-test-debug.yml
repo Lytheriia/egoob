@@ -1,10 +1,4 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 name: Build & Test Debug
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 on:
   push:
@@ -16,7 +10,8 @@ on:
 
 jobs:
   build:
-    if: github.event.pull_request.draft == false
+    name: Build & Content.Tests
+    if: github.actor != 'Erida-change-bot' && (github.event_name != 'pull_request' || github.event.pull_request.draft == false)
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -25,7 +20,7 @@ jobs:
 
     steps:
     - name: Checkout Master
-      uses: actions/checkout@v4.2.2
+      uses: actions/checkout@v7.0.0
 
     - name: Setup Submodule
       run: |
@@ -40,7 +35,7 @@ jobs:
         git submodule update --init --recursive
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v4.1.0
+      uses: actions/setup-dotnet@v5.3.0
       with:
         dotnet-version: 10.0.x
 
