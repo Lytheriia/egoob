@@ -1,0 +1,58 @@
+- type: trait
+  id: CatLigaments
+  name: trait-catligaments-name
+  description: trait-catligaments-desc
+  category: Medical
+  effects:
+  - !type:AddCompsEffect
+    removeExisting: true
+    components:
+     - type: Vocal
+       sounds:
+         Male: MaleFelinid
+         Female: FemaleFelinid
+         Unsexed: MaleFelinid
+     - type: Speech
+       allowedEmotes: [ 'Mews', 'Meows', 'Purrs', 'Hiss' ]
+       speechSounds: Alto
+
+- type: trait
+  id: dogpLigaments
+  name: trait-dogligaments-name
+  description: trait-dogligments-desc
+  category: Medical
+  effects:
+  - !type:AddCompsEffect
+    removeExisting: true
+    components:
+     - type: MessyDrinker
+       spillChance: 0.33
+     - type: Speech
+       speechSounds: Vulpkanin
+       speechVerb: Vulpkanin
+       allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl' ]
+     - type: Vocal
+       sounds:
+         Male: MaleVulpkanin
+         Female: FemaleVulpkanin
+         Unsexed: MaleVulpkanin
+
+- type: trait
+  id: lactation
+  name: trait-lactation-name
+  description: trait-lactation-desc
+  category: Medical
+  conditions:
+  - !type:IsGenderCondition
+    genders:
+    - Female
+  effects:
+  - !type:AddCompsEffect
+    removeExisting: true
+    components:
+    - type: Lactation
+      drinkSound: !type:SoundPathSpecifier
+        params:
+          variation: 0.25
+          volume: -2
+        path: /Audio/Items/drink.ogg
