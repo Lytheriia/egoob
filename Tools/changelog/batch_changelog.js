@@ -169,7 +169,7 @@ function writeChangelog(newEntries) {
 
     fs.writeFileSync(
         path,
-        "Name: Gooblog\nOrder: -1\nEntries:\n" +
+        "Name: Erida\nOrder: -1\nEntries:\n" +
             yaml.dump(data.Entries, { indent: 2 }).replace(/^---/, "")
     );
 }
