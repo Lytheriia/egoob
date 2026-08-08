@@ -59,25 +59,25 @@ public sealed partial class CCVars
     /// Ban the player when violating emote rules.
     /// </summary>
     public static readonly CVarDef<bool> EmoteProtectionBanEnabled =
-        CVarDef.Create("protection.emote_ban", true, CVar.SERVERONLY);
+        CVarDef.Create("protection.emote_ban", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Kick the player (if ban is disabled) when violating emote rules.
     /// </summary>
     public static readonly CVarDef<bool> EmoteProtectionKickEnabled =
-        CVarDef.Create("protection.emote_kick", false, CVar.SERVERONLY);
+        CVarDef.Create("protection.emote_kick", true, CVar.SERVERONLY);
 
     /// <summary>
     /// Erase the character (delete entity, wipe mind, etc.) when violating emote rules.
     /// </summary>
     public static readonly CVarDef<bool> EmoteProtectionEraseEnabled =
-        CVarDef.Create("protection.emote_erase", true, CVar.SERVERONLY);
+        CVarDef.Create("protection.emote_erase", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Delete all chat messages by the violating player.
     /// </summary>
     public static readonly CVarDef<bool> EmoteProtectionDeleteMessages =
-        CVarDef.Create("protection.emote_delete_messages", true, CVar.SERVERONLY);
+        CVarDef.Create("protection.emote_delete_messages", false, CVar.SERVERONLY);
 
     /// <summary>
     /// Hard threshold for emote spam. If exceeded, immediate action is taken.
