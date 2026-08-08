@@ -26,6 +26,23 @@
     node: frameUnsecured
   - type: Sprite
     drawdepth: Objects
+    # Orion start
+    layers:
+    - map: [ "computerLayerBody" ]
+      state: broken
+  - type: EdgeConnection
+    connectionKey: computer-console
+    allowedDirections: East, West
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.EdgeConnectionVisuals.ConnectionMask:
+        computerLayerBody:
+          None: { state: broken, sprite: Structures/Machines/computers.rsi }
+          West: { state: computer_r-broken, sprite: _Orion/Structures/Machines/computers.rsi }
+          East: { state: computer_l-broken, sprite: _Orion/Structures/Machines/computers.rsi }
+          East, West: { state: computer_l_r-broken, sprite: _Orion/Structures/Machines/computers.rsi }
+  # Orion end
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: Electronic
