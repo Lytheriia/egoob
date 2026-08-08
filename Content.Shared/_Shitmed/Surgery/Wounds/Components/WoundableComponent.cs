@@ -210,4 +210,6 @@ public sealed class WoundableComponentState : ComponentState
     public Dictionary<NetEntity, WoundableHealingMultiplier> HealingMultipliers = new();
 
     public WoundableSeverity WoundableSeverity;
+
+    public float HealingRateAccumulated;
 }

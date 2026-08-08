@@ -1,69 +1,179 @@
-<!--
-SPDX-FileCopyrightText: 2017 PJB3005 <pieterjan.briers@gmail.com>
-SPDX-FileCopyrightText: 2018 Pieter-Jan Briers <pieterjan.briers@gmail.com>
-SPDX-FileCopyrightText: 2019 Ivan <silvertorch5@gmail.com>
-SPDX-FileCopyrightText: 2019 Silver <silvertorch5@gmail.com>
-SPDX-FileCopyrightText: 2020 Injazz <43905364+Injazz@users.noreply.github.com>
-SPDX-FileCopyrightText: 2020 RedlineTriad <39059512+RedlineTriad@users.noreply.github.com>
-SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <zddm@outlook.es>
-SPDX-FileCopyrightText: 2021 Paul Ritter <ritter.paul1@googlemail.com>
-SPDX-FileCopyrightText: 2021 Swept <sweptwastaken@protonmail.com>
-SPDX-FileCopyrightText: 2021 mirrorcult <lunarautomaton6@gmail.com>
-SPDX-FileCopyrightText: 2022 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-SPDX-FileCopyrightText: 2022 ike709 <ike709@users.noreply.github.com>
-SPDX-FileCopyrightText: 2023 iglov <iglov@avalon.land>
-SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
-SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 Rares Popa <2606875+rarepops@users.noreply.github.com>
-SPDX-FileCopyrightText: 2024 router <messagebus@vk.com>
-SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-SPDX-FileCopyrightText: 2025 Piras314 <p1r4s@proton.me>
+<div align="center">
+    <h1>【 Erida 】</h1>
+    <h3></h3>
+</div>
 
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
+<div align="center">
 
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://github.com/Goob-Station/Goob-Station/blob/master/Resources/Textures/Logo/logo.png" /></p>
+![](https://img.shields.io/github/last-commit/dead-space-server/space-erida-14?&style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B)
+![](https://img.shields.io/github/languages/top/dead-space-server/space-erida-14?&style=for-the-badge&color=8ad7eb&logo=git&logoColor=D9E0EE&labelColor=1E202B)
+![](https://img.shields.io/github/repo-size/dead-space-server/space-erida-14?color=86dbce&label=SIZE&logo=protondrive&style=for-the-badge&logoColor=D9E0EE&labelColor=1E202B)
+<a href="https://discord.gg/nA4h29Ffts">
+  <img alt="Discord" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FFC9EGuS7zm%3Fwith_counts%3Dtrue&query=approximate_member_count&style=for-the-badge&logo=discord&logoColor=D9E0EE&label=discord&labelColor=%231E202B&color=86dbc0">
+</a>
 
-This is a fork from the primary repo for Space Station 14 called Goob Station. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server this is the content pack for Goob Station.
+</div>
 
-If you want to host or create content for SS14, go to the [Space Station 14 repository](https://github.com/space-wizards/space-station-14) as it contains both RobustToolbox and the content pack for development of new content packs and is the base for your fork.
+<div align="center">
+    <h2>• overview •</h2>
+    <h3></h3>
+</div>
 
-## Links
+<details>
+<summary>About project</summary>
 
-[Goob Station Discord Server](https://discord.gg/goobstation) | [Goob Station Development Discord Server](https://discord.gg/zXk2cyhzPN) | [Goob Station Forum](https://forums.goobstation.com/) | [Goob Station Website](https://goobstation.com)
+This is a [Space Station 14](https://spacestation14.com/) server, forked from [Goobstation](https://github.com/Goob-Station/Goob-Station). We are a roleplay-focused server, tailored for an 18+ audience.
 
-## Documentation/Wiki
+</details>
 
-The Goob Station [docs site](https://docs.goobstation.com/) has documentation on GS14's content, engine, game design, and more. It also has lots of resources for new contributors to the project.
+<details>
+<summary>Contributing</summary>
 
-## Contributing
+- We are happy to accept contributions from anybody.
+- Get in [Discord](https://discord.gg/nA4h29Ffts) if you want to help.
 
-We are happy to accept contributions from anybody. Get in [Development Discord Server](https://discord.gg/zXk2cyhzPN) if you want to help. Feel free to check the [list of issues](https://github.com/Goob-Station/Goob-Station/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
-While following the [Space Station 14 contribution guidelines](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html) is not mandatory for Goob Station, we recommend reviewing them for best practices.
+</details>
 
-We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
+<details>
+<summary>Links</summary>
 
-## AI-generated contributions disclaimer
-This project does not accept low-effort or wholesale AI-generated contributions. Examples include, but are not limited to:
+- [Discord server](https://discord.gg/nA4h29Ffts)
+- [Wiki](https://wiki.deadspace14.net/%D0%AD%D1%80%D0%B8%D0%B4%D0%B0:%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0)
 
-- Any code (including yaml) generated by tools like GitHub Copilot, ChatGPT, or similar.
-- AI-created artwork, sound files, or other assets.
-- Auto-generated documentation, issue reports or pull request descriptions.
+</details>
 
-Exceptions to this are simple tools like Rider's single-line completion feature.
+<details>
+<summary>How to connect (SS14)</summary>
 
-## Building
+- To connect to the server, use the following address: ```ss14s://erida.deadspace14.net```
+- Open Space Station 14 and paste this link into the server browser or use direct connect.
 
-1. Clone this repo.
-2. Run `RUN_THIS.py` to init submodules and download the engine.
-3. Compile the solution.
+</details>
 
-[More detailed instructions on building the project.](https://docs.goobstation.com/en/general-development/setup.html)
+<div align="center">
+    <h2>• building •</h2>
+    <h3></h3>
+</div>
 
-## License
+<div align="center">
+  Refer to <a href="https://docs.spacestation14.com/en/general-development/setup/setting-up-a-development-environment.html">
+  the Space Wizards' guide</a> on setting up a development environment for general information.
+  <br><br>
+  We provide some scripts shown below to make the job easier.
+</div>
 
-All code in this codebase is released under the AGPL-3.0-or-later license. Each file includes REUSE Specification headers or separate .license files that specify a dual license option. This dual licensing is provided to simplify the process for projects that are not using AGPL, allowing them to adopt the relevant portions of the code under an alternative license. You can review the complete texts of these licenses in the LICENSES/ directory.
+<details>
+<summary>Build dependencies</summary>
 
-Most media assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+- Git
+- .NET SDK 10.0
 
-Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
+</details>
+<details>
+<summary>Windows</summary>
+
+1. Clone this repository
+2. Run `Tools/RunScripts/bat/updateEngine.bat` in a terminal or file explorer to download the engine
+3. Run `Tools/RunScripts/bat/buildAllDebug.bat` after making any changes to the source
+4. Run `Tools/RunScripts/bat/runQuickAll.bat` to launch the client and the server
+5. Connect to localhost in the client and play
+
+</details>
+
+<details>
+<summary>Linux</summary>
+
+1. Clone this repository
+2. Run `Tools/RunScripts/sh/updateEngine.sh` in a terminal to download the engine
+3. Run `Tools/RunScripts/sh/buildAllDebug.sh` after making any changes to the source
+4. Run `Tools/RunScripts/sh/runQuickAll.sh` to launch the client and the server
+5. Connect to localhost in the client and play
+
+</details>
+
+<div align="center">
+    <h2>• license •</h2>
+    <h3></h3>
+</div>
+
+<details>
+<summary>License</summary>
+
+### Code
+This project as a whole is distributed under **AGPL-3.0-or-later**.
+
+Some individual files may be available under more permissive or **dual licensing** options through
+REUSE-compatible SPDX headers or adjacent `.license` files. The nearest file-level license notice is
+the source of truth for that file; keep existing license, copyright, and provenance notices intact.
+
+New original Erida files should be licensed under **MIT** and should carry REUSE/SPDX metadata near
+the top of the file:
+
+```text
+SPDX-FileCopyrightText: 2026 <copyright holder>
+SPDX-License-Identifier: MIT
+```
+
+`MIT OR AGPL-3.0-or-later` is also acceptable when an explicit dual-license is useful. Use MIT or
+dual MIT/AGPL licensing only for code that is original to Erida or based on sources that permit this.
+Do not mark copied or adapted AGPL/GPL/fork code as MIT-only; preserve the original license and
+attribution. Existing AGPL files and files ported from AGPL projects are expected to remain AGPL.
+When MIT or dual-licensed files are built into Erida, the combined project distribution still follows
+**AGPL-3.0-or-later**.
+
+Pull requests are checked for this metadata on new text files. Existing files without SPDX metadata
+are left alone. Existing files that already contain SPDX metadata may produce non-blocking review
+warnings if copyright metadata looks incomplete.
+
+Full license texts can be found in `LICENSE-AGPLv3.TXT`, `LICENSE-GPLv3.TXT`, and `LICENSE-MIT.TXT`.
+
+---
+
+### Assets
+Most media assets are licensed under **CC-BY-SA 3.0**, unless stated otherwise.
+
+- Assets include their own license and copyright information in metadata files
+- Example: [asset metadata](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json)
+
+---
+
+### Commercial use
+Some assets are licensed under **CC-BY-NC-SA 3.0** or similar non-commercial licenses.
+
+> These assets **must be removed** if you intend to use this project commercially.
+
+</details>
+
+<details>
+<summary> Attribution</summary>
+
+We organize borrowed content from other forks into dedicated subdirectories.
+
+This helps preserve proper attribution and reduces merge conflicts.
+
+Content inside these subdirectories originates from their respective forks and may include modifications.
+Changes are marked with comments around the edited lines.
+
+---
+
+### Fork sources
+
+| Subdirectory | Fork Name | Repository | License |
+|--------------|----------|------------|---------|
+| `_Erida` | Erida | https://github.com/dead-space-server/space-erida-14 | AGPL 3.0 |
+| `_Goobstation` | Goob Station | https://github.com/Goob-Station/Goob-Station | AGPL-3.0 |
+
+---
+
+
+### Additional sources
+
+The following repositories were used without creating dedicated subdirectories:
+
+| Fork Name | Repository | License |
+|-----------|------------|---------|
+| Space Station 14 | https://github.com/space-wizards/space-station-14 | MIT |
+
+</details>
+
+![License](https://img.shields.io/badge/license-AGPL--3.0-blue?style=for-the-badge)

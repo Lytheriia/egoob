@@ -1,5 +1,3 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
-# From https://github.com/DeltaV-Station/Delta-v/
 name: PR Changelogs
 concurrency: commit_action
 on:
@@ -7,22 +5,23 @@ on:
     types: [closed]
 
 env:
-  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-  CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  CHANGELOG_DIR: Resources/Changelog/Erida.yml
   PR_NUMBER: ${{ github.event.number }}
 
 jobs:
   changelog:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     permissions:
       contents: write
     steps:
       - name: Checkout Master
-        uses: actions/checkout@v3
+        # Erida edit: v5 is Node 24, while v6 includeIf credentials broke auth here.
+        uses: actions/checkout@v5
         with:
-          token: ${{ secrets.BOT_TOKEN }}
-          ref: "${{ vars.CHANGELOG_BRANCH }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: master
 
       - name: Setup Git
         run: |
@@ -31,28 +30,32 @@ jobs:
         shell: bash
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        # Erida edit: keep the workflow on a supported action runtime.
+        uses: actions/setup-node@v6.4.0
         with:
           node-version: 18.x
 
       - name: Install Dependencies
         run: |
-          cd "Tools/changelog"
+          cd "Tools/_NF/changelog"
           npm install
         shell: bash
-        continue-on-error: true
 
       - name: Generate Changelog
         run: |
-          cd "Tools/changelog"
+          cd "Tools/_NF/changelog"
           node changelog.js
         shell: bash
-        continue-on-error: true
 
       - name: Commit Changelog
         run: |
-          git add *.yml
+          # Erida edit: commit generated changelog changes before rebasing, otherwise pull fails on a dirty tree.
+          git add "$CHANGELOG_DIR"
+          if git diff --cached --quiet; then
+            echo "No changelog changes to commit."
+            exit 0
+          fi
           git commit -m "${{ vars.CHANGELOG_MESSAGE }} (#${{ env.PR_NUMBER }})"
+          git pull --rebase origin master
           git push
         shell: bash
-        continue-on-error: true

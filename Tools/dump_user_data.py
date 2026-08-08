@@ -1,8 +1,3 @@
-# SPDX-FileCopyrightText: 2023 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
-# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
-#
-# SPDX-License-Identifier: MIT
-
 #!/usr/bin/env python3
 
 # User data dumping script for dumping data from an SS14 postgres database.
@@ -533,4 +528,3 @@ FROM (
 main()
 
 # "I'm surprised you managed to write this entire Python file without spamming the word 'sus' everywhere." - Remie
-
