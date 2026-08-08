@@ -271,10 +271,6 @@
   components:
   - type: Absorbable # Goobstation - changelings
   - type: WraithAbsorbable # Goobstation - wraith
-  # Erida start
-  - type: InteractionWhitelist
-    lactation: true
-  # Erida end
   - type: Barotrauma
     damage:
       types:
