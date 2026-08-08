@@ -788,7 +788,7 @@ namespace Content.Client.Lobby.UI
                 ToolTip = Loc.GetString("humanoid-profile-editor-link-tooltip", ("url", url)),
                 HorizontalExpand = true,
                 HorizontalAlignment = HAlignment.Center,
-                StyleClasses = { StyleBase.ButtonOpenBoth },
+                StyleClasses = { StyleClass.ButtonOpenBoth },
             };
 
             button.OnPressed += _ => OpenLink(url);
