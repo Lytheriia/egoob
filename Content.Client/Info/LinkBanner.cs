@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Client.Changelog;
-﻿using Content.Client._RMC14.LinkAccount;
+using Content.Client._RMC14.LinkAccount;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Systems.EscapeMenu;
 using Content.Client.UserInterface.Systems.Guidebook;
@@ -30,7 +30,7 @@ namespace Content.Client.Info
             var uriOpener = IoCManager.Resolve<IUriOpener>();
             _cfg = IoCManager.Resolve<IConfigurationManager>();
 
-            var rulesButton = new Button() {Text = Loc.GetString("server-info-rules-button")};
+            var rulesButton = new Button() { Text = Loc.GetString("server-info-rules-button") };
             rulesButton.OnPressed += args => new RulesAndInfoWindow().Open();
             buttons.AddChild(rulesButton);
 
@@ -41,13 +41,15 @@ namespace Content.Client.Info
             AddInfoButton("server-info-telegram-button", CCVars.InfoLinksTelegram);
             AddInfoButton("rmc-ui-patreon", CCVars.InfoLinksPatreon);
 
-            var linkAccount = UserInterfaceManager.GetUIController<LinkAccountUIController>();
-            var linkAccountButton = new Button
-            {
-                Text = Loc.GetString("rmc-ui-link-discord-account"),
-            };
-            linkAccountButton.OnPressed += _ => linkAccount.ToggleWindow();
-            buttons.AddChild(linkAccountButton);
+            // Erida start
+            // var linkAccount = UserInterfaceManager.GetUIController<LinkAccountUIController>();
+            // var linkAccountButton = new Button
+            // {
+            //     Text = Loc.GetString("rmc-ui-link-discord-account"),
+            // };
+            // linkAccountButton.OnPressed += _ => linkAccount.ToggleWindow();
+            // buttons.AddChild(linkAccountButton);
+            // Erida end
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();
             var guidebookButton = new Button() { Text = Loc.GetString("server-info-guidebook-button") };
