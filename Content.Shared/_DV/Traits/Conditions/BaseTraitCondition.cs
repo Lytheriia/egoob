@@ -1,4 +1,3 @@
-using Content.Shared.Preferences;
 using JetBrains.Annotations;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -58,9 +57,4 @@ public sealed class TraitConditionContext
     /// The species ID of the player, if available.
     /// </summary>
     public string? SpeciesId { get; init; }
-
-    /// <summary>
-    /// The <see cref="HumanoidCharacterProfile"/> of the player, if available.
-    /// </summary>
-    public HumanoidCharacterProfile? Profile { get; init; }
 }

@@ -7,9 +7,6 @@ using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Inventory;
-using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
@@ -49,14 +46,14 @@ public sealed class TraitSystem : EntitySystem
             !jobProto.ApplyTraits)
             return;
 
-        // Use the species ID from the profile if for some reason we can't get the humanoid appearance
-        ProtoId<SpeciesPrototype>? speciesId = args.Profile.Species;
+        // Get species ID for condition checking
+        string? speciesId = null;
 
         // Track disabled traits and reasons
         var disabledTraits = new Dictionary<ProtoId<TraitPrototype>, List<string>>();
 
         // Validate and collect valid traits
-        var validTraits = ValidateTraits(args.Mob, args.Profile.TraitPreferences, args.Player, args.JobId, speciesId, args.Profile, disabledTraits);
+        var validTraits = ValidateTraits(args.Mob, args.Profile.TraitPreferences, args.Player, args.JobId, speciesId, disabledTraits);
 
         // Apply valid traits
         foreach (var traitId in validTraits)
@@ -83,7 +80,6 @@ public sealed class TraitSystem : EntitySystem
         ICommonSession? session,
         string? jobId,
         string? speciesId,
-        HumanoidCharacterProfile? profile,
         Dictionary<ProtoId<TraitPrototype>, List<string>> disabledTraits)
     {
         var validTraits = new HashSet<ProtoId<TraitPrototype>>();
@@ -103,7 +99,6 @@ public sealed class TraitSystem : EntitySystem
             LogMan = _log,
             JobId = jobId,
             SpeciesId = speciesId,
-            Profile = profile,
         };
 
         foreach (var traitId in selectedTraits)
