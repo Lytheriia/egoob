@@ -25,16 +25,6 @@
     item: PillCanisterNeurozenium
 
 - type: trait
-  id: Addicted
-  name: trait-addicted-name
-  description: trait-addicted-desc
-  category: Mental
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Addicted
-
-- type: trait
   id: Liar
   name: trait-liar-name
   description: trait-liar-desc

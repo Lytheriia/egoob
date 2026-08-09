@@ -11,16 +11,6 @@
     accent: dementia
 
 - type: trait
-  id: ScottishAccent
-  name: trait-scottish-name
-  description: trait-scottish-desc
-  category: SpeechTraits
-  cost: 1
-  components:
-  - type: ReplacementAccent
-    accent: scottish
-
-- type: trait
   id: Bogan
   name: trait-bogan-name
   description: trait-bogan-desc

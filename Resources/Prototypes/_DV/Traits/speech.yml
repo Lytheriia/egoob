@@ -85,17 +85,6 @@
     - type: SpanishAccent
 
 - type: trait
-  id: IrishAccent
-  name: trait-irish-accent-name
-  description: trait-irish-accent-desc
-  category: Accents
-  cost: 0
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: IrishAccent
-
-- type: trait
   id: MobsterAccent
   name: trait-mobster-accent-name
   description: trait-mobster-accent-desc
@@ -105,17 +94,6 @@
   - !type:AddCompsEffect
     components:
     - type: MobsterAccent
-
-- type: trait
-  id: ScottishAccent
-  name: trait-scottish-accent-name
-  description: trait-scottish-accent-desc
-  category: Accents
-  cost: 0
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: ScottishAccent
 
 - type: trait
   id: Accentless
@@ -158,19 +136,3 @@
   - !type:AddCompsEffect
     components:
     - type: FrontalLisp
-
-- type: trait
-  id: Hushed
-  name: trait-hushed-name
-  description: trait-hushed-desc
-  category: Accents
-  cost: 0
-  conditions:
-  - !type:HasCompCondition
-    component: BorgChassis
-    invert: true
-    tooltip: trait-condition-borg-not
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Hushed
