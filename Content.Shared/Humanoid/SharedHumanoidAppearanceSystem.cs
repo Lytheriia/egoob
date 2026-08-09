@@ -178,6 +178,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
 
         targetHumanoid.Gender = sourceHumanoid.Gender;
+        targetHumanoid.CustomSpecies = sourceHumanoid.CustomSpecies; // Erida edit
 
         if (TryComp<GrammarComponent>(target, out var grammar))
             _grammarSystem.SetGender((target, grammar), sourceHumanoid.Gender);
@@ -479,6 +480,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         SetSpecies(uid, profile.Species, false, humanoid);
+
+        humanoid.CustomSpecies = profile.CustomSpecies; // Erida
+
         SetSex(uid, profile.Sex, false, humanoid);
         humanoid.EyeColor = profile.Appearance.EyeColor;
 
