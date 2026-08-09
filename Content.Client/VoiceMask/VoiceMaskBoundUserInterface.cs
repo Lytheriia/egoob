@@ -35,6 +35,7 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
 
         _window.OnNameChange += OnNameSelected;
         _window.OnVerbChange += verb => SendMessage(new VoiceMaskChangeVerbMessage(verb));
+        _window.OnVoiceChange += voice => SendMessage(new VoiceMaskChangeVoiceMessage(voice)); // Corvax-TTS
         _window.OnToggle += OnToggle;
         _window.OnAccentToggle += OnAccentToggle;
         _window.OnJobIconChanged += OnJobIconChanged; // GabyStation -> Radio icons
@@ -69,7 +70,7 @@ public sealed class VoiceMaskBoundUserInterface : BoundUserInterface
             return;
         }
 
-        _window.UpdateState(cast.Name, cast.Verb, cast.Active, cast.AccentHide);
+        _window.UpdateState(cast.Name, cast.Voice, cast.Verb, cast.Active, cast.AccentHide); // Corvax-TTS-Edit
 
         _window.SetCurrentJobIcon(cast.JobIcon); // GabyStation -> Radio icons
     }

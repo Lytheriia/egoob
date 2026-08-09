@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: AGPL-3.0-or-later
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Robust.Shared.Configuration;
 
@@ -23,7 +23,7 @@ public sealed partial class CCVars
     /// </remarks>
     /// <seealso cref="ChatRateLimitPeriod"/>
     public static readonly CVarDef<int> ChatRateLimitCount =
-        CVarDef.Create("chat.rate_limit_count", 10, CVar.SERVERONLY);
+        CVarDef.Create("chat.rate_limit_count", 2, CVar.SERVERONLY);
 
     /// <summary>
     ///     Minimum delay (in seconds) between notifying admins about chat message rate limit violations.

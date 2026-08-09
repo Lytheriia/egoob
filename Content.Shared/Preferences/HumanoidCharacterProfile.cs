@@ -69,6 +69,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using Robust.Shared;
+using YamlDotNet.RepresentationModel;
+using Content.Shared._DV.Traits; // DeltaV - Traits rework
+using Content.Shared._Erida.TTS;
 
 namespace Content.Shared.Preferences
 {
@@ -122,14 +126,58 @@ namespace Content.Shared.Preferences
         [DataField]
         public string FlavorText { get; set; } = string.Empty;
 
+        // Orion-Start
+        [DataField]
+        public string OocFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string CharacterFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string GreenFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string YellowFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string RedFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string TagsFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string LinksFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string NsfwFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string NsfwOOCFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string NsfwLinksFlavorText { get; set; } = string.Empty;
+
+        [DataField]
+        public string NsfwTagsFlavorText { get; set; } = string.Empty;
+        // Orion-End
+
         /// <summary>
         /// Associated <see cref="SpeciesPrototype"/> for this profile.
         /// </summary>
         [DataField]
         public ProtoId<SpeciesPrototype> Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
+        // Erida start
+        [DataField]
+        public string Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice; // Corvax-TTS
+        // Erida end
+
         [DataField] // Goob Station - Barks
         public ProtoId<BarkPrototype> BarkVoice { get; set; } = SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
+        // Erida-start
+        [DataField]
+        public string CustomSpecies { get; set; } = string.Empty;
+        // Erida end
 
         [DataField]
         public int Age { get; set; } = 18;
@@ -189,9 +237,24 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(
             string name,
             string flavortext,
+            // Orion-Start
+            string oocflavortext,
+            string characterflavortext,
+            string greenflavortext,
+            string yellowflavortext,
+            string redflavortext,
+            string tagsflavortext,
+            string linksflavortext,
+            string nsfwflavortext,
+            string nsfwoocflavortext,
+            string nsfwlinksflavortext,
+            string nsfwtagsflavortext,
+            // Orion-End
             string species,
             float height, // Goobstation: port EE height/width sliders
             float width, // Goobstation: port EE height/width sliders
+            string customspecies, // Erida edit
+            string voice, // Corvax-TTS
             int age,
             Sex sex,
             Gender gender,
@@ -206,9 +269,24 @@ namespace Content.Shared.Preferences
         {
             Name = name;
             FlavorText = flavortext;
+            // Orion-Start
+            OocFlavorText = oocflavortext;
+            CharacterFlavorText = characterflavortext;
+            GreenFlavorText = greenflavortext;
+            YellowFlavorText = yellowflavortext;
+            RedFlavorText = redflavortext;
+            TagsFlavorText = tagsflavortext;
+            LinksFlavorText = linksflavortext;
+            NsfwFlavorText = nsfwflavortext;
+            NsfwOOCFlavorText = nsfwoocflavortext;
+            NsfwLinksFlavorText = nsfwlinksflavortext;
+            NsfwTagsFlavorText = nsfwtagsflavortext;
+            // Orion-End
             Species = species;
             Height = height; // Goobstation: port EE height/width sliders
             Width = width; // Goobstation: port EE height/width sliders
+            CustomSpecies = customspecies; // Erida edit
+            Voice = voice; // Corvax-TTS
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -240,9 +318,24 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile(HumanoidCharacterProfile other)
             : this(other.Name,
                 other.FlavorText,
+                // Orion-Start
+                other.OocFlavorText,
+                other.CharacterFlavorText,
+                other.GreenFlavorText,
+                other.YellowFlavorText,
+                other.RedFlavorText,
+                other.TagsFlavorText,
+                other.LinksFlavorText,
+                other.NsfwFlavorText,
+                other.NsfwOOCFlavorText,
+                other.NsfwLinksFlavorText,
+                other.NsfwTagsFlavorText,
+                // Orion-End
                 other.Species,
                 other.Height, // Goobstation: port EE height/width sliders
                 other.Width, // Goobstation: port EE height/width sliders
+                other.CustomSpecies, // Erida edit
+                other.Voice, // Corvax-TTS
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -324,6 +417,14 @@ namespace Content.Shared.Preferences
             );
             //  Goob Station - Barks End
 
+            // Corvax-TTS-Start
+            var voiceId = random.Pick(prototypeManager
+                .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(x => x.RoundStart)
+                .Where(o => CanHaveVoice(o, sex)).ToArray()
+            ).ID;
+            // Corvax-TTS-End
+
             var gender = Gender.Epicene;
 
             switch (sex)
@@ -346,6 +447,7 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
+                Voice = voiceId, // Corvax-TTS
                 Width = width, // Goobstation: port EE height/width sliders
                 Height = height, // Goobstation: port EE height/width sliders
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
@@ -362,6 +464,70 @@ namespace Content.Shared.Preferences
         {
             return new(this) { FlavorText = flavorText };
         }
+
+        // Orion-Start
+        public HumanoidCharacterProfile WithOOCFlavorText(string oocFlavorText)
+        {
+            return new(this) { OocFlavorText = oocFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithCharacterText(string characterFlavorText)
+        {
+            return new(this) { CharacterFlavorText = characterFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithGreenPreferencesText(string greenFlavorText)
+        {
+            return new(this) { GreenFlavorText = greenFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithYellowPreferencesText(string yellowFlavorText)
+        {
+            return new(this) { YellowFlavorText = yellowFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithRedPreferencesText(string redFlavorText)
+        {
+            return new(this) { RedFlavorText = redFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithTagsText(string tagsFlavorText)
+        {
+            return new(this) { TagsFlavorText = tagsFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithLinksText(string linksFlavorText)
+        {
+            return new(this) { LinksFlavorText = linksFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithNsfwPreferencesText(string nsfwFlavorText)
+        {
+            return new(this) { NsfwFlavorText = nsfwFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithNsfwOOCFlavorText(string nsfwOOCFlavorText)
+        {
+            return new(this) { NsfwOOCFlavorText = nsfwOOCFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithNsfwLinksText(string nsfwLinksFlavorText)
+        {
+            return new(this) { NsfwLinksFlavorText = nsfwLinksFlavorText };
+        }
+
+        public HumanoidCharacterProfile WithNsfwTagsText(string nsfwTagsFlavorText)
+        {
+            return new(this) { NsfwTagsFlavorText = nsfwTagsFlavorText };
+        }
+        // Orion-End
+
+        // Erida start
+        public HumanoidCharacterProfile WithCustomSpecies(string customspecies)
+        {
+            return new(this) { CustomSpecies = customspecies };
+        }
+        // Erida end
 
         public HumanoidCharacterProfile WithAge(int age)
         {
@@ -410,6 +576,13 @@ namespace Content.Shared.Preferences
             return new(this) { BarkVoice = barkVoice };
         }
         // Goob Station - Barks End
+
+        // Corvax-TTS-Start
+        public HumanoidCharacterProfile WithVoice(string voice)
+        {
+            return new(this) { Voice = voice };
+        }
+        // Corvax-TTS-End
 
         public HumanoidCharacterProfile WithJobPriorities(IEnumerable<KeyValuePair<ProtoId<JobPrototype>, JobPriority>> jobPriorities)
         {
@@ -506,12 +679,12 @@ namespace Content.Shared.Preferences
             // Category not found so dump it.
             TraitCategoryPrototype? traitCategory = null;
 
-            if (category != null && !protoManager.Resolve(category, out traitCategory))
+            if (!protoManager.Resolve(category, out traitCategory)) // DeltaV 13/01/26 - Traits: Category is no longer nullable
                 return new(this);
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
 
-            if (traitCategory == null || traitCategory.MaxTraitPoints < 0)
+            if (traitCategory.MaxPoints < 0) // DeltaV 13/01/26 - Traits: Changed to MaxPoints
             {
                 return new(this)
                 {
@@ -532,7 +705,7 @@ namespace Content.Shared.Preferences
                 count += otherProto.Cost;
             }
 
-            if (count > traitCategory.MaxTraitPoints && traitProto.Cost != 0)
+            if (count > traitCategory.MaxPoints && traitProto.Cost != 0) // DeltaV 13/01/26 - Traits: Changed to MaxPoints
             {
                 return new(this);
             }
@@ -572,7 +745,9 @@ namespace Content.Shared.Preferences
             if (Species != other.Species) return false;
             if (Height != other.Height) return false; // Goobstation: port EE height/width sliders
             if (Width != other.Width) return false; // Goobstation: port EE height/width sliders
+            if (Voice != other.Voice) return false; // Corvax-TTS
             if (BarkVoice != other.BarkVoice) return false; // Goob Station - Barks
+            if (CustomSpecies != other.CustomSpecies) return false; // Erida edit
             if (PreferenceUnavailable != other.PreferenceUnavailable) return false;
             if (SpawnPriority != other.SpawnPriority) return false;
             if (!_jobPriorities.SequenceEqual(other._jobPriorities)) return false;
@@ -580,6 +755,19 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             if (!Loadouts.SequenceEqual(other.Loadouts)) return false;
             if (FlavorText != other.FlavorText) return false;
+            // Orion-Start
+            if (OocFlavorText != other.OocFlavorText) return false;
+            if (CharacterFlavorText != other.CharacterFlavorText) return false;
+            if (GreenFlavorText != other.GreenFlavorText) return false;
+            if (YellowFlavorText != other.YellowFlavorText) return false;
+            if (RedFlavorText != other.RedFlavorText) return false;
+            if (TagsFlavorText != other.TagsFlavorText) return false;
+            if (LinksFlavorText != other.LinksFlavorText) return false;
+            if (NsfwFlavorText != other.NsfwFlavorText) return false;
+            if (NsfwOOCFlavorText != other.NsfwOOCFlavorText) return false;
+            if (NsfwLinksFlavorText != other.NsfwLinksFlavorText) return false;
+            if (NsfwTagsFlavorText != other.NsfwTagsFlavorText) return false;
+            // Orion-End
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
@@ -656,12 +844,147 @@ namespace Content.Shared.Preferences
             var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
             if (FlavorText.Length > maxFlavorTextLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
+                flavortext = FlavorText[..maxFlavorTextLength]; // Orion-Edit | Remove RemoveMarkupOrThrow
             }
             else
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
+                flavortext = FlavorText; // Orion-Edit | Remove RemoveMarkupOrThrow
             }
+
+            // Orion-Start
+            string oocflavortext;
+            var oocMaxFlavorTextLength = configManager.GetCVar(CCVars.OOCMaxFlavorTextLength);
+            if (OocFlavorText.Length > oocMaxFlavorTextLength)
+            {
+                oocflavortext = OocFlavorText[..oocMaxFlavorTextLength];
+            }
+            else
+            {
+                oocflavortext = OocFlavorText;
+            }
+
+            string characterDescription;
+            var maxCharacterDescriptionLength = configManager.GetCVar(CCVars.CharacterDescriptionLength);
+            if (CharacterFlavorText.Length > maxCharacterDescriptionLength)
+            {
+                characterDescription = CharacterFlavorText[..maxCharacterDescriptionLength];
+            }
+            else
+            {
+                characterDescription = CharacterFlavorText;
+            }
+
+            string greenPreferences;
+            var maxGreenPreferencesLength = configManager.GetCVar(CCVars.GreenPreferencesLength);
+            if (GreenFlavorText.Length > maxGreenPreferencesLength)
+            {
+                greenPreferences = GreenFlavorText[..maxGreenPreferencesLength];
+            }
+            else
+            {
+                greenPreferences = GreenFlavorText;
+            }
+
+            string yellowPreferences;
+            var maxYellowPreferencesLength = configManager.GetCVar(CCVars.YellowPreferencesLength);
+            if (YellowFlavorText.Length > maxYellowPreferencesLength)
+            {
+                yellowPreferences = YellowFlavorText[..maxYellowPreferencesLength];
+            }
+            else
+            {
+                yellowPreferences = YellowFlavorText;
+            }
+
+            string redPreferences;
+            var maxRedPreferencesLength = configManager.GetCVar(CCVars.RedPreferencesLength);
+            if (RedFlavorText.Length > maxRedPreferencesLength)
+            {
+                redPreferences = RedFlavorText[..maxRedPreferencesLength];
+            }
+            else
+            {
+                redPreferences = RedFlavorText;
+            }
+
+            string tags;
+            var maxTagsLength = configManager.GetCVar(CCVars.TagsLength);
+            if (TagsFlavorText.Length > maxTagsLength)
+            {
+                tags = TagsFlavorText[..maxTagsLength];
+            }
+            else
+            {
+                tags = TagsFlavorText;
+            }
+
+            tags = FormatTags(tags);
+
+            var customSpeciesMaxLength = configManager.GetCVar(CCVars.MaxCustomSpeciesLength);
+            string customSpecies;
+            if (CustomSpecies.Length > customSpeciesMaxLength)
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies)[..customSpeciesMaxLength];
+            }
+            else
+            {
+                customSpecies = FormattedMessage.RemoveMarkupOrThrow(CustomSpecies);
+            }
+
+            string links;
+            var maxLinksLength = configManager.GetCVar(CCVars.LinksLength);
+            if (LinksFlavorText.Length > maxLinksLength)
+            {
+                links = LinksFlavorText[..maxLinksLength];
+            }
+            else
+            {
+                links = LinksFlavorText;
+            }
+
+            string nsfwPreferences;
+            var maxNsfwPreferencesLength = configManager.GetCVar(CCVars.NsfwPreferencesLength);
+            if (NsfwFlavorText.Length > maxNsfwPreferencesLength)
+            {
+                nsfwPreferences = NsfwFlavorText[..maxNsfwPreferencesLength];
+            }
+            else
+            {
+                nsfwPreferences = NsfwFlavorText;
+            }
+
+            string nsfwoocflavortext;
+            if (NsfwOOCFlavorText.Length > oocMaxFlavorTextLength)
+            {
+                nsfwoocflavortext = NsfwOOCFlavorText[..oocMaxFlavorTextLength];
+            }
+            else
+            {
+                nsfwoocflavortext = NsfwOOCFlavorText;
+            }
+
+            string nsfwlinks;
+            if (NsfwLinksFlavorText.Length > maxLinksLength)
+            {
+                nsfwlinks = NsfwLinksFlavorText[..maxLinksLength];
+            }
+            else
+            {
+                nsfwlinks = NsfwLinksFlavorText;
+            }
+
+            string nsfwtags;
+            if (NsfwTagsFlavorText.Length > maxTagsLength)
+            {
+                nsfwtags = NsfwTagsFlavorText[..maxTagsLength];
+            }
+            else
+            {
+                nsfwtags = NsfwTagsFlavorText;
+            }
+
+            nsfwtags = FormatTags(nsfwtags);
+            // Orion-End
 
             // begin Goobstation: port EE height/width sliders
             var height = Height;
@@ -719,8 +1042,28 @@ namespace Content.Shared.Preferences
                          .Where(prototypeManager.HasIndex)
                          .ToList();
 
+            // Corvax-TTS-Start
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null || !CanHaveVoice(voice, Sex))
+                Voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
+            // Corvax-TTS-End
+
             Name = name;
             FlavorText = flavortext;
+            // Orion-Start
+            OocFlavorText = oocflavortext;
+            CharacterFlavorText = characterDescription;
+            GreenFlavorText = greenPreferences;
+            YellowFlavorText = yellowPreferences;
+            RedFlavorText = redPreferences;
+            TagsFlavorText = tags;
+            LinksFlavorText = links;
+            NsfwFlavorText = nsfwPreferences;
+            NsfwOOCFlavorText = nsfwoocflavortext;
+            NsfwLinksFlavorText = nsfwlinks;
+            NsfwTagsFlavorText = nsfwtags;
+            // Orion-End
+            CustomSpecies = customSpecies; // Erida edit
             Age = age;
             Height = height; // Goobstation: port EE height/width sliders
             Width = width; // Goobstation: port EE height/width sliders
@@ -782,11 +1125,11 @@ namespace Content.Shared.Preferences
                     continue;
 
                 // Always valid.
-                if (traitProto.Category == null)
-                {
-                    result.Add(trait);
-                    continue;
-                }
+                // if (traitProto.Category == null) // DeltaV 13/01/26 - Traits rework
+                // {
+                //     result.Add(trait);
+                //     continue;
+                // }
 
                 // No category so dump it.
                 if (!protoManager.Resolve(traitProto.Category, out var category))
@@ -796,7 +1139,7 @@ namespace Content.Shared.Preferences
                 existing += traitProto.Cost;
 
                 // Too expensive.
-                if (existing > category.MaxTraitPoints)
+                if (existing > category.MaxPoints) // DeltaV 13/01/26 - Traits:  Was MaxTraitPoints
                     continue;
 
                 groups[category.ID] = existing;
@@ -842,9 +1185,24 @@ namespace Content.Shared.Preferences
             hashCode.Add(_loadouts);
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
+            // Orion-Start
+            hashCode.Add(OocFlavorText);
+            hashCode.Add(CharacterFlavorText);
+            hashCode.Add(GreenFlavorText);
+            hashCode.Add(YellowFlavorText);
+            hashCode.Add(RedFlavorText);
+            hashCode.Add(TagsFlavorText);
+            hashCode.Add(LinksFlavorText);
+            hashCode.Add(NsfwFlavorText);
+            hashCode.Add(NsfwOOCFlavorText);
+            hashCode.Add(NsfwLinksFlavorText);
+            hashCode.Add(NsfwTagsFlavorText);
+            // Orion-End
             hashCode.Add(Species);
             hashCode.Add(Height); // Goobstation: port EE height/width sliders
             hashCode.Add(Width); // Goobstation: port EE height/width sliders
+            hashCode.Add(CustomSpecies); // Erida edit
+            hashCode.Add(Voice); // Corvax-TTS
             hashCode.Add(Age);
             hashCode.Add((int) Sex);
             hashCode.Add((int) Gender);
@@ -891,9 +1249,47 @@ namespace Content.Shared.Preferences
             return loadout;
         }
 
+        // Orion-Start
+        private string FormatTags(string inputTags)
+        {
+            if (string.IsNullOrWhiteSpace(inputTags))
+                return string.Empty;
+
+            var rawTags = inputTags.Split(new[] { ',', ' ', '\n', '\r', '\t', ';' }, StringSplitOptions.RemoveEmptyEntries);
+            var formattedTags = new List<string>();
+
+            foreach (var rawTag in rawTags)
+            {
+                var tag = rawTag.Trim();
+                if (string.IsNullOrEmpty(tag))
+                    continue;
+
+                if (!tag.StartsWith("#"))
+                {
+                    tag = "#" + tag;
+                }
+
+                if (tag.Length > 1)
+                {
+                    formattedTags.Add(tag);
+                }
+            }
+
+            return string.Join(", ", formattedTags);
+        }
+        // Orion-End
+
         public HumanoidCharacterProfile Clone()
         {
             return new HumanoidCharacterProfile(this);
         }
+
+        // Corvax-TTS-Start
+        // SHOULD BE NOT PUBLIC, BUT....
+        public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
+        {
+            return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
+        }
+        // Corvax-TTS-End
     }
 }

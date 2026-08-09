@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
-
+/* // Orion-Remove | Replaced
 using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Verbs;
@@ -45,3 +45,4 @@ public sealed class DetailExaminableSystem : EntitySystem
         args.Verbs.Add(verb);
     }
 }
+*/
