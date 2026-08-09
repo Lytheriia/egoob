@@ -152,12 +152,14 @@
         sprite: Mobs/Customization/masking_helpers.rsi
         state: full
         visible: false
-      - map: ["enum.HumanoidVisualLayers.LFoot"]
-      - map: ["enum.HumanoidVisualLayers.RFoot"]
-      - map: ["socks"]
-      - map: ["underpants"]
-      - map: ["undershirt"]
-      - map: ["jumpsuit"]
+      # Erida start
+      - map: [ "underpants" ]
+      - map: [ "undershirt" ]
+      - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+      - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+      - map: [ "socks" ]
+      - map: [ "jumpsuit" ]
+      # Erida end
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: ["enum.HumanoidVisualLayers.Handcuffs"]
@@ -256,12 +258,14 @@
           sprite: Mobs/Customization/masking_helpers.rsi
           state: full
           visible: false
-        - map: ["enum.HumanoidVisualLayers.LFoot"]
-        - map: ["enum.HumanoidVisualLayers.RFoot"]
-        - map: ["socks"]
-        - map: ["underpants"]
-        - map: ["undershirt"]
-        - map: ["jumpsuit"]
+        # Erida start
+        - map: [ "underpants" ]
+        - map: [ "undershirt" ]
+        - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+        - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+        - map: [ "socks" ]
+        - map: [ "jumpsuit" ]
+        # Erida end
         - map: ["enum.HumanoidVisualLayers.LHand"]
         - map: ["enum.HumanoidVisualLayers.RHand"]
         - map: ["enum.HumanoidVisualLayers.Handcuffs"]
