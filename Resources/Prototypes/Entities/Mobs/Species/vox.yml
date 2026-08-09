@@ -132,9 +132,14 @@
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: [ "jumpsuit" ]
+    # Erida start
+    - map: [ "underpants" ]
+    - map: [ "undershirt" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "socks" ]
+    - map: [ "jumpsuit" ]
+    # Erida end
     - map: [ "enum.HumanoidVisualLayers.LHand" ]
     - map: [ "enum.HumanoidVisualLayers.RHand" ]
     - map: [ "gloves" ]

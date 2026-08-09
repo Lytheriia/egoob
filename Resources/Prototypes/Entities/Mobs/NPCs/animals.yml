@@ -1463,9 +1463,14 @@
       sprite: /Textures/Mobs/Animals/monkey.rsi
       visible: false
       map: [ "enum.ToggleableVisuals.Layer" ]
-    - map: ["jumpsuit"]
-    - map: ["enum.HumanoidVisualLayers.LFoot"]
-    - map: ["enum.HumanoidVisualLayers.RFoot"]
+    # Erida start
+    - map: [ "underpants" ]
+    - map: [ "undershirt" ]
+    - map: [ "enum.HumanoidVisualLayers.LFoot" ]
+    - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+    - map: [ "socks" ]
+    - map: [ "jumpsuit" ]
+    # Erida end
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
     - map: ["enum.HumanoidVisualLayers.Handcuffs"]
