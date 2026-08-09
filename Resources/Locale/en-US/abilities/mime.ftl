@@ -12,3 +12,5 @@ mime-invisible-wall-popup-others = {CAPITALIZE(THE($mime))} brushes up against a
 mime-invisible-wall-failed = You can't create an invisible wall there.
 mime-not-ready-repent = You aren't ready to repent for your broken vow yet.
 mime-ready-to-repent = You feel ready to take your vows again.
+ent-ActionMimeInvisibleWall-desc = Create an invisible wall in front of you, if placeable there.
+ent-ActionMimeInvisibleWall = Create Invisible Wall

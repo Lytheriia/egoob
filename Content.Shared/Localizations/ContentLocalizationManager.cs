@@ -12,7 +12,8 @@ namespace Content.Shared.Localizations
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
         // If you want to change your codebase's language, do it here.
-        private const string Culture = "en-US";
+        private const string Culture = "ru-RU"; // Erida
+        private const string FallbackCulture = "en-US"; // Erida
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -28,8 +29,12 @@ namespace Content.Shared.Localizations
         public void Initialize()
         {
             var culture = new CultureInfo(Culture);
+            var fallbackCulture = new CultureInfo(FallbackCulture); // Erida
 
             _loc.LoadCulture(culture);
+            _loc.LoadCulture(fallbackCulture); // Erida
+            _loc.SetFallbackCluture(fallbackCulture); // Erida
+            _loc.AddFunction(culture, "MANY", FormatMany); // Erida
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
             _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
@@ -52,6 +57,8 @@ namespace Content.Shared.Localizations
 
             _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
             _loc.AddFunction(cultureEn, "MANY", FormatMany);
+
+            _loc.SetCulture(culture); // Erida
         }
 
         private ILocValue FormatMany(LocArgs args)

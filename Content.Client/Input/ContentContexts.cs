@@ -111,6 +111,8 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.TargetRightFoot);
             // Shitmed Change End
 
+            human.AddFunction(ContentKeyFunctions.TogglePosing); // ADT-Tweak
+
             // actions should be common (for ghosts, mobs, etc)
             common.AddFunction(ContentKeyFunctions.OpenActionsMenu);
 

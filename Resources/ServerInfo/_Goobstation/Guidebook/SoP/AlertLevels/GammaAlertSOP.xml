@@ -1,44 +1,32 @@
-<!--
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
-<Document>
-  # Station Alert - Gamma
+﻿<Document>
+  # Код станции - Гамма
 
   <Box>
-    [italic]Called by: Central Command. Use a Fax Machine and send a fax stamped by a member of command.[/italic]
+    [italic]Вызывается Центральным Командованием. Командование станции может его запросить через факс.[/italic]
   </Box>
 
-  [bold]Conditions:[/bold]
+  [bold]Условия:[/bold]
 
-  There is a massive threat to the continued safety of the station and crew, threatening the very existence of the Station;
+  Существует масштабная угроза безопасности станции и экипажа, угрожающая самому существованию станции;
 
-  However, this threat is not yet big enough to warrant the destruction of the Station, and Central Command may still want to protect their assets.
+  Однако эта угроза еще не настолько велика, чтобы требовать уничтожения станции, и Центральное командование может захотеть защитить свои активы.
 
-  [bold]Security:[/bold]
+  [bold]Безопасность:[/bold]
 
-  Martial Law is enacted. Standard Operating Procedure is suspended. Security personnel have full permission to do whatever it takes to ensure that the safety of the station and crew is maintained. Personnel interfering with emergency procedures may be detained. Security are cleared to use lethal force in response to any physical threat. Assault of Command or ERT may be punished with immediate field execution.
+  Введено военное положение. Стандартные рабочие процедуры приостановлены. Сотрудники службы безопасности имеют полное право делать все необходимое для обеспечения безопасности станции и экипажа. Лица, вмешивающиеся в экстренные процедуры, могут быть задержаны. Охрана имеет право применять смертоносную силу в ответ на любую физическую угрозу. Нападение на командование или членов ДСО может стать причиной немедленной казни на месте.
 
-  Random searches are fully permitted, allowed and encouraged. Security personnel may detain any personnel refusing a random search in order to conduct said search;
+  Случайные обыски полностью разрешены, допускаются и поощряются. Сотрудники службы безопасности могут задержать любого сотрудника, отказывающегося от случайного обыска, для проведения такого обыска;
 
-  Security personnel are to cooperate fully with any Central Command Staff (such as Emergency Response Teams) in order to eliminate the threat to the station.
+  Сотрудники службы безопасности должны полностью сотрудничать с любым персоналом Центрального Командования и ДСО (например, с группами быстрого реагирования) для устранения угрозы станции.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Общий экипаж:[/bold]
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Весь персонал обязан переключить датчики в режим координат;
 
-  All Secure Areas are to be bolted down. Secure Areas may be left unbolted at the discretion of Command personnel;
+  Весь персонал должен оставаться в своих отсеках до тех пор, пока не пройдет код "Гамма", если только это потребует служба безопасности и/или командование.
 
-  Excursions into the Gateway are fully prohibited.
+  Посетители станции должны оставаться в баре, библиотеке или дормах до тех пор, пока не пройдет код "Гамма";
 
-  [bold]General Crew:[/bold]
-
-  All personnel are required to maximize their Suit Sensors;
-
-  All personnel are to remain inside their Departments until such a point as Code Gamma has passed, unless specifically requested by Security and/or Command, or their particular skills can help resolve the situation (such as Field Medics or Engineers);
-
-  Visitors to the station (anyone with Civilian-level access) are to remain inside the Bar, Library or Dormitories until such a point as Code Gamma has passed;
-
-  Personnel are to follow the instructions of Security staff, so long as they are within the bounds of Space Law and are not acting against the general well-being of the station and its crew. Failure to do so may lead to their arrest for Creating a Workplace Hazard.
+  Персонал должен следовать указаниям сотрудников службы безопасности, если они не выходят за рамки космического закона и не действуют во вред общему благополучию станции и ее экипажа. Невыполнение этих указаний может привести к аресту за создание опасности на рабочем месте.
 
 </Document>

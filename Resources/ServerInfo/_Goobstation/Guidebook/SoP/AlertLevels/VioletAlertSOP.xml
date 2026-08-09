@@ -1,42 +1,28 @@
-<!--
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-  # Station Alert - Violet
+  # Код станции - Фиолетовый
 
   <Box>
-    [italic]Called by: A viral threat aboard the station.[/italic]
+    [italic]вызывается: любым членом командования или автоматической системой оповещения вирусных угроз[/italic].
   </Box>
 
-  [bold]Conditions:[/bold]
+  [bold]Условия:[/bold]
 
-  There is a known viral threat aboard the station, and all hands on deck are required to combat it.
+  На борту станции обнаружена вирусная угроза, и для борьбы с ней требуется любые руки.
 
-  [bold]Security:[/bold]
+  [bold]Охрана:[/bold]
 
-  Security should fully arm themselves, and at their discretion may also hand out arms to trusted crewmembers and Command.
+  Служба Безопасности должна полностью вооружиться, а также по своему усмотрению может выдавать оружие доверенным членам экипажа и командованию.
 
-  Security personnel are to prioritize the safety of themselves and Command, and crewmembers as the next-highest priority.
+  Во избежание распространения неизвестных болезнетворных микроорганизмов сотрудники службы безопасности должны дистанцироваться от других людей.
 
-  Security personnel should distance themselves from others in order to avoid the spread of unknown pathogens.
+  [bold]Общий экипаж:[/bold]
 
-  [bold]Secure Areas:[/bold]
+  Весь персонал должен включить датчики в режим координат;
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Персонал должен дистанцироваться от других сотрудников, если есть подозрение на заражение или статус носителя вируса.
 
-  It is recommended that all Secure Areas be bolted down unless their use is necessary;
+  Персонал должен проявлять осторожность в любое время. Соблюдение простых правил безопасности (например, не ходить в одиночку в технические туннели) может предотвратить ненужные несчастные случаи.
 
-  The Gateway should be fully closed to avoid off-station spread of the virus.
-
-  [bold]General Crew:[/bold]
-
-  All personnel are required to maximize their Suit Sensors;
-
-  Personnel are to distance themselves from other personnel where infection or carrier status is suspected.
-
-  Personnel must exercise caution at all times. Following simple safety procedures (such as not going through Maintenance alone) can prevent needless accidents.
-
-  Personnel are advised to secure a secluded location to ride out the viral threat in. Stock as much food and water as is possible.
+  Персоналу рекомендуется найти уединенное место, где можно переждать вирусную угрозу. Запаситесь как можно большим количеством еды и воды.
 
 </Document>

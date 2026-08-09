@@ -33,6 +33,13 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
 
     public ProtoId<GuideEntryPrototype> LastEntry;
 
+    // erida edit: useless rules tabs (NRP, antag conditions) we don't need them
+    private static readonly HashSet<ProtoId<GuideEntryPrototype>> HiddenRootEntries = new()
+    {
+        "NRPRuleset",
+        "Conditions",
+    };
+
     public GuidebookWindow()
     {
         RobustXamlLoader.Load(this);
@@ -205,7 +212,8 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler, IA
                 entries.ExceptWith(entry.Children);
             }
 
-            rootEntries = entries.ToList();
+            // erida edit: same thing
+            rootEntries = entries.Where(x => !HiddenRootEntries.Contains(x)).ToList();
         }
 
         return rootEntries

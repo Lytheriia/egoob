@@ -1,148 +1,155 @@
-<!--
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-# Alert Levels
-The following alert levels are the publicly defined levels on this station and what they entail.
-Below are the listed pop-ups for each alert and the color associated with them.
+# Код станции
+Коды станции - это публичные уровни угрозы на станции.
+Ниже приведены всплывающие окна для каждого уровня тревоги и связанные с ними цвета.
 
 <ColorBox>
   <Box>
-    For the purposes of Alert Escalation: Treat higher alerts as if they are still on the previous alert level. (Yellow Alert is Blue Alert if it was Blue Alert prior.) Furthermore, treat Delta, Gamma, Epsilon, and Violet Alert as Red Alert.
+    Желтый код - это синий код, если до него был синий код. Аналогично с другими цветами. Кроме того, рассматривайте дельту, гамму, эпсилон и фиолетовый код как красный код, но с поправкой на ситуацию.
   </Box>
 </ColorBox>
-
-There are individual entries for each alert level and what they entail for station personnel.
-
 <Table Columns="1">
   <ColorBox Color="#388c34">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Green Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Зелёный код[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now green! It is now safe to return to your workplace!
+      Внимание! Уровень тревоги на станции стал зеленым! Теперь можно вернуться на свое рабочее место!
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#388c34]Green Alert[/color] will always appear at the start of shift and is the default station alert level.
+[color=#388c34]Зелёный код[/color] всегда появляется в начале смены и является кодом станции по умолчанию.
 
 <Table Columns="1">
   <ColorBox Color="#1b67a5">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Blue Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Синий код[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now blue! There is a confirmed threat to the station. Security should perform random checks. Crewmembers are advised to be vigilant and report suspicious activity to security.
+      Внимание! Уровень тревоги станции теперь синий! Существует подтвержденная угроза станции. Служба безопасности должна провести выборочные проверки. Членам экипажа рекомендуется быть бдительными и сообщать о подозрительной активности службе безопасности.
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#1b67a5]Blue Alert[/color] will appear when a threat or significant amount of crimes have been reported. This often stays around for a while.
+[color=#1b67a5]Синий код[/color] появляется, когда поступает сообщение об возможной угрозе станции. Часто оно сохраняется в течение некоторого времени.
 
 <Table Columns="1">
   <ColorBox Color="#c8a404">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Yellow Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Жёлтый код[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now yellow! There is a structural or atmospheric threat within the station. Engineering staff are advised to immediately respond and perform safety measures. Crewmembers are advised to stay away from the threat, and stay in their workplaces if necessary.
+      Внимание! Уровень тревоги на станции теперь желтый! На станции существует структурная или атмосферная угроза. Инженерному отделу рекомендуется немедленно отреагировать и принять меры безопасности. Членам экипажа рекомендуется держаться подальше от угрозы и при необходимости оставаться на своих рабочих местах.
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#c8a404]Yellow Alert[/color] will appear for massive damage to the station or gas leaks.
+[color=#c8a404]Жёлтый код[/color] появляется в случае масштабных повреждений станции или утечки газа.
 
-<Table Columns="1">
+  <Table Columns="1">
+    <ColorBox Color="#959595">
+      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
+        [bold][color=#ffffff][head=1]Серый код[/head][/color][/bold]
+      </Box>
+    </ColorBox>
+    <ColorBox>
+      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
+        Внимание! Уровень тревоги станции теперь серый! На станции присутствует угроза ОПГ. Служба безопасности имеет полное право использовать нелетальные патроны и оружие против сторонников ОПГ. Все члены экипажа, за исключением должностных лиц, обязаны проследовать в свои отделы и ожидать дальнейших инструкций до отмены кода. Все ассистенты обязаны проследовать в бар. Неподчинение комендантскому часу будет караться.
+      </Box>
+    </ColorBox>
+  </Table>
+  [color=#959595]Серый код[/color] ставится в случае угрозы станции от организованной преступной группировки под названием "Серая Волна".
+
+  <Table Columns="1">
   <ColorBox Color="#ba292c">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Red Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Красный код[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now red! There is an immediate threat to the station. Security should prepare to use lethal force if necessary. Crewmembers should find a safe place to shelter in, and are advised to follow any present authorities.
+      Внимание! Уровень тревоги станции теперь красный! Существует непосредственная угроза для станции. Службе Безопасности следует приготовиться к применению летальной силы, если это потребуется. Членам экипажа следует найти безопасное место, где можно укрыться, и следовать указаниям командования.
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#ba292c]Red Alert[/color] will appear for major hostile activities and/or threats to the station.
+[color=#ba292c]Красный код[/color] появляется в случае серьезных враждебных действий и/или угроз для станции.
 
 <Table Columns="1">
   <ColorBox Color="#8b0000">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Delta Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Код Дельта[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now delta! The station is currently under threat of imminent destruction. Crewmembers are advised to listen to heads of staff for more information.
+      Внимание! Уровень тревоги станции теперь дельта! В настоящее время станция находится под угрозой неминуемого уничтожения. Членам экипажа рекомендуется обратиться к командованию для получения дополнительной информации.
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#8b0000]Delta Alert[/color] will appear in situations where the station is actively about to self-destruct or be destroyed by other means.
+[color=#8b0000]Код Дельта[/color] появляется в ситуациях, когда станция активно собирается самоуничтожиться или быть уничтоженной другими способами.
 
 <Table Columns="1">
   <ColorBox Color="#9400d3">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Epsilon Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Код Эпсилон[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now epsilon! Central Command has ordered the Epsilon security level on the station. Consider all contracts terminated.
+      Внимание! Уровень тревоги на станции теперь эпсилон! Центральное Командование приказало ввести на станции код "Эпсилон". Все контракты расторгнуты.
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#9400d3]Epsilon Alert[/color] is only set when Central Command intervenes on the station for whatever reason.
+Вы ничего не знаете о [color=#9400d3]Коде Эпсилон[/color], даже об его существовании.
 
 <Table Columns="1">
   <ColorBox Color="#db7093">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Gamma Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Гамма Код[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now gamma! Central Command has ordered the Gamma security level on the station. Security is to have weapons at all times, and all civilians are to immediately seek their nearest head for transportation to a secure location.
+      Внимание! Уровень тревоги на станции теперь гамма! Центральное командование приказало ввести на станции уровень безопасности "Гамма". Служба Безопасности должна постоянно иметь при себе оружие, а все гражданские лица должны немедленно обратиться к командованию для получения инструкций.
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#db7093]Gamma Alert[/color] is rare and often only used in extreme cases.
+[color=#db7093]Код Гамма[/color] встречается редко и используется только в крайних случаях, когда на станции большая угроза.
 
 <Table Columns="1">
   <ColorBox Color="#cc74fc">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
-      [bold][color=#ffffff][head=1]Violet Alert[/head][/color][/bold]
+      [bold][color=#ffffff][head=1]Фиолетовый код[/head][/color][/bold]
     </Box>
   </ColorBox>
   <ColorBox>
     <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10">
-      Attention! Station alert level is now violet! There is a viral threat on the station. Medical staff are advised to isolate crewmembers with any symptoms. Crewmembers are advised to distance themselves from others and perform safety measures to prevent further spread.
+      Внимание! Уровень тревоги на станции теперь фиолетовый! На станции существует вирусная угроза. Медицинскому персоналу рекомендуется изолировать членов экипажа с любыми симптомами. Членам экипажа рекомендуется дистанцироваться от окружающих и соблюдать меры безопасности, чтобы предотвратить дальнейшее распространение вируса.
     </Box>
   </ColorBox>
 </Table>
 
-The [color=#cc74fc]Violet Alert[/color] is set for viral outbreaks when a zombie infection or other disease occurs.
+[color=#cc74fc]Фиолетовый код[/color] устанавливается из-за вирусных вспышек, когда возникает зомби-инфекция или другая болезнь.
 
 These alerts can be found in entries listed below:
-- [textlink="Green Alert" link="GreenAlert SOP"]
-- [textlink="Blue Alert" link="BlueAlert SOP"]
-- [textlink="Yellow Alert" link="YellowAlert SOP"]
-- [textlink="Red Alert" link="RedAlert SOP"]
-- [textlink="Delta Alert" link="DeltaAlert SOP"]
-- [textlink="Epsilon Alert" link="EpsilonAlert SOP"]
-- [textlink="Gamma Alert" link="GammaAlert SOP"]
-- [textlink="Violet Alert" link="VioletAlert SOP"]
+- [textlink="Зелёный код" link="GreenAlertSOP"]
+- [textlink="Синий код" link="BlueAlertSOP"]
+- [textlink="Жёлтый код" link="YellowAlertSOP"]
+- [textlink="Красный код" link="RedAlertSOP"]
+- [textlink="Дельта код" link="DeltaAlertSOP"]
+- [textlink="Код Эпсилон" link="EpsilonAlertSOP"]
+- [textlink="Гамма код" link="GammaAlertSOP"]
+- [textlink="Фиолетовый код" link="VioletAlertSOP"]
 
 </Document>

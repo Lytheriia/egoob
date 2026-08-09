@@ -1,21 +1,16 @@
-<!--
-SPDX-License-Identifier: AGPL-3.0-or-later
--->
-
 <Document>
-# Emergency Procedures
-This is the list of procedures that should (ideally) be followed in certain circumstances. This is a variety of emergencies and levels of hostiliy/threat to the station.
+# Аварийные процедуры
+Это список процедур, которые должны (в идеале) выполняться в определенных обстоятельствах. Здесь перечислены различные чрезвычайные ситуации и уровни враждебности/угрозы для станции.
 
-Command and Security should utilize this section to differentiate the danger level for this station and choose appropriate reactions.
+Командование и служба безопасности должны использовать этот раздел, чтобы определить уровень опасности для станции и выбрать соответствующие реакции.
 
-The following emergencies are underneath this folder:
-- [textlink="Confirmed Revolutions" link="ConfirmedRevs SOP"]
-- [textlink="Containment Failures (Tesla/Singularity)" link="ContainmentFail SOP"]
-- [textlink="Fire/Gas Spills" link="FireGasSpill SOP"]
-- [textlink="Meteor Storms" link="MeteorStorm SOP"]
-- [textlink="Supermatter Delamination" link="SMDelam SOP"]
-- [textlink="War Declaration" link="WarDeclaration SOP"]
-- [textlink="Zombie Outbreak" link="Zombie SOP"]
-- [textlink="Emergency Response Team" link="EmergencyResponseTeam SOP"]
+В этой папке собраны следующие чрезвычайные ситуации:
+- [textlink="Подтверждённая Революция" link="ConfirmedRevsSOP"]
+- [textlink="Теслалуз/Сингалуз" link="ContainmentFailSOP"]
+- [textlink="Пожар/Опасные газы" link="FireGasSpillSOP"]
+- [textlink="Метеоритная буря" link="MeteorStormSOP"]
+- [textlink="Дестабилизация суперматерии" link="SMDelamSOP"]
+- [textlink="Объявление о войне" link="WarDeclarationSOP"]
+- [textlink="Вспышка зомби-вируса" link="ZombieSOP"]
 
 </Document>

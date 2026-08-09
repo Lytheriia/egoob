@@ -1,32 +1,35 @@
 <!--
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Station Alert - Omicron
+  # Код Омикрон
 
   <Box>
-    [italic]Called by: Central Command Only.[/italic]
+    [italic]Устанавливается: Только Центральным Командованием.[/italic]
   </Box>
 
-  [bold]Conditions:[/bold]
+  [bold]Условия:[/bold]
 
-  Central Command has decided to take direct control of the station.
+  Центральное Командование решило взять станцию под свой непосредственный контроль.
 
-  [bold]Security:[/bold]
+  [bold]Служба безопасности:[/bold]
 
-  All security members are to de-arm and await further instructions from Central Command.
+  Все сотрудники службы безопасности должны сложить оружие и ожидать дальнейших указаний от Центрального Командования.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Зоны ограниченного доступа:[/bold]
 
-  All Secure Areas are to be bolted down.
+  Все зоны ограниченного доступа должны быть заболтированы.
 
-  [bold]General Crew:[/bold]
+  [bold]Общее для всего экипажа:[/bold]
 
-  All personnel must maximise their suit sensors.
+  Весь экипаж должен перевести свои датчики костюма в режим координат.
 
-  All personnel should remain in their department, and await further orders.
+  Все сотрудники должны оставаться в своих отделах и ожидать дальнейших распоряжений.
 
-  Personnel are required to follow all Central Command orders.
+  Персонал обязан выполнять все приказы Центрального Командования.
 
 </Document>
