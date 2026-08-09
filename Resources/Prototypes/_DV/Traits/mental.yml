@@ -16,15 +16,6 @@
         collection: Paracusia
 
 - type: trait
-  id: Depression
-  name: trait-depression-name
-  description: trait-depression-desc
-  category: Mental
-  effects:
-  - !type:SpawnItemInHandEffect
-    item: PillCanisterNeurozenium
-
-- type: trait
   id: Liar
   name: trait-liar-name
   description: trait-liar-desc
