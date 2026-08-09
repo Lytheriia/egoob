@@ -11,6 +11,11 @@ public sealed partial class SlotBlockComponent : Component
     /// <summary>
     /// Slots that this entity should block.
     /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public SlotFlags Slots = SlotFlags.NONE;
+    [DataField, AutoNetworkedField]
+    public HashSet<SlotFlags> BlockList = new(); // Erida edit
+    /// <summary>
+    /// Slots that this entity should only hide.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HashSet<SlotFlags> HideList = new(); // Erida edit
 }

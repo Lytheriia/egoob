@@ -48,6 +48,12 @@ public sealed partial class SlotDefinition
     /// </summary>
     [DataField("stripHidden")] public bool StripHidden { get; private set; }
 
+    // Erida start
+    [DataField] public bool StripHiddenForce { get; set; }
+
+    [DataField] public bool StripBlocked { get; set; }
+    // Erida end
+
     /// <summary>
     ///     Offset for the clothing sprites.
     /// </summary>

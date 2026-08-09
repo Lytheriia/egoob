@@ -163,6 +163,9 @@
     sprintModifier: 1.0
   - type: HeldSpeedModifier
   - type: GroupExamine
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERSHIRT ]
+    hideList: [ IDCARD ]
 
 - type: entity
   parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseCommandContraband] # Goobstation?

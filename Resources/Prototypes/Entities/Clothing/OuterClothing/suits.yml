@@ -304,6 +304,9 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, SOCKS, FEET ]
+    hideList: [ POCKET, IDCARD ]
 
 - type: entity
   parent: ClothingOuterBase
@@ -315,6 +318,9 @@
     sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/shrine-maiden.rsi
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING ]
+    hideList: [ POCKET, IDCARD ]
 
 - type: entity
   parent: ClothingOuterBase
@@ -326,6 +332,9 @@
     sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/witchrobe.rsi
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING ]
+    hideList: [ POCKET, IDCARD ]
 
 - type: entity
   parent: ClothingOuterBase
@@ -345,6 +354,9 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, SOCKS, FEET ]
+    hideList: [ POCKET, IDCARD ]
 
 - type: entity
   parent: [ ClothingOuterBase, ClothingOuterBaseToggleable ]
@@ -373,6 +385,9 @@
     tags:
     - CorgiWearable
     - WhitelistChameleon
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, SOCKS, FEET ]
+    hideList: [ POCKET, IDCARD ]
   - type: AddAccentClothing
     accent: BarkAccent
 
@@ -395,6 +410,14 @@
   - type: HideClothingLayerClothing # Goobstation
     hiddenSlots:
     - jumpsuit
+  # Erida start
+  - type: SlotBlock
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, SOCKS, FEET ]
+    hideList: [ POCKET, IDCARD ]
+  - type: HideLayerClothing
+    slots:
+    - Tail
+  # Erida end
 
 - type: entity
   parent: ClothingOuterSuitCarp

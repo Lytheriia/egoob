@@ -44,6 +44,9 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, GLOVES, SOCKS ]
+    hideList: [ IDCARD, POCKET ]
   - type: Tag
     tags:
       - WhitelistChameleon
@@ -229,6 +232,13 @@
   - type: CosmicTransmutable # DeltaV
     transmutesTo: ClothingOuterHardsuitCosmicCult
     requiredGlyphType: CosmicGlyphWarding
+   # Erida start
+  - type: SlotBlock
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING, GLOVES, SOCKS, FEET ]
+    hideList: [ IDCARD, POCKET ]
+  - type: HideLayerClothing
+    layers: { Tail: OUTERCLOTHING }
+   # Erida end
 
 - type: entity
   abstract: true
@@ -236,9 +246,6 @@
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:
-# SlotBlocker blocked until UI change
-#  - type: SlotBlock
-#    slots: [innerclothing, feet]
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -277,6 +284,13 @@
   - type: CosmicTransmutable # DeltaV
     transmutesTo: ClothingOuterHardsuitCosmicCult
     requiredGlyphType: CosmicGlyphWarding
+  # Erida start
+  - type: SlotBlock
+    blockList: [ UNDERPOCKET, SOCKS, UNDERSHIRT, UNDERPANTS, FEET, LEGS, GLOVES, INNERCLOTHING, FEET ]
+    hideList: [ IDCARD, POCKET ]
+  - type: HideLayerClothing
+    layers: { Tail: OUTERCLOTHING }
+  # Erida end
 
 - type: entity
   parent: ClothingOuterBase
@@ -296,6 +310,9 @@
     interfaces:
       enum.ToggleClothingUiKey.Key:
         type: ToggleableClothingBoundUserInterface
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERPOCKET, UNDERSHIRT, UNDERPANTS, LEGS, INNERCLOTHING ]
+    hideList: [ IDCARD, POCKET ]
 
 - type: entity
   abstract: true
