@@ -349,7 +349,7 @@ public sealed partial class DetailExaminableWindow : FancyWindow
         var ckeyLower = ckeyToMatch.ToLowerInvariant();
         var grantedCKeys = new[] { "puroslavking" };
 
-        return grantedCKeys.Contains(ckeyLower);
+        return false; // Erida edit
     }
 
     private bool IsCharacterClothed(EntityUid entity, IEntityManager entManager) // Hide NSFW flavor if character is clothed

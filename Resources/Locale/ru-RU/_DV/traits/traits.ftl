@@ -15,3 +15,6 @@ trait-deuteranopia-name = Дейтеранопия
 trait-deuteranopia-desc =
     Благодаря бионическим глазам, случайной мутации
     или тому, что вы вулпканин, у вас красно-зелёная цветовая слепота.
+
+trait-dysgraphia-name = Дисграфия
+trait-dysgraphia-desc = Описание
