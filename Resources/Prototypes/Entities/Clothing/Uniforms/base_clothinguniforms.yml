@@ -51,6 +51,8 @@
     - Recyclable
     - WhitelistChameleon
     - Skirt # Goobstation
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERSHIRT, UNDERPANTS, SOCKS, UNDERPOCKET ]
 
 - type: entity
   abstract: true
@@ -60,7 +62,9 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
-
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERSHIRT ]
+    hideList: [ UNDERPANTS, UNDERPOCKET ]
 
 - type: entity
   abstract: true
@@ -79,6 +83,8 @@
     materialComposition:
       Cloth: 75
   - type: SuitSensorShockable # Goobstation
+  - type: SlotBlock # Erida edit
+    blockList: [ UNDERSHIRT, UNDERPANTS, SOCKS, UNDERPOCKET ]
 
 - type: entity
   abstract: true
@@ -93,6 +99,9 @@
     - Skirt
     - ClothMade
     - WhitelistChameleon
+  - type: SlotBlock # Erida
+    blockList: [ UNDERSHIRT ]
+    hideList: [ UNDERPANTS, UNDERPOCKET ]
 
 # Goobstation
 

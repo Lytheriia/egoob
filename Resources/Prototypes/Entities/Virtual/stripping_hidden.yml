@@ -11,3 +11,16 @@
   - type: Sprite
     texture: Interface/VerbIcons/information.svg.192dpi.png
     scale: 0.3,0.3
+    scale: 0.3,0.3
+
+# Erida start
+- type: entity
+  id: BlockedSlotEntity
+  name: You don`t know if there anything there.
+  description:
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    texture: Interface/VerbIcons/information.svg.192dpi.png
+    scale: 0.3,0.3
+# Erida end

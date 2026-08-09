@@ -111,6 +111,8 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot {}
+  - type: SlotBlock # Erida edit
+    blockList: [ MASK, EARS, EYES ]
 
 - type: entity
   abstract: true
@@ -152,6 +154,9 @@
     - Snout
     - HeadTop
     - HeadSide
+    - FacialHair
+  - type: SlotBlock # Erida edit
+    blockList: [ MASK, EARS, EYES ]
 
 - type: entity
   abstract: true
@@ -214,7 +219,10 @@
     - Snout
     - HeadTop
     - HeadSide
+    - FacialHair
   - type: FaceHuggerBlocker # Goobstation
+  - type: SlotBlock # Erida edit
+    blockList: [ MASK, EARS, EYES ]
 
 - type: entity
   abstract: true
@@ -271,6 +279,8 @@
     startingCharge: 600
   - type: BatterySelfRecharger
     autoRechargeRate: 2 #recharge of 2 makes total drain 1w / s so max charge is 1:1 with time. Time to fully charge should be 5 minutes. Having recharge gives light an extended flicker period which gives you some warning to return to light area.
+  - type: SlotBlock # Erida edit
+    blockList: [ MASK, EARS, EYES ]
 
 - type: entity
   abstract: true
@@ -301,3 +311,5 @@
     - Hair
     - HeadTop
     - HeadSide
+  - type: SlotBlock # Erida edit
+    blockList: [ EARS ]
