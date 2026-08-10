@@ -32,6 +32,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Robust.Shared.Physics.Systems;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics;
 
 namespace Content.Shared.Mind;
 
@@ -45,6 +48,7 @@ public abstract partial class SharedMindSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
     [ViewVariables]
     protected readonly Dictionary<NetUserId, EntityUid> UserMinds = new();
@@ -331,7 +335,7 @@ public abstract partial class SharedMindSystem : EntitySystem
         if (mindId == null || !Resolve(mindId.Value, ref mind, false))
             return;
 
-        TransferTo(mindId.Value, null, createGhost:false, mind: mind);
+        TransferTo(mindId.Value, null, createGhost: false, mind: mind);
         SetUserId(mindId.Value, null, mind: mind);
     }
 
@@ -353,9 +357,9 @@ public abstract partial class SharedMindSystem : EntitySystem
     {
     }
 
-    public virtual void ControlMob(EntityUid user, EntityUid target) {}
+    public virtual void ControlMob(EntityUid user, EntityUid target) { }
 
-    public virtual void ControlMob(NetUserId user, EntityUid target) {}
+    public virtual void ControlMob(NetUserId user, EntityUid target) { }
 
     /// <summary>
     /// Tries to create and add an objective from its prototype id.
@@ -715,6 +719,11 @@ public abstract partial class SharedMindSystem : EntitySystem
         EnsureComp<MindContainerComponent>(uid);
         if (allowMovement)
         {
+            EnsureComp<PhysicsComponent>(uid, out var physics);
+            // A debug assert will trip if the entity's BodyType is still "Dynamic" when it gets InputMover
+            _physics.SetBodyType(uid, BodyType.KinematicController);
+
+            Dirty(uid, physics);
             EnsureComp<InputMoverComponent>(uid);
             EnsureComp<MobMoverComponent>(uid);
             EnsureComp<MovementSpeedModifierComponent>(uid);
