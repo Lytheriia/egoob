@@ -86,6 +86,8 @@
   name: tomato killer
   description: Looks like it's not you eating tomatoes today, it's the tomatoes eating you.
   components:
+  - type: Physics
+    bodyType: KinematicController
   - type: GhostRole
     prob: 0.05
     makeSentient: true
