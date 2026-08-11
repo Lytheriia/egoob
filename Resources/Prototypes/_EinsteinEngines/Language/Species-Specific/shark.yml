@@ -1,0 +1,29 @@
+- type: language
+  id: Shark
+  speech:
+    color: "#7fffd4"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 4
+    replacement:
+      - бульк
+      - хрысь
+      - бламп
+      - кыть
+      - шлюп
+      - грыз
+      - плюсь
+      - хляп
+      - тресь
+      - буль
+      - крысь
+      - вжик
+      - шмыг
+      - плёк
+      - хрусь
+      - глуп
+      - трыщ
+      - схлюп
+      - жвак
+      - вырк
