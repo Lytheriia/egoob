@@ -29,8 +29,8 @@ namespace Content.Shared.Friction
         [Dependency] private readonly SharedGravitySystem _gravity = default!;
         [Dependency] private readonly SharedMoverController _mover = default!;
         [Dependency] private readonly SharedMapSystem _map = default!;
-        [Dependency] private readonly EntityQuery<CanMoveInAirComponent> _canMoveInAirQuery = default!;
 
+        private EntityQuery<CanMoveInAirComponent> _canMoveInAirQuery;
         private EntityQuery<TileFrictionModifierComponent> _frictionQuery;
         private EntityQuery<PullerComponent> _pullerQuery;
         private EntityQuery<PullableComponent> _pullableQuery;
@@ -54,6 +54,7 @@ namespace Content.Shared.Friction
             Subs.CVar(_configManager, CCVars.AirFriction, value => _airDamping = value, true);
             Subs.CVar(_configManager, CCVars.OffgridFriction, value => _offGridDamping = value, true);
             _frictionQuery = GetEntityQuery<TileFrictionModifierComponent>();
+            _canMoveInAirQuery = GetEntityQuery<CanMoveInAirComponent>();
             _pullerQuery = GetEntityQuery<PullerComponent>();
             _pullableQuery = GetEntityQuery<PullableComponent>();
             _gridQuery = GetEntityQuery<MapGridComponent>();
