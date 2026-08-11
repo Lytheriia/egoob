@@ -44,7 +44,6 @@
   id: CyberLimbsMarkingBishopLArm
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: l_arm-primary
@@ -57,7 +56,6 @@
   id: CyberLimbsMarkingBishopLHand
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: l_hand
@@ -66,7 +64,6 @@
   id: CyberLimbsMarkingBishopLLeg
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: l_leg-primary
@@ -78,7 +75,6 @@
   id: CyberLimbsMarkingBishopLFoot
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: l_foot
@@ -89,7 +85,6 @@
   id: CyberLimbsMarkingBishopRArm
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: r_arm-primary
@@ -103,7 +98,6 @@
   id: CyberLimbsMarkingBishopRHand
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: r_hand
@@ -112,7 +106,6 @@
   id: CyberLimbsMarkingBishopRLeg
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: r_leg-primary
@@ -124,7 +117,6 @@
   id: CyberLimbsMarkingBishopRFoot
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian, Tajaran] # Goobstation - Tajaran
   sprites:
   - sprite: _EinsteinEngines/Mobs/Species/Cybernetics/bishop/bishop_main.rsi
     state: r_foot

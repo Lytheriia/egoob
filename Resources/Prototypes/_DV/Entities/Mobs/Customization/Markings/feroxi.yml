@@ -3,7 +3,6 @@
   id: FeroxiEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi #RedTerror Goob Resprite
     state: feroxi-ears
@@ -14,7 +13,6 @@
   id: FeroxiTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -25,7 +23,6 @@
   id: FeroxiSnout
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/snout_markings.rsi #RedTerror Goob Resprite
     state: feroxi-snout
@@ -35,7 +32,6 @@
   id: FeroxiEarsTips
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi #RedTerror Goob Resprite
     state: feroxi-ears
@@ -49,7 +45,6 @@
   id: FeroxiSnoutStripe
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/snout_markings.rsi #RedTerror Goob Resprite
     state: feroxi-snout
@@ -60,7 +55,6 @@
   id: FeroxiSnoutCountershading
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/snout_markings.rsi #RedTerror Goob Resprite
     state: feroxi-snout
@@ -71,7 +65,6 @@
   id: FeroxiSnoutCountershadingStripe
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/snout_markings.rsi #RedTerror Goob Resprite
     state: feroxi-snout
@@ -84,7 +77,6 @@
   id: FeroxiSnoutNurse
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/snout_markings.rsi #RedTerror Goob Resprite
     state: feroxi-snout
@@ -95,7 +87,6 @@
   id: FeroxiSnoutNurseCountershading
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/snout_markings.rsi #RedTerror Goob Resprite
     state: feroxi-snout
@@ -109,7 +100,6 @@
   id: FeroxiTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -118,7 +108,6 @@
   id: FeroxiStripedTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -129,7 +118,6 @@
   id: FeroxiStripedTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -144,7 +132,6 @@
   id: FeroxiTipTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -159,7 +146,6 @@
   id: FeroxiTipTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -178,7 +164,6 @@
   id: FeroxiTailBlitz
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -199,7 +184,6 @@
   id: FeroxiTailBlitzNoDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -216,7 +200,6 @@
   id: FeroxiTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -227,7 +210,6 @@
   id: FeroxiTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -240,7 +222,6 @@
   id: FeroxiStripeTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -253,7 +234,6 @@
   id: FeroxiStripeTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -270,7 +250,6 @@
   id: FeroxiTipTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -287,7 +266,6 @@
   id: FeroxiTipTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi #RedTerror Goob Resprite
     state: feroxi-tail
@@ -309,7 +287,6 @@
   id: FeroxiHeadStripesTiger
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-head-stripes-tiger
@@ -318,7 +295,6 @@
   id: FeroxiTorsoStripesBlitz
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-torso-stripes-blitz
@@ -327,7 +303,6 @@
   id: FeroxiTorsoCountershadingF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-torso-countershading-f
@@ -336,7 +311,6 @@
   id: FeroxiTorsoCountershadingM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-torso-countershading-m
@@ -345,7 +319,6 @@
   id: FeroxiTorsoStripesTiger
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-torso-stripes-tiger
@@ -355,7 +328,6 @@
   id: FeroxiLLegStripesBlitz #RedTerror Goob Resprite
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Lleg-stripes-blitz #RedTerror Goob Resprite
@@ -364,7 +336,6 @@
   id: FeroxiRLegStripesBlitz #RedTerror Goob Resprite
   bodyPart: RLeg #RedTerror Goob Resprite
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Rleg-stripes-blitz #RedTerror Goob Resprite
@@ -373,7 +344,6 @@
   id: FeroxiLLegStripesTiger #RedTerror Goob Resprite
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Lleg-stripes-tiger #RedTerror Goob Resprite
@@ -382,7 +352,6 @@
   id: FeroxiRLegStripesTiger #RedTerror Goob Resprite
   bodyPart: RLeg #RedTerror Goob Resprite
   markingCategory: Legs
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Rleg-stripes-tiger #RedTerror Goob Resprite
@@ -392,7 +361,6 @@
   id: FeroxiLArmStripesBlitz #RedTerror Goob Resprite
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Larm-stripes-blitz #RedTerror Goob Resprite
@@ -401,7 +369,6 @@
   id: FeroxiRArmStripesBlitz #RedTerror Goob Resprite
   bodyPart: RArm #RedTerror Goob Resprite
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Rarm-stripes-blitz #RedTerror Goob Resprite
@@ -410,7 +377,6 @@
   id: FeroxiLArmStripesTiger #RedTerror Goob Resprite
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Larm-stripes-tiger #RedTerror Goob Resprite
@@ -419,7 +385,6 @@
   id: FeroxiRArmStripesTiger #RedTerror Goob Resprite
   bodyPart: RArm #RedTerror Goob Resprite
   markingCategory: Arms
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi #RedTerror Goob Resprite
     state: feroxi-Rarm-stripes-tiger #RedTerror Goob Resprite
@@ -430,7 +395,6 @@
   id: FeroxiEarsTiger
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears
@@ -443,7 +407,6 @@
   id: FeroxiEarsPierced
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears-pierced
@@ -452,7 +415,6 @@
   id: FeroxiEarsPiercedTiger
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears-pierced
@@ -463,7 +425,6 @@
   id: FeroxiEarsAlt
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears-alt
@@ -474,7 +435,6 @@
   id: FeroxiEarsAltTips
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears-alt
@@ -487,7 +447,6 @@
   id: FeroxiEarsAltTiger
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/ear_markings.rsi
     state: feroxi-ears-alt
@@ -502,7 +461,6 @@
   id: FeroxiFullTipTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -515,7 +473,6 @@
   id: FeroxiFullTipTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -532,7 +489,6 @@
   id: FeroxiTailBlitzFullTip
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -551,7 +507,6 @@
   id: FeroxiTailBlitzNoDorsalFullTip
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -566,7 +521,6 @@
   id: FeroxiFullTipTwoToneTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -581,7 +535,6 @@
   id: FeroxiFullTipTwoToneTailAndDorsal
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/tail_markings.rsi
     state: feroxi-tail
@@ -601,7 +554,6 @@
   id: FeroxiHeadStripesTigerAlt
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-head-stripes-tiger-alt
@@ -610,7 +562,6 @@
   id: FeroxiTorsoStripesTigerAlt
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-torso-stripes-tiger-alt
@@ -621,7 +572,6 @@
   id: FeroxiLHandTip
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Lhand-tip
@@ -630,7 +580,6 @@
   id: FeroxiRHandTip
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Rhand-tip
@@ -640,7 +589,6 @@
   id: FeroxiLHandStripesTiger
   bodyPart: LHand
   markingCategory: LeftHand
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Lhand-stripes-tiger
@@ -649,7 +597,6 @@
   id: FeroxiRHandStripesTiger
   bodyPart: RHand
   markingCategory: RightHand
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Rhand-stripes-tiger
@@ -659,7 +606,6 @@
   id: FeroxiLFootTip
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Lfoot-tip
@@ -668,7 +614,6 @@
   id: FeroxiRFootTip
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Rfoot-tip
@@ -677,7 +622,6 @@
   id: FeroxiLFootStripesTiger
   bodyPart: LFoot
   markingCategory: LeftFoot
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Lfoot-stripes-tiger
@@ -686,7 +630,6 @@
   id: FeroxiRFootStripesTiger
   bodyPart: RFoot
   markingCategory: RightFoot
-  speciesRestriction: [ Feroxi ]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Feroxi/body_markings.rsi
     state: feroxi-Rfoot-stripes-tiger

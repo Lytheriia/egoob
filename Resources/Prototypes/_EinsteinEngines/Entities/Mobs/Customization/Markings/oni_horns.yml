@@ -5,7 +5,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns48x48.rsi
     state: tall_curved
@@ -14,7 +13,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns48x48.rsi
     state: tall_curved_3tone_1
@@ -27,7 +25,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns48x48.rsi
     state: tall_bull
@@ -36,7 +33,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns48x48.rsi
     state: tall_bull_3tone_1
@@ -49,7 +45,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: crowned
@@ -59,7 +54,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: serket
@@ -69,7 +63,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: serket_3tone_1
@@ -83,7 +76,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: pisces
@@ -93,7 +85,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: pisces_2tone_1
@@ -105,7 +96,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: pisces_3tone_1
@@ -119,7 +109,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: virgo
@@ -129,7 +118,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: virgo_3tone_1
@@ -143,7 +131,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: sagittarius
@@ -153,7 +140,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: sagittarius_3tone_1
@@ -167,7 +153,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: vantas
@@ -177,7 +162,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: vantas_3tone_1
@@ -191,7 +175,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns48x48.rsi
     state: makara
@@ -201,7 +184,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns48x48.rsi
     state: makara_2tone_1
@@ -213,7 +195,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns48x48.rsi
     state: makara_3tone_1
@@ -227,7 +208,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: nepeta
@@ -237,7 +217,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: nepeta_3tone_1
@@ -251,7 +230,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: taurus
@@ -261,7 +239,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: taurus_2tone_1
@@ -273,7 +250,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: taurus_3tone_1
@@ -287,7 +263,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: aries
@@ -297,7 +272,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: aries_3tone_1
@@ -311,7 +285,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: tavris
@@ -321,7 +294,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: tavris_3tone_1
@@ -335,7 +307,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: inclined
@@ -345,7 +316,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: inclined_3tone_1
@@ -359,7 +329,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: wavy
@@ -369,7 +338,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: wavy_2tone_1
@@ -381,7 +349,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: wavy_3tone_1
@@ -395,7 +362,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: antlers_2tone_1
@@ -407,7 +373,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: antlers_3tone_1
@@ -421,7 +386,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: unicorn
@@ -431,7 +395,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: erebia
@@ -441,7 +404,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: erebia_3tone_1
@@ -455,7 +417,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: erebia
@@ -467,7 +428,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: double_thick
@@ -477,7 +437,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: double_thick_2tone_1
@@ -489,7 +448,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: double_thick_3tone_1
@@ -503,7 +461,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: double_curved_3tone_1
@@ -517,7 +474,6 @@
   bodyPart: HeadTop
   markingCategory: HeadTop
   forcedColoring: false
-  speciesRestriction: [Oni]
   sprites:
   - sprite: _EinsteinEngines/Mobs/Customization/Oni/oni_horns.rsi
     state: double_curved_outwards_3tone_1

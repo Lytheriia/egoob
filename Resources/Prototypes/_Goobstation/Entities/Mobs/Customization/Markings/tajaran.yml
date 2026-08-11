@@ -5,7 +5,6 @@
   id: TajaranTailRetro
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/tails.rsi
     state: tail
@@ -14,7 +13,6 @@
   id: TajaranTailAnim
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/tails.rsi
     state: tail_anim
@@ -23,7 +21,6 @@
   id: TajaranTailRetroRings
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/tails.rsi
     state: tail
@@ -34,7 +31,6 @@
   id: TajaranTailAnimRings
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/tails.rsi
     state: tail_anim
@@ -47,7 +43,6 @@
   id: TajaranEarsRetro
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/ears.rsi
     state: ears
@@ -56,7 +51,6 @@
   id: TajaranEarsSeparate
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/ears.rsi
     state: outears
@@ -67,7 +61,6 @@
   id: TajaranEarsRetroNear
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/ears.rsi
     state: ears_near
@@ -76,7 +69,6 @@
   id: TajaranEarsSeparateNear
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/ears.rsi
     state: outears_near
@@ -89,7 +81,6 @@
   id: TajaranHeadNose
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: nose
@@ -98,7 +89,6 @@
   id: TajaranHeadMuzzle
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: muzzle
@@ -107,7 +97,6 @@
   id: TajaranHeadMuzzleLarge
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: muzzle_large
@@ -116,7 +105,6 @@
   id: TajaranHeadPoints
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: points
@@ -125,7 +113,6 @@
   id: TajaranHeadTiger
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: tiger_face
@@ -134,7 +121,6 @@
   id: TajaranHeadTigerAlt
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: tiger_head
@@ -143,7 +129,6 @@
   id: TajaranHeadPatches
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/head.rsi
     state: patch
@@ -154,7 +139,6 @@
   id: TajaranTorsoBelly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/torso.rsi
     state: belly
@@ -163,7 +147,6 @@
   id: TajaranTorsoCrest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/torso.rsi
     state: crest
@@ -172,7 +155,6 @@
   id: TajaranTorsoFullBelly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/torso.rsi
     state: fullbelly
@@ -183,7 +165,6 @@
   id: TajaranOverlayPatch
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/overlays.rsi
     state: patch
@@ -192,7 +173,6 @@
   id: TajaranOverlayPoints
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/overlays.rsi
     state: points
@@ -203,7 +183,6 @@
   id: TajaranEarsBasic
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: basic_outer
@@ -214,7 +193,6 @@
   id: TajaranEarsCurled
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: curled_outer
@@ -225,7 +203,6 @@
   id: TajaranEarsDroopy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: droopy_outer
@@ -236,7 +213,6 @@
   id: TajaranEarsFuzzy
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: basic_outer
@@ -247,7 +223,6 @@
   id: TajaranEarsStubby
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: stubby_outer
@@ -258,7 +233,6 @@
   id: TajaranEarsTall
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: tall_outer
@@ -271,7 +245,6 @@
   id: TajaranEarsTorn
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: torn_outer
@@ -282,7 +255,6 @@
   id: TajaranEarsWide
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Tajaran]
   sprites:
   - sprite: _Goobstation/Mobs/Customization/Tajaran/felinid_ears.rsi
     state: wide_outer

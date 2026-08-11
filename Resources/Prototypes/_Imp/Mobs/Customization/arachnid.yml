@@ -6,7 +6,6 @@
   id: ArachnidOverlayFluffy
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/chest.rsi
     state: fluffy
@@ -15,7 +14,6 @@
   id: ArachnidTorsoSegments
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/chest.rsi
     state: segments1
@@ -26,7 +24,6 @@
   id: SpiderMirror
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/chest.rsi
     state: mirror
@@ -37,7 +34,6 @@
   id: ArachnidHeadSegments
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/head.rsi
     state: segments1
@@ -50,7 +46,6 @@
   id: WhipSpiderMouth
   bodyPart: Snout
   markingCategory: HeadSide
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/snout.rsi
     state: whipspidermouth
@@ -61,7 +56,6 @@
   id: ArachnidEyesJumper
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
     state: jumper1
@@ -76,7 +70,6 @@
   id: ArachnidEyesJumperGlowing
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
     state: jumper1
@@ -93,7 +86,6 @@
   id: ArachnidEyesRound
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
     state: round1
@@ -108,7 +100,6 @@
   id: ArachnidEyesRoundGlowing
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
     state: round1
@@ -125,7 +116,6 @@
   id: SpiderEyesMulti
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
     state: multi1
@@ -140,7 +130,6 @@
   id: SpiderGlowEyes
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/eyes.rsi
     state: glow
@@ -152,7 +141,6 @@
   id: ArachnidRArmSegments
   bodyPart: RArm
   markingCategory: RightArm
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/rarm.rsi
     state: segments1
@@ -165,7 +153,6 @@
   id: ArachnidLArmSegments
   bodyPart: LArm
   markingCategory: LeftArm
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/larm.rsi
     state: segments1
@@ -178,7 +165,6 @@
   id: ArachnidRLegSegments
   bodyPart: RLeg
   markingCategory: RightLeg
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/rleg.rsi
     state: segments1
@@ -191,7 +177,6 @@
   id: ArachnidLLegSegments
   bodyPart: LLeg
   markingCategory: LeftLeg
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/lleg.rsi
     state: segments1
@@ -214,7 +199,6 @@
   id: SpiderHair1
   bodyPart: Hair
   markingCategory: Hair
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
     state: fluffy
@@ -223,7 +207,6 @@
   id: SpiderHair2
   bodyPart: Hair
   markingCategory: Hair
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
     state: longhorned
@@ -232,7 +215,6 @@
   id: SpiderHair3
   bodyPart: Hair
   markingCategory: Hair
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/hair.rsi
     state: wisps
@@ -243,7 +225,6 @@
   id: ArachnidCheliceraeSmall
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/headside.rsi
     state: small
@@ -256,7 +237,6 @@
   id: AbdomenBasic
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/tail.rsi
     state: abdomenbasic1
@@ -267,7 +247,6 @@
   id: AbdomenWidow
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/tail.rsi
     state: widow1
@@ -278,7 +257,6 @@
   id: CreepyArms
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Arachnid ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/Arachnid/tail.rsi
     state: creepy

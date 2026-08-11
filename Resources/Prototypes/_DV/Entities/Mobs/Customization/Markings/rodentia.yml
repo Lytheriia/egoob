@@ -7,7 +7,6 @@
   id: RodentiaHeadTopEarDefault
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia, Human]
   coloring:
     default:
       type: !type:TattooColoring
@@ -21,7 +20,6 @@
   id: RodentiaTailDefault
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia, Human]
   coloring:
     default:
       type: !type:TattooColoring
@@ -35,7 +33,6 @@
   id: RodentiaHeadTopEarBat
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: bat
@@ -44,7 +41,6 @@
   id: RodentiaHeadTopEarBatLarge
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: bat_large
@@ -53,7 +49,6 @@
   id: RodentiaHeadTopEarHamster
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: hamster
@@ -64,7 +59,6 @@
   id: RodentiaHeadTopEarLong
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: long
@@ -75,7 +69,6 @@
   id: RodentiaHeadTopEarMouse
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: mouse
@@ -86,7 +79,6 @@
   id: RodentiaHeadTopEarMouseLarge
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: mouse_large
@@ -97,7 +89,6 @@
   id: RodentiaHeadTopEarNone
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: none
@@ -106,7 +97,6 @@
   id: RodentiaHeadTopEarPointy
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: pointy
@@ -115,7 +105,6 @@
   id: RodentiaHeadTopEarRabbit
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: rabbit
@@ -126,7 +115,6 @@
   id: RodentiaHeadTopEarSmall
   markingCategory: HeadTop
   bodyPart: HeadTop
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/ear_markings.rsi
       state: small
@@ -137,7 +125,6 @@
   id: RodentiaSnoutBat
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: bat
@@ -148,7 +135,6 @@
   id: RodentiaSnoutBatCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: bat
@@ -161,7 +147,6 @@
   id: RodentiaSnoutFlat
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -172,7 +157,6 @@
   id: RodentiaSnoutFlatCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: flat
@@ -185,7 +169,6 @@
   id: RodentiaSnoutRound
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -196,7 +179,6 @@
   id: RodentiaSnoutRoundCounter
   markingCategory: Snout
   bodyPart: Snout
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/snout_markings.rsi
       state: round
@@ -211,7 +193,6 @@
   id: RodentiaCheeksRound
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -220,7 +201,6 @@
   id: RodentiaCheeksRoundCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: cheeks
@@ -231,7 +211,6 @@
   id: RodentiaCheeksFluff
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -240,7 +219,6 @@
   id: RodentiaCheeksFluffCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff
@@ -251,7 +229,6 @@
   id: RodentiaCheeksFluffAlt
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -260,7 +237,6 @@
   id: RodentiaCheeksFluffAltCounter
   markingCategory: HeadSide
   bodyPart: HeadSide
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: fluff_alt
@@ -271,7 +247,6 @@
   id: RodentiaCheeksWhiskers
   markingCategory: Head # for no-cost markings
   bodyPart: HeadTop # for layering
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/cheek_markings.rsi
       state: whiskers
@@ -284,7 +259,6 @@
   id: RodentiaTailBeaver
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: beaver
@@ -293,7 +267,6 @@
   id: RodentiaTailHamster
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: hamster
@@ -302,7 +275,6 @@
   id: RodentiaTailLong
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: long
@@ -311,7 +283,6 @@
   id: RodentiaTailLongCounter
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: long
@@ -322,7 +293,6 @@
   id: RodentiaTailLongCounterTip
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: long
@@ -335,7 +305,6 @@
   id: RodentiaTailMouse
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: mouse
@@ -344,7 +313,6 @@
   id: RodentiaTailRabbit
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: rabbit
@@ -353,7 +321,6 @@
   id: RodentiaTailRabbitCounter
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: rabbit
@@ -364,7 +331,6 @@
   id: RodentiaTailShort
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: short
@@ -373,7 +339,6 @@
   id: RodentiaTailSquirrel
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: squirrel
@@ -382,7 +347,6 @@
   id: RodentiaTailSquirrelBicolor
   markingCategory: Tail
   bodyPart: Tail
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/tail_markings.rsi
       state: squirrel
@@ -395,7 +359,6 @@
   id: RodentiaChestCountershade
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [Rodentia]
   sexRestriction: Male
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
@@ -405,7 +368,6 @@
   id: RodentiaChestCountershadeF
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [Rodentia]
   sexRestriction: Female
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
@@ -415,7 +377,6 @@
   id: RodentiaLegLeftCountershade
   markingCategory: LeftLeg
   bodyPart: LLeg
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_leg
@@ -426,7 +387,6 @@
   id: RodentiaLegRightCountershade
   markingCategory: RightLeg
   bodyPart: RLeg
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_leg
@@ -437,7 +397,6 @@
   id: RodentiaChestFawn
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
       state: fawn
@@ -446,7 +405,6 @@
   id: RodentiaChestHooded
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [Rodentia]
   sexRestriction: Male
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
@@ -456,7 +414,6 @@
   id: RodentiaChestHoodedF
   markingCategory: Chest
   bodyPart: Chest
-  speciesRestriction: [Rodentia]
   sexRestriction: Female
   sprites:
     - sprite: _DV/Mobs/Customization/Rodentia/body_markings.rsi
@@ -468,7 +425,6 @@
   id: RodentiaHeadBlaze
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: head_m
@@ -479,7 +435,6 @@
   id: RodentiaHeadRound
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: head_m
@@ -494,7 +449,6 @@
   id: RodentiaHeadBasic
   markingCategory: Head
   bodyPart: Head
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: head_m
@@ -505,7 +459,6 @@
   id: RodentiaArmLeftBasic
   markingCategory: LeftArm
   bodyPart: LArm
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_arm
@@ -514,7 +467,6 @@
   id: RodentiaArmRightBasic
   markingCategory: RightArm
   bodyPart: RArm
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_arm
@@ -525,7 +477,6 @@
   id: RodentiaLegLeftBasic
   markingCategory: LeftLeg
   bodyPart: LLeg
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_leg
@@ -534,7 +485,6 @@
   id: RodentiaLegRightBasic
   markingCategory: RightLeg
   bodyPart: RLeg
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_leg
@@ -545,7 +495,6 @@
   id: RodentiaHandLeftBasic
   markingCategory: LeftHand
   bodyPart: LHand
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_hand
@@ -554,7 +503,6 @@
   id: RodentiaHandRightBasic
   markingCategory: RightHand
   bodyPart: RHand
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_hand
@@ -565,7 +513,6 @@
   id: RodentiaFootLeftBasic
   markingCategory: LeftFoot
   bodyPart: LFoot
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: l_foot
@@ -574,7 +521,6 @@
   id: RodentiaFootRightBasic
   markingCategory: RightFoot
   bodyPart: RFoot
-  speciesRestriction: [Rodentia]
   sprites:
     - sprite: _DV/Mobs/Species/Rodentia/parts.rsi
       state: r_foot

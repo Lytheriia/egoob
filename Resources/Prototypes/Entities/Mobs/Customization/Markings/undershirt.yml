@@ -4,7 +4,6 @@
   id: UndershirtDefault
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -18,7 +17,6 @@
   id: UndershirtRolled
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -32,7 +30,6 @@
   id: UndershirtSleeveless
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -46,7 +43,6 @@
   id: UndershirtRolledSleeveless
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -60,7 +56,6 @@
   id: UndershirtGrossSleeveless
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -74,7 +69,6 @@
   id: UndershirtNanotrasen
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -88,7 +82,6 @@
   id: UndershirtBinder
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -102,7 +95,6 @@
   id: UndershirtBraClassic
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -116,7 +108,6 @@
   id: UndershirtBraSports
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
@@ -130,7 +121,6 @@
   id: UndershirtBraStrapless
   bodyPart: UndergarmentTop
   markingCategory: UndergarmentTop
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Diona, Moth, Harpy, Yowie] # goob edit - yowies
   coloring:
     default:
       type:
