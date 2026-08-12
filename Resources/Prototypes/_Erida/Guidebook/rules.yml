@@ -1,0 +1,70 @@
+- type: guideEntry
+  id: RuleEridaC0
+  name: guide-entry-rules-c0
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC0.xml"
+
+- type: guideEntry
+  id: RuleEridaC1
+  name: guide-entry-rules-c1
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC1.xml"
+
+- type: guideEntry
+  id: RuleEridaC2
+  name: guide-entry-rules-c2
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC2.xml"
+
+- type: guideEntry
+  id: RuleEridaC3
+  name: guide-entry-rules-c3
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC3.xml"
+
+- type: guideEntry
+  id: RuleEridaC4
+  name: guide-entry-rules-c4
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC4.xml"
+
+- type: guideEntry
+  id: RuleEridaC5
+  name: guide-entry-rules-c5
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC5.xml"
+
+- type: guideEntry
+  id: RuleEridaC6
+  name: guide-entry-rules-c6
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC6.xml"
+
+- type: guideEntry
+  id: RuleEridaC7
+  name: guide-entry-rules-c7
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC7.xml"
+
+- type: guideEntry
+  id: RuleEridaC8
+  name: guide-entry-rules-c8
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleC8.xml"
+
+- type: guideEntry
+  id: CoreRules
+  name: guide-entry-rules-core
+  ruleEntry: true
+  priority: 10
+  text: "/ServerInfo/Guidebook/_Erida/ServerRules/CoreRules/RuleCC.xml"
+  children:
+  - RuleEridaC0
+  - RuleEridaC1
+  - RuleEridaC2
+  - RuleEridaC3
+  - RuleEridaC4
+  - RuleEridaC5
+  - RuleEridaC6
+  - RuleEridaC7
+  - RuleEridaC8
