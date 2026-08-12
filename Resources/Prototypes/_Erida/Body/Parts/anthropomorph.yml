@@ -15,6 +15,7 @@
 
 - type: entity
   id: ChestAnthropomorph
+  parent: [PartAnthropomorph, BaseChest]
   name: "anthropomorph chest"
   components:
   - type: Sprite
