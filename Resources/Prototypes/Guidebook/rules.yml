@@ -8,27 +8,6 @@
   text: "/ServerInfo/Guidebook/_Erida/ServerRules/DefaultRules.xml" # Erida edit
 
 - type: guideEntry
-  id: CoreRuleset
-  name: guide-entry-rules-core-only
-  ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenCoreOnlyRules.xml"
-
-- type: guideEntry
-  id: StandardRuleset
-  name: guide-entry-rules-lrp
-  ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenLRPRules.xml"
-
-- type: guideEntry
-  id: MRPRuleset
-  name: guide-entry-rules-mrp
-  ruleEntry: true
-  priority: 10
-  text: "/ServerInfo/Guidebook/ServerRules/WizDenMRPRules.xml"
-
-- type: guideEntry
   id: RoleTypes
   name: guide-entry-rules-role-types
   ruleEntry: true
@@ -57,12 +36,6 @@
 #   - RuleC12
 #   - RuleC13
 #   - RuleC14
-
-- type: guideEntry
-  id: RuleC1
-  name: guide-entry-rules-c1
-  ruleEntry: true
-  text: "/ServerInfo/Guidebook/ServerRules/CoreRules/RuleC1Admins.xml"
 
 - type: guideEntry
   id: RuleC2
