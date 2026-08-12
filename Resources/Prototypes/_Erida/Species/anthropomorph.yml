@@ -1,0 +1,149 @@
+- type: species
+  id: Anthropomorph
+  name: species-name-anthropomorph
+  roundStart: true
+  prototype: MobAnthropomorph
+  sprites: MobAnthropomorphSprites
+  defaultSkinTone: "#ffffff"
+  markingLimits: MobAnthropomorphMarkingLimits
+  dollPrototype: MobAnthropomorphDummy
+  skinColoration: Hues
+  maleFirstNames: NamesFirstMale
+  femaleFirstNames: NamesFirstFemale
+  lastNames: NamesLast
+
+- type: speciesBaseSprites
+  id: MobAnthropomorphSprites
+  sprites:
+    Head: MobAnthropomorphHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Chest: MobAnthropomorphTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    Eyes: MobHumanoidEyes
+    LArm: MobAnthropomorphLArm
+    RArm: MobAnthropomorphRArm
+    LHand: MobAnthropomorphLHand
+    RHand: MobAnthropomorphRHand
+    LLeg: MobAnthropomorphLLeg
+    RLeg: MobAnthropomorphRLeg
+    LFoot: MobAnthropomorphLFoot
+    RFoot: MobAnthropomorphRFoot
+
+- type: markingPoints
+  id: MobAnthropomorphMarkingLimits
+  points:
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    HeadTop:
+      points: 1
+      required: false
+    HeadSide:
+      points: 1
+      required: false
+    Chest:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    Legs:
+      points: 2
+      required: false
+    Arms:
+      points: 2
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphHead
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphHeadMale
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: head_m
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphHeadFemale
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: head_f
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphTorso
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphTorsoMale
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: torso_m
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphTorsoFemale
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphLLeg
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphLHand
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphLArm
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphLFoot
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphRLeg
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphRHand
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphRArm
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobAnthropomorphRFoot
+  baseSprite:
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: r_foot

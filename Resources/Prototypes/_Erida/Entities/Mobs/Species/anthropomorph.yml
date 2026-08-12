@@ -2,13 +2,13 @@
 
 - type: entity
   save: false
-  name: Urist McDemon
+  name: Urist McAnthropomorph
   parent: BaseMobSpeciesOrganic
-  id: BaseMobDemon
+  id: BaseMobAnthropomorph
   abstract: true
   components:
   - type: HumanoidAppearance
-    species: Demon
+    species: Anthropomorph
     hideLayersOnEquip:
     - Hair
     - Snout
@@ -16,23 +16,49 @@
     - HeadSide
     - Tail
   - type: Inventory
-    speciesId: demon
+    speciesId: Anthropomorph
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: jumpsuit
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: outerwear
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: shoes
+      head:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: head
+      socks:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: shoes
   - type: Thirst
   - type: Hunger
   - type: Icon
-    sprite: _Erida/Mobs/Demon/parts.rsi
-    state: full_m
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: full
   - type: Body
-    prototype: Demon
+    prototype: Anthropomorph
   - type: Speech
     speechSounds: Lizard
   - type: LanguageKnowledge # Einstein Engines - Languages
     speaks:
     - TauCetiBasic
-    - Demonic
+    - Canilunzt
     understands:
     - TauCetiBasic
-    - Demonic
+    - Canilunzt
   - type: Sprite
     netsync: false
     noRot: true
@@ -96,17 +122,7 @@
   - type: Perishable
   - type: Damageable
   - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 46
   - type: TemperatureDamage
-    heatDamageThreshold: 400
-    coldDamageThreshold: 193  #starting temperature damage treshold
-    coldDamage:
-      types:
-        Cold : 0.1 #per second, scales with temperature & other constants
-    heatDamage:
-      types:
-        Heat : 0.3 #per second, scales with temperature & other constants
   - type: ScentTracker # Einstein Engines
   - type: Vocal
     sounds:
@@ -122,11 +138,38 @@
 
 - type: entity
   save: false
-  name: Demon Dummy
+  name: Anthropomorph Dummy
   parent: BaseSpeciesDummy
-  id: MobDemonDummy
+  id: MobAnthropomorphDummy
   categories: [ HideSpawnMenu ]
   components:
   - type: HumanoidAppearance
-    species: Demon
-
+    species: Anthropomorph
+  - type: Inventory
+    speciesId: Anthropomorph
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: jumpsuit
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: outerwear
+      shoes:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: shoes
+      head:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: head
+      socks:
+        sizeMaps:
+          32:
+            sprite: _Corvax/Mobs/Species/Vulpkanin/displacement.rsi # Corvax vulpkanins
+            state: shoes

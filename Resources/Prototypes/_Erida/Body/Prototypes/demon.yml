@@ -1,29 +1,29 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: body
-  name: "anthropomorph"
-  id: Anthropomorph
+  name: "demon"
+  id: Demon
   root: chest
   slots:
     head:
-      part: HeadAnthropomorph
+      part: HeadDemon
       connections:
       - chest
       organs:
         brain: OrganHumanBrain
         eyes: OrganHumanEyes
     chest:
-      part: ChestAnthropomorph
+      part: ChestDemon
       connections:
       - groin
       - right arm
       - left arm
       - head
       organs:
-        heart: OrganAnimalHeart
+        heart: OrganHumanHeart
         lungs: OrganHumanLungs
     groin:
-      part: GroinAnthropomorph
+      part: GroinDemon
       connections:
       - right leg
       - left leg
@@ -32,26 +32,26 @@
         liver: OrganHumanLiver
         kidneys: OrganHumanKidneys
     right arm:
-      part: RightArmAnthropomorph
+      part: RightArmDemon
       connections:
       - right hand
     left arm:
-      part: LeftArmAnthropomorph
+      part: LeftArmDemon
       connections:
       - left hand
     right hand:
-      part: RightHandAnthropomorph
+      part: RightHandDemon
     left hand:
-      part: LeftHandAnthropomorph
+      part: LeftHandDemon
     right leg:
-      part: RightLegAnthropomorph
+      part: RightLegDemon
       connections:
       - right foot
     left leg:
-      part: LeftLegAnthropomorph
+      part: LeftLegDemon
       connections:
       - left foot
     right foot:
-      part: RightFootAnthropomorph
+      part: RightFootDemon
     left foot:
-      part: LeftFootAnthropomorph
+      part: LeftFootDemon

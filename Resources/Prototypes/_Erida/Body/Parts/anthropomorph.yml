@@ -1,0 +1,135 @@
+- type: entity
+  id: PartAnthropomorph
+  parent: [BaseItem, BasePart]
+  name: "anthropomorph body part"
+  abstract: true
+  components:
+  - type: BodyPart
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoAnthropomorph
+  name: "anthropomorph chest"
+  components:
+  - type: Sprite
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: "torso_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadAnthropomorph
+  name: "anthropomorph head"
+  parent: [PartAnthropomorph, BaseHead]
+  components:
+  - type: Sprite
+    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    state: "head_m"
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmAnthropomorph
+  name: "left Anthropomorph arm"
+  parent: [PartAnthropomorph, BaseLeftArm]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "l_arm"
+
+- type: entity
+  id: RightArmAnthropomorph
+  name: "right Anthropomorph arm"
+  parent: [PartAnthropomorph, BaseRightArm]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "r_arm"
+
+- type: entity
+  id: LeftHandAnthropomorph
+  name: "left Anthropomorph hand"
+  parent: [PartAnthropomorph, BaseLeftHand]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "l_hand"
+
+- type: entity
+  id: RightHandAnthropomorph
+  name: "right Anthropomorph hand"
+  parent: [PartAnthropomorph, BaseRightHand]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "r_hand"
+
+- type: entity
+  id: LeftLegAnthropomorph
+  name: "left Anthropomorph leg"
+  parent: [PartAnthropomorph, BaseLeftLeg]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "l_leg"
+    - type: MovementBodyPart
+      walkSpeed: 2.7
+      sprintSpeed: 4.5
+
+- type: entity
+  id: RightLegAnthropomorph
+  name: "right Anthropomorph leg"
+  parent: [PartAnthropomorph, BaseRightLeg]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "r_leg"
+    - type: MovementBodyPart
+      walkSpeed: 2.7
+      sprintSpeed: 4.5
+
+- type: entity
+  id: LeftFootAnthropomorph
+  name: "left Anthropomorph foot"
+  parent: [PartAnthropomorph, BaseLeftFoot]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "l_foot"
+    - type: Icon
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "l_foot"
+    - type: BodyPart
+      partType: Foot
+      symmetry: Left
+
+- type: entity
+  id: RightFootAnthropomorph
+  name: "right Anthropomorph foot"
+  parent: [PartAnthropomorph, BaseRightFoot]
+  components:
+    - type: Sprite
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "r_foot"
+    - type: Icon
+      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      state: "r_foot"
+    - type: BodyPart
+      partType: Foot
+      symmetry: Right

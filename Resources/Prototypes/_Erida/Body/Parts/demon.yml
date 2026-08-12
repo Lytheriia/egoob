@@ -1,0 +1,83 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  abstract: true
+  parent: BasePart
+  id: PartDemonBase
+  components:
+  - type: Sprite
+    sprite: _Erida/Mobs/Demon/parts.rsi
+  - type: Icon
+    sprite: _Erida/Mobs/Demon/parts.rsi
+  - type: BodyPart
+    species: Demon
+  - type: Damageable # Shitmed
+
+- type: entity
+  parent: [ PartDemonBase, BaseChest ]
+  id: ChestDemon
+  name: "demon chest"
+  components:
+  - type: Sprite
+    sprite: _Erida/Mobs/Demon/parts.rsi
+    state: "torso_m"
+  - type: Icon
+    sprite: _Erida/Mobs/Demon/parts.rsi
+    state: "torso_m"
+
+- type: entity
+  parent: [ PartDemonBase, BaseGroin ]
+  id: GroinDemon
+  name: "demon groin"
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "groin_m"
+  - type: Icon
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "groin_m"
+
+- type: entity
+  parent: [ PartDemonBase, BaseHead ]
+  id: HeadDemon
+  name: "demon head"
+
+- type: entity
+  parent: [ PartDemonBase, BaseLeftArm ]
+  id: LeftArmDemon
+  name: "left demon arm"
+
+- type: entity
+  parent: [ PartDemonBase, BaseRightArm ]
+  id: RightArmDemon
+  name: "right demon arm"
+
+- type: entity
+  parent: [ PartDemonBase, BaseLeftHand ]
+  id: LeftHandDemon
+  name: "left demon hand"
+
+- type: entity
+  parent: [ PartDemonBase, BaseRightHand ]
+  id: RightHandDemon
+  name: "right demon hand"
+
+- type: entity
+  parent: [ PartDemonBase, BaseLeftLeg ]
+  id: LeftLegDemon
+  name: "left demon leg"
+
+- type: entity
+  parent: [ PartDemonBase, BaseRightLeg ]
+  id: RightLegDemon
+  name: "right demon leg"
+
+- type: entity
+  parent: [ PartDemonBase, BaseLeftFoot ]
+  id: LeftFootDemon
+  name: "left demon foot"
+
+- type: entity
+  parent: [ PartDemonBase, BaseRightFoot ]
+  id: RightFootDemon
+  name: "right demon foot"

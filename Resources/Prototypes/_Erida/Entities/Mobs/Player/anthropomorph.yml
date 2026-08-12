@@ -2,9 +2,9 @@
 
 - type: entity
   save: false
-  name: Urist McDemon
-  parent: BaseMobDemon
-  id: MobDemon
+  name: Urist McAnthropomorph
+  parent: BaseMobAnthropomorph
+  id: MobAnthropomorph
   components:
     - type: CombatMode
     - type: InteractionPopup
