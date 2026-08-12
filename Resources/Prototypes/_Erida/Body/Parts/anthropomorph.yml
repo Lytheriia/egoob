@@ -14,7 +14,7 @@
         Quantity: 10
 
 - type: entity
-  id: TorsoAnthropomorph
+  id: ChestAnthropomorph
   name: "anthropomorph chest"
   components:
   - type: Sprite
