@@ -64,3 +64,4 @@
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
             Reporter: [ 1, 1 ]
+        - type: StationGoal # Erida

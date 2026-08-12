@@ -76,3 +76,4 @@
           stageCritical: 450
           stageTheEnd: 900
         # Goobstation blob-config-end
+        - type: StationGoal # Erida

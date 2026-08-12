@@ -77,3 +77,4 @@
           stageCritical: 450
           stageTheEnd: 900
         # backmen blob-config-end
+        - type: StationGoal # Erida

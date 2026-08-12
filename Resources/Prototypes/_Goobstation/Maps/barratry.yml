@@ -66,4 +66,4 @@
             Musician: [ 1, 1 ]
             #silicon
             StationAi: [ 1, 1 ]
-
+        - type: StationGoal # Erida
