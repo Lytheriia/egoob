@@ -134,3 +134,15 @@
     - type: BodyPart
       partType: Foot
       symmetry: Right
+
+- type: entity
+  parent: [ PartAnthropomorph, BaseGroin ]
+  id: GroinAnthropomorph
+  name: "anthropomorph groin"
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "groin_m"
+  - type: Icon
+    sprite: Mobs/Species/Human/parts.rsi
+    state: "groin_m"
