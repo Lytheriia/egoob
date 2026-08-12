@@ -240,8 +240,8 @@
   components:
   - type: LightBulb
     color: "#FFE4CE" # 5000K color temp
-    lightEnergy: 0.8
-    lightRadius: 10
+    lightEnergy: 0.6 # Erida
+    lightRadius: 8 # Erida
     lightSoftness: 1
     PowerUse: 25
 
@@ -253,8 +253,8 @@
   components:
   - type: LightBulb
     color: "#FFDABB" # old fluorescents are yellower-4500K temp
-    lightEnergy: 0.5
-    lightRadius: 10
+    lightEnergy: 0.45 # Erida
+    lightRadius: 8 # Erida
     lightSoftness: 1
     PowerUse: 10
 
@@ -276,7 +276,7 @@
   components:
   - type: LightBulb
     color: "#EEEEFF"
-    lightEnergy: 1
+    lightEnergy: 0.9 # Erida
     lightRadius: 15
     lightSoftness: 0.9
     BurningTemperature: 350
@@ -290,7 +290,7 @@
   components:
   - type: LightBulb
     color: "#B4FCF0"
-    lightEnergy: 4.5
+    lightEnergy: 4 # Erida
     lightRadius: 12
     lightSoftness: 0.5
     BurningTemperature: 350
@@ -304,7 +304,7 @@
   components:
   - type: LightBulb
     color: "#FFAF38"
-    lightEnergy: 4
+    lightEnergy: 3 # Erida
     lightRadius: 10
     lightSoftness: 0.5
     BurningTemperature: 350
@@ -318,7 +318,7 @@
   abstract: true
   components:
   - type: LightBulb
-    lightEnergy: 3
+    lightEnergy: 2 # Erida
     lightRadius: 8
     lightSoftness: 0.5
     BurningTemperature: 350
@@ -407,7 +407,7 @@
   components:
   - type: LightBulb
     color: "#363636"
-    lightEnergy: 1
+    lightEnergy: 0.8 # Erida
     lightRadius: 8
   - type: Construction
     graph: BlackLight
@@ -457,7 +457,7 @@
   components:
   - type: LightBulb
     color: "#47f8ff"
-    lightEnergy: 1
+    lightEnergy: 0.8 # Erida
     lightRadius: 6
     lightSoftness: 0.5
     BurningTemperature: 350
