@@ -47,8 +47,6 @@
       - map: [ "enum.HumanoidVisualLayers.LArm" ]
       - map: [ "enum.HumanoidVisualLayers.RLeg" ]
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-      - shader: StencilClear
-        map: [ "enum.HumanoidVisualLayers.StencilMask" ]
       # Erida start
       - map: [ "underpants" ]
       - map: [ "undershirt" ]
