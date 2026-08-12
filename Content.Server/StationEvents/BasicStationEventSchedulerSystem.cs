@@ -81,6 +81,8 @@ namespace Content.Server.StationEvents
         private EntityTableSystem? _entityTable;
         private IComponentFactory? _compFac;
         private IRobustRandom? _random;
+        private IPrototypeManager? _protoMan;
+
 
         /// <summary>
         ///     Estimates the expected number of times an event will run over the course of X rounds, taking into account weights and
@@ -97,12 +99,14 @@ namespace Content.Server.StationEvents
         ///     to even exist) so I think it's fine.
         /// </remarks>
         [CommandImplementation("simulate")]
-        public IEnumerable<(string, float)> Simulate([CommandArgument] Prototype<EntityPrototype> eventSchedulerProto, [CommandArgument] int rounds, [CommandArgument] int playerCount, [CommandArgument] float roundEndMean, [CommandArgument] float roundEndStdDev)
+        public IEnumerable<(string, float)> Simulate([CommandArgument] EntProtoId eventSchedulerProto, [CommandArgument] int rounds, [CommandArgument] int playerCount, [CommandArgument] float roundEndMean, [CommandArgument] float roundEndStdDev)
         {
             _stationEvent ??= GetSys<EventManagerSystem>();
             _entityTable ??= GetSys<EntityTableSystem>();
             _compFac ??= IoCManager.Resolve<IComponentFactory>();
             _random ??= IoCManager.Resolve<IRobustRandom>();
+            _protoMan ??= IoCManager.Resolve<IPrototypeManager>(); // Erida
+
 
             var occurrences = new Dictionary<string, int>();
 
@@ -111,11 +115,11 @@ namespace Content.Server.StationEvents
                 occurrences.Add(ev.Key.ID, 0);
             }
 
-            eventSchedulerProto.Deconstruct(out EntityPrototype eventScheduler);
+            var eventScheduler = _protoMan.Index(eventSchedulerProto); // Erida
 
             if (!eventScheduler.TryGetComponent<BasicStationEventSchedulerComponent>(out var basicScheduler, _compFac))
             {
-                return occurrences.Select(p => (p.Key, (float)p.Value)).OrderByDescending(p => p.Item2);
+                return occurrences.Select(p => (p.Key, (float) p.Value)).OrderByDescending(p => p.Item2);
             }
 
             var compMinMax = basicScheduler.MinMaxEventTiming; // we gotta do this since we cant execute on comp w/o an ent.
@@ -150,12 +154,13 @@ namespace Content.Server.StationEvents
         }
 
         [CommandImplementation("lsprob")]
-        public IEnumerable<(string, float)> LsProb([CommandArgument] Prototype<EntityPrototype> eventSchedulerProto)
+        public IEnumerable<(string, float)> LsProb([CommandArgument] EntProtoId eventSchedulerProto)
         {
             _compFac ??= IoCManager.Resolve<IComponentFactory>();
             _stationEvent ??= GetSys<EventManagerSystem>();
+            _protoMan ??= IoCManager.Resolve<IPrototypeManager>(); // Erida
 
-            eventSchedulerProto.Deconstruct(out EntityPrototype eventScheduler);
+            var eventScheduler = _protoMan.Index(eventSchedulerProto); // Erida
 
             if (!eventScheduler.TryGetComponent<BasicStationEventSchedulerComponent>(out var basicScheduler, _compFac))
                 yield break;
@@ -173,12 +178,13 @@ namespace Content.Server.StationEvents
         }
 
         [CommandImplementation("lsprobtheoretical")]
-        public IEnumerable<(string, float)> LsProbTime([CommandArgument] Prototype<EntityPrototype> eventSchedulerProto, [CommandArgument] int playerCount, [CommandArgument] float time)
+        public IEnumerable<(string, float)> LsProbTime([CommandArgument] EntProtoId eventSchedulerProto, [CommandArgument] int playerCount, [CommandArgument] float time)
         {
             _compFac ??= IoCManager.Resolve<IComponentFactory>();
             _stationEvent ??= GetSys<EventManagerSystem>();
+            _protoMan ??= IoCManager.Resolve<IPrototypeManager>(); // Erida
 
-            eventSchedulerProto.Deconstruct(out EntityPrototype eventScheduler);
+            var eventScheduler = _protoMan.Index(eventSchedulerProto); // Erida
 
             if (!eventScheduler.TryGetComponent<BasicStationEventSchedulerComponent>(out var basicScheduler, _compFac))
                 yield break;
@@ -200,12 +206,13 @@ namespace Content.Server.StationEvents
         }
 
         [CommandImplementation("prob")]
-        public float Prob([CommandArgument] Prototype<EntityPrototype> eventSchedulerProto, [CommandArgument] string eventId)
+        public float Prob([CommandArgument] EntProtoId eventSchedulerProto, [CommandArgument] string eventId)
         {
             _compFac ??= IoCManager.Resolve<IComponentFactory>();
             _stationEvent ??= GetSys<EventManagerSystem>();
+            _protoMan ??= IoCManager.Resolve<IPrototypeManager>(); // Erida
 
-            eventSchedulerProto.Deconstruct(out EntityPrototype eventScheduler);
+            var eventScheduler = _protoMan.Index(eventSchedulerProto); // Erida
 
             if (!eventScheduler.TryGetComponent<BasicStationEventSchedulerComponent>(out var basicScheduler, _compFac))
                 return 0f;
