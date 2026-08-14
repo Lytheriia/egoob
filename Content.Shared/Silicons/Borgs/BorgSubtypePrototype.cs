@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using System.Numerics;
+using Content.Shared._Erida.Silicons.SwitchableState;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -31,4 +33,14 @@ public sealed partial class BorgSubtypePrototype : IPrototype
     /// </summary>
     [DataField]
     public required ProtoId<BorgTypePrototype> ParentBorgType = "generic";
+
+    // Erida start
+    [DataField]
+    public Dictionary<BorgStateType, Vector2> StatesWhiteList = [];
+
+    [DataField] public bool? HaveMotionAnimation = null;
+
+    [DataField]
+    public TimeSpan DoAfterDuration = TimeSpan.FromSeconds(2);
+    // Erida end
 }

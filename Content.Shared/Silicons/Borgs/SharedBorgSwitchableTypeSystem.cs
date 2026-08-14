@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Erida.Silicons.SwitchableState;
 using Content.Shared.Actions;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Components;
@@ -7,6 +8,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Silicons.Borgs;
 
@@ -122,6 +124,22 @@ public abstract class SharedBorgSwitchableTypeSystem : EntitySystem
         BorgTypePrototype prototype,
         BorgSubtypePrototype subtypePrototype) // GOOB
     {
+
+        // Erida start
+        if (subtypePrototype.StatesWhiteList.Count != 0)
+        {
+            var switchableState = EnsureComp<BorgSwitchableStateComponent>(entity.Owner);
+            switchableState.DoAfterDuration = subtypePrototype.DoAfterDuration;
+            switchableState.StatesWhiteList = subtypePrototype.StatesWhiteList;
+            switchableState.BaseSprite = new SpriteSpecifier.Rsi(
+                subtypePrototype.SpritePath,
+                rsiState: prototype.SpriteBodyState
+            );
+
+            Dirty(entity.Owner, switchableState);
+        }
+        // Erida end
+
         if (TryComp(entity, out InteractionPopupComponent? popup))
         {
             _interactionPopup.SetInteractSuccessString((entity.Owner, popup), prototype.PetSuccessString);
@@ -133,23 +151,30 @@ public abstract class SharedBorgSwitchableTypeSystem : EntitySystem
             footstepModifier.FootstepSoundCollection = prototype.FootstepCollection;
         }
 
-        if (prototype.SpriteBodyMovementState is { } movementState)
-        {
-            var spriteMovement = EnsureComp<SpriteMovementComponent>(entity);
-            spriteMovement.NoMovementLayers.Clear();
-            spriteMovement.NoMovementLayers["movement"] = new PrototypeLayerData
-            {
-                State = prototype.SpriteBodyState,
-            };
-            spriteMovement.MovementLayers.Clear();
-            spriteMovement.MovementLayers["movement"] = new PrototypeLayerData
-            {
-                State = movementState,
-            };
-        }
-        else
+        // Erida start
+        var movementState = subtypePrototype.HaveMotionAnimation != null && subtypePrototype.HaveMotionAnimation.Value
+            ? prototype.SpriteBodyState + "_moving"
+            : prototype.SpriteBodyMovementState;
+
+        if (movementState is null || subtypePrototype.HaveMotionAnimation == false)
         {
             RemComp<SpriteMovementComponent>(entity);
+            return;
         }
+
+        var spriteMovement = EnsureComp<SpriteMovementComponent>(entity);
+
+        spriteMovement.NoMovementLayers.Clear();
+        spriteMovement.NoMovementLayers["movement"] = new PrototypeLayerData
+        {
+            State = prototype.SpriteBodyState,
+        };
+
+        spriteMovement.MovementLayers.Clear();
+        spriteMovement.MovementLayers["movement"] = new PrototypeLayerData
+        {
+            State = movementState,
+        };
+        // Erida end
     }
 }

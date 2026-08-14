@@ -13,27 +13,31 @@ public sealed partial class SpriteMovementComponent : Component
     /// <summary>
     /// Layer and sprite state to use when moving.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Erida edit
     public Dictionary<string, PrototypeLayerData> MovementLayers = new();
 
     /// <summary>
     /// Layer and sprite state to use when runnin.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Erida edit
     public Dictionary<string, PrototypeLayerData> RunLayers = new();
 
     /// <summary>
     /// Layer and sprite state to use when walking.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Erida edit
     public Dictionary<string, PrototypeLayerData> WalkLayers = new();
 
     /// <summary>
     /// Layer and sprite state to use when not moving.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Erida edit
     public Dictionary<string, PrototypeLayerData> NoMovementLayers = new();
 
     [DataField, AutoNetworkedField]
     public bool IsMoving;
+
+    // Erida start
+    [DataField, AutoNetworkedField]
+    public bool IsEnabled = true;
 }

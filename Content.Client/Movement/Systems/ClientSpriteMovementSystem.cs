@@ -26,7 +26,7 @@ public sealed class ClientSpriteMovementSystem : SharedSpriteMovementSystem
 
     private void OnAfterAutoHandleState(Entity<SpriteMovementComponent> ent, ref AfterAutoHandleStateEvent args)
     {
-        if (!_spriteQuery.TryGetComponent(ent, out var sprite))
+        if (!_spriteQuery.TryGetComponent(ent, out var sprite) || !ent.Comp.IsEnabled)
             return;
 
         if (ent.Comp.IsMoving)
