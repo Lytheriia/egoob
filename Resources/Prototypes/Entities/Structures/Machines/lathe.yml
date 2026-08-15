@@ -330,6 +330,8 @@
     # Goobstation Packs
     - SharedBoards
     - ShuttleBoardsGoob
+    # CorvaxGoob Packs
+    - ReactorCircuitboards # Nuclear Reactor
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient

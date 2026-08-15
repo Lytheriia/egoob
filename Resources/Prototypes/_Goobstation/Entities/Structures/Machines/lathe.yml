@@ -40,6 +40,7 @@
     - MiscSignallersStatic
     - NailgunStatic
     - NailsStatic
+    - ReactorPartsBasic
     dynamicPacks:
     - ConstructionBagOfHolding
     - AdvancedTools
@@ -57,6 +58,15 @@
     - BluespaceTheory
     - ScienceClothing
     - UpgradeKits
+    # Nuclear Reactor Packs
+    - ReactorCircuitboards
+    - ReactorFuelRods
+    - ReactorControlRods
+    - ReactorGasChannels
+    - ReactorHeatExchangers
+    - GasTurbineBlades
+    - GasTurbineStators
+    - NuclearSafetyTools
   - type: EmagLatheRecipes
     emagStaticPacks:
     - NailgunEvilStatic

@@ -59,6 +59,18 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(cultureEn, "MANY", FormatMany);
 
             _loc.SetCulture(culture); // Erida
+            /// CorvaxGoob - Nuclear Reactor localization - start
+            _loc.AddFunction(cultureEn, "PRESSURE", FormatPressure);
+            _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
+            _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
+            _loc.AddFunction(cultureEn, "ENERGYWATTHOURS", FormatEnergyWattHours);
+            _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
+            _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
+            _loc.AddFunction(cultureEn, "LOC", FormatLoc);
+            _loc.AddFunction(cultureEn, "NATURALFIXED", FormatNaturalFixed);
+            _loc.AddFunction(cultureEn, "NATURALPERCENT", FormatNaturalPercent);
+            _loc.AddFunction(cultureEn, "PLAYTIME", FormatPlaytime);
+            /// CorvaxGoob - Nuclear Reactor localization - end
         }
 
         private ILocValue FormatMany(LocArgs args)
@@ -78,8 +90,8 @@ namespace Content.Shared.Localizations
         private ILocValue FormatNaturalPercent(LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value * 100;
-            var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
+            var maxDecimals = (int) Math.Floor(((LocValueNumber) args.Args[1]).Value);
+            var formatter = (NumberFormatInfo) NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)) + "%");
         }
@@ -87,8 +99,8 @@ namespace Content.Shared.Localizations
         private ILocValue FormatNaturalFixed(LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value;
-            var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
+            var maxDecimals = (int) Math.Floor(((LocValueNumber) args.Args[1]).Value);
+            var formatter = (NumberFormatInfo) NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)));
         }
@@ -159,7 +171,7 @@ namespace Content.Shared.Localizations
         public static string FormatPlaytime(TimeSpan time)
         {
             time = TimeSpan.FromMinutes(Math.Ceiling(time.TotalMinutes));
-            var hours = (int)time.TotalHours;
+            var hours = (int) time.TotalHours;
             var minutes = time.Minutes;
             return Loc.GetString($"zzzz-fmt-playtime", ("hours", hours), ("minutes", minutes));
         }
