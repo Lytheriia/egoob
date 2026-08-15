@@ -17,12 +17,12 @@ using Content.Shared.GameTicking; // Frontier
 
 namespace Content.Server._Corvax.Respawn;
 
-public sealed class RespawnSystem : EntitySystem
+public sealed partial class RespawnSystem : EntitySystem
 {
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IAdminManager _admin = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private IAdminManager _admin = default!;
 
     private float _respawnTime = 0f;
 
@@ -66,6 +66,15 @@ public sealed class RespawnSystem : EntitySystem
         SetRespawnTime(session.UserId, ref respawnData, _timing.CurTime + TimeSpan.FromSeconds(_respawnTime));
     }
 
+    /// <summary>
+    /// DeltaV: Sets the respawn time for a player to the full death cooldown.
+    /// </summary>
+    public void SetDeathRespawnTime(NetUserId player)
+    {
+        var respawnData = GetRespawnData(player);
+        SetRespawnTime(player, ref respawnData, _timing.CurTime + TimeSpan.FromSeconds(_respawnTime));
+    }
+
     private void OnMindRemoved(EntityUid entity, MindContainerComponent _, MindRemovedMessage e)
     {
         if (e.Mind.Comp.UserId is null)
@@ -82,7 +91,7 @@ public sealed class RespawnSystem : EntitySystem
         if (HasComp<GhostComponent>(entity)) // Don't penalize user for reobserving
             return;
 
-        if (e.Mind.Comp.Session != null && _admin.IsAdmin(e.Mind.Comp.Session)) // Admins get free respawns
+        if (TryComp<ActorComponent>(entity, out var actor) && _admin.IsAdmin(actor.PlayerSession)) // Admins get free respawns
             return;
 
         // Get respawn info
