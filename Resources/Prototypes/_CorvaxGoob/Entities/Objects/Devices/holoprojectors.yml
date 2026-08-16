@@ -13,3 +13,7 @@
   - type: Tag
     tags:
       - HolofanProjector
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 50
+      Glass: 37
