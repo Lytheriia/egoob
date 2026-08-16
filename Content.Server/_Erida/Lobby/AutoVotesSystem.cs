@@ -152,6 +152,9 @@ public sealed partial class AutoVotesSystem : EntitySystem
             Duration = _cfg.GetCVar(CCVars.AutomaticVoteDuration),
         };
 
+        if (data.NextVoteProto == null)
+            return;
+
         foreach (var proto in data.NextVoteProto)
         {
             var protoData = _prototypeManager.Index(proto);
@@ -163,7 +166,7 @@ public sealed partial class AutoVotesSystem : EntitySystem
                 if (option.AnswerData.Action == AutoVoteOptionAction.GameModeStart
                     && _previousGamerules.Count != 0
                     && protoData.Options.Count > 1
-                    && option.AnswerData.GamePresetProto.Id == _previousGamerules[_previousGamerules.Count - 1])
+                    && option.AnswerData.GamePresetProto!.Value.Id == _previousGamerules[_previousGamerules.Count - 1])
                     continue;
 
                 options.Options.Add((Loc.GetString(option.Label), option));
@@ -178,10 +181,13 @@ public sealed partial class AutoVotesSystem : EntitySystem
 
     private void StartGamePreset(AutoVoteOptionAnswerData data)
     {
+        if (data.GamePresetProto == null)
+            return;
+
         if (_previousGamerules.Count >= 3)
             _previousGamerules.RemoveAt(0);
 
-        _previousGamerules.Add(data.GamePresetProto.Id);
+        _previousGamerules.Add(data.GamePresetProto.Value.Id);
 
         var ticker = _entityManager.EntitySysManager.GetEntitySystem<GameTicker>();
         ticker.SetGamePreset(data.GamePresetProto);
@@ -214,10 +220,10 @@ public sealed partial class AutoVotesSystem : EntitySystem
         switch (option.AnswerData.Action)
         {
             case AutoVoteOptionAction.GameModeStart:
-                return option.AnswerData.GamePresetProto.Id == presetId.Id;
+                return option.AnswerData.GamePresetProto!.Value.Id == presetId.Id;
 
             case AutoVoteOptionAction.NextVote:
-                foreach (var nextProtoId in option.AnswerData.NextVoteProto)
+                foreach (var nextProtoId in option.AnswerData!.NextVoteProto!)
                 {
                     if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
                         continue;
@@ -259,10 +265,10 @@ public sealed partial class AutoVotesSystem : EntitySystem
         switch (option.AnswerData.Action)
         {
             case AutoVoteOptionAction.GameModeStart:
-                return option.AnswerData.GamePresetProto.Id == presetId.Id;
+                return option.AnswerData.GamePresetProto!.Value.Id == presetId.Id;
 
             case AutoVoteOptionAction.NextVote:
-                foreach (var nextProtoId in option.AnswerData.NextVoteProto)
+                foreach (var nextProtoId in option.AnswerData!.NextVoteProto!)
                 {
                     if (!_prototypeManager.TryIndex(nextProtoId, out var nextProto))
                         continue;
