@@ -3,3 +3,9 @@
 
 - type: Tag
   id: invisible
+
+- type: Tag
+  id: HumanoidXeno
+
+- type: Tag
+  id: NoXeno
