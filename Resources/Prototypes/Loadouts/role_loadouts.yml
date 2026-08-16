@@ -12,6 +12,11 @@
   - CaptainShoes # Goobstation
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - CaptainJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -33,6 +38,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - HoPJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -67,6 +77,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - PassengerJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -86,6 +101,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - BartenderJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -103,6 +123,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ServiceWorkerJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -123,6 +148,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ChefJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -140,6 +170,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - LibrarianJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -158,6 +193,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - LawyerJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -180,6 +220,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ChaplainJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -200,6 +245,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - JanitorJobTrinkets
   - Animals # Goobstation?
   - GroupSpeciesBreathTool
@@ -219,6 +269,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - BotanistJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -240,6 +295,11 @@
   - Glasses
   - SurvivalClown
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ClownJobTrinkets
   - Animals # Goobstation
   # Goobstation - EE Plasmeme Change.
@@ -263,6 +323,11 @@
   - Glasses
   - SurvivalMime
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - MimeJobTrinkets
   - Animals # Goobstation
   # Goobstation - EE Plasmeme Change.
@@ -282,6 +347,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - MusicianJobTrinkets
   - Instruments
   - Animals
@@ -305,6 +375,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - QuartermasterJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -326,6 +401,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - CargoTechnicianJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -346,6 +426,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - SalvageSpecialistJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -367,6 +452,11 @@
   - ChiefEngineerShoes
   - SurvivalExtended
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ChiefEngineerJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -383,6 +473,11 @@
   - StationEngineerBackpack
   - SurvivalExtended
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - TechnicalAssistantJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -403,6 +498,11 @@
   - StationEngineerID
   - SurvivalExtended
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - StationEngineerJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -422,6 +522,11 @@
   - AtmosphericTechnicianShoes
   - SurvivalExtended
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - AtmosphericTechnicianJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -445,6 +550,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ResearchDirectorJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -468,6 +578,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ScientistJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -485,6 +600,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ResearchAssistantJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -508,6 +628,11 @@
   - SecurityGloves #goob
   - SurvivalSecurity
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - HeadofSecurityJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolSecurity
@@ -531,6 +656,11 @@
   - SecurityGloves #goob
   - SurvivalSecurity
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - WardenJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolSecurity
@@ -554,6 +684,11 @@
   - SecurityBelt
   - SurvivalSecurity
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - SecurityJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolSecurity
@@ -573,6 +708,11 @@
   - SecurityShoes
   - SurvivalSecurity
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - DetectiveJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolSecurity
@@ -592,6 +732,11 @@
   - SecurityNeck
   - SecurityOuterClothing # Goobstation - Why not.
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - SecurityCadetJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolSecurity
@@ -616,6 +761,11 @@
  # - MedicalEyewear #Goobstation - Spawns with medichem hud
   - SurvivalMedical
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ChiefMedicalOfficerJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolMedical
@@ -639,6 +789,11 @@
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - MedicalDoctorJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolMedical
@@ -656,6 +811,11 @@
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - MedicalInternJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolMedical
@@ -677,6 +837,11 @@
   - MedicalShoes
   - SurvivalMedical
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ChemistJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolMedical
@@ -699,6 +864,11 @@
   - MedicalEyewear
   - SurvivalMedical
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ParamedicJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathToolMedical
@@ -718,6 +888,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - ReporterJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
@@ -735,6 +910,11 @@
   - Glasses
   - Survival
   - Trinkets
+  # Erida start
+  - Undershirt
+  - Underwear
+  - Socks
+  # Erida end
   - PsychologistJobTrinkets
   - Animals # Goobstation
   - GroupSpeciesBreathTool
