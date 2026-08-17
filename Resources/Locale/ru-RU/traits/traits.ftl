@@ -57,3 +57,6 @@ trait-hemophilia-desc = Ваш организм не справляется со
 trait-impaired-mobility-name = Нарушение подвижности
 
 trait-impaired-mobility-desc = Вам тяжело передвигаться без посторонней помощи.
+
+trait-layers-hiding-name = Ненависть к холоду
+trait-layers-hiding-desc = Вы не любите холод, от чего всегда пытаетесь спрятать свои части тел под одеждой
