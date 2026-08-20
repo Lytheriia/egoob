@@ -140,7 +140,7 @@ public sealed partial class EridaWebhooks
                     // Bad realization, but we needed it only for localization
                     var count = rolesText.Count(',');
 
-                    payload.Embeds[0].Fields.Insert(payload.Embeds.Count - 1,
+                    payload.Embeds[0].Fields.Insert(payload.Embeds[0].Fields.Count - 1,
                         new()
                         {
                             Name = Loc.GetString("ban-webhook-roles", ("count", count)),
