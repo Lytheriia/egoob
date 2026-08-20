@@ -2,6 +2,7 @@
 
 using System.Linq;
 using Content.Client._RMC14.LinkAccount;
+using Content.Client.Options.UI;
 using Content.Client.UserInterface.Screens;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
@@ -62,6 +63,16 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatFancyNameBackground, FancyNameBackgroundsCheckBox);
         Control.AddOptionCheckBox(CCVars.StaticStorageUI, StaticStorageUI);
+
+        // erida edit
+        var storageLimitEntries = new List<OptionDropDownCVar<int>.ValueOption>
+        {
+            new(1, Loc.GetString("ui-options-storage-limit-one")),
+            new(2, Loc.GetString("ui-options-storage-limit-two")),
+            new(3, Loc.GetString("ui-options-storage-limit-three")),
+            new(-1, Loc.GetString("ui-options-storage-limit-unlimited")),
+        };
+        Control.AddOptionDropDown(CCVars.StorageLimit, StorageLimitDropDown, storageLimitEntries);
 
         Control.Initialize();
     }

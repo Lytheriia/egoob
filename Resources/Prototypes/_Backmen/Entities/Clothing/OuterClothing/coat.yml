@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ClothingOuterArmorBlueshield, ClothingOuterStorageBase, BaseBlueShieldContraband]
+  id: ClothingOuterCoatArmorBlueShield
+  name: ent-ClothingOuterCoatArmorBlueShield
+  description: ent-ClothingOuterCoatArmorBlueShield.desc
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/OuterClothing/Coats/bluecoat.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/OuterClothing/Coats/bluecoat.rsi
+  - type: GroupExamine

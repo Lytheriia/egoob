@@ -1,0 +1,33 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: ent-HypoBlueShield
+  parent: BaseItem
+  description: ent-HypoBlueShield.desc
+  id: HypoBlueShield
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Specific/Medical/hypospray_blueshield.rsi
+    state: hypoblueshield
+  - type: Item
+    sprite: _Erida/Objects/Specific/Medical/hypospray_blueshield.rsi
+  - type: Solution
+    id: hypospray
+    solution:
+      maxVol: 15
+  - type: RefillableSolution
+    solution: hypospray
+  - type: ExaminableSolution
+    solution: hypospray
+    heldOnly: true # Allow examination only when held in hand.
+    exactVolume: true
+  - type: Injector
+    solutionName: hypospray
+    activeModeProtoId: HypopenDynamicMode
+    allowedModes:
+    - HyposprayInjectMode
+    - HypopenDynamicMode
+  - type: UseDelay
+    delay: 2.5
+  - type: StaticPrice
+    price: 550

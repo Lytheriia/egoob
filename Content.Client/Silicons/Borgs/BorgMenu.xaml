@@ -34,6 +34,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
                 <LineEdit Name="NameLineEdit" HorizontalExpand="True"/>
                 <Label Name="NameIdentifierLabel" Margin="10 0 0 0"/>
             </BoxContainer>
+            <!-- erida edit -->
+            <BoxContainer Orientation="Horizontal" Margin="0 10 0 0">
+                <Button Name="AtmosMonitorButton" Text="{Loc 'borg-ui-atmos-monitor'}" HorizontalExpand="True" MinHeight="32" StyleClasses="OpenLeft" Visible="False"/>
+                <Control MinWidth="5"/>
+                <Button Name="PowerMonitorButton" Text="{Loc 'borg-ui-power-monitor'}" HorizontalExpand="True" MinHeight="32" StyleClasses="OpenLeft" Visible="False"/>
+            </BoxContainer>
+            <!-- erida edit end -->
             <Control MinHeight="10"/>
             <Button HorizontalExpand="True" Name="BrainButton" ToggleMode="False" Margin="0" MinHeight="40" StyleClasses="OpenLeft">
                 <SpriteView Name="BrainView" HorizontalAlignment="Left" VerticalAlignment="Center"/>

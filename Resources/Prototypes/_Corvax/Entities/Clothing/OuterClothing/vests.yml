@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterVestArmorMedSec # Erida edit
+  name: ent-ClothingOuterVestArmorMedSec
+  description: ent-ClothingOuterVestArmorMedSec.desc
+  components:
+  - type: Sprite
+    sprite: _Corvax/Clothing/OuterClothing/Vests/armor_sec_med.rsi
+  - type: Clothing
+    sprite: _Corvax/Clothing/OuterClothing/Vests/armor_sec_med.rsi

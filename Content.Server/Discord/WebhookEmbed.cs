@@ -19,6 +19,8 @@ public struct WebhookEmbed
     [JsonPropertyName("footer")]
     public WebhookEmbedFooter? Footer { get; set; } = null;
 
+    [JsonPropertyName("timestamp")] // Erida add
+    public string? Timestamp { get; set; } = null;
 
     [JsonPropertyName("fields")]
     public List<WebhookEmbedField> Fields { get; set; } = default!;

@@ -42,6 +42,18 @@ public sealed class BorgBoundUserInterface : BoundUserInterface
         {
             SendPredictedMessage(new BorgRemoveModuleBuiMessage(EntMan.GetNetEntity(module)));
         };
+
+        // erida edit
+        _menu.AtmosMonitorButtonPressed += () =>
+        {
+            SendPredictedMessage(new BorgOpenAtmosConsoleMessage());
+        };
+
+        _menu.PowerMonitorButtonPressed += () =>
+        {
+            SendPredictedMessage(new BorgOpenPowerConsoleMessage());
+        };
+        // erida edit end
     }
 
     public override void Update()
@@ -49,5 +61,6 @@ public sealed class BorgBoundUserInterface : BoundUserInterface
         _menu?.UpdateBatteryButton();
         _menu?.UpdateBrainButton();
         _menu?.UpdateModulePanel();
+        _menu?.UpdateMonitorButtons();
     }
 }

@@ -129,10 +129,10 @@
   components:
   - type: LightBulb
     bulb: Bulb
-    color: "#FFD1A3" # 4000K color temp
-    lightEnergy: 1.0
-    lightRadius: 6
-    lightSoftness: 1.1
+    color: "#fac192" # erida edit
+    lightEnergy: 1.0 # erida edit
+    lightRadius: 6 # erida edit
+    lightSoftness: 1.3 # erida edit
   - type: Tag
     tags:
     - LightBulb
@@ -146,10 +146,10 @@
   components:
   - type: LightBulb
     bulb: Bulb
-    color: "#EEEEFF"
-    lightEnergy: 1
-    lightRadius: 8
-    lightSoftness: 1
+    color: "#fac192" # erida edit
+    lightEnergy: 1.0 # erida edit
+    lightRadius: 8 # erida edit
+    lightSoftness: 1.2 # erida edit
     BurningTemperature: 350 #LEDs are colder than incandescent bulbs
     PowerUse: 6 #LEDs are more power efficient than incandescent bulbs
   - type: Tag
@@ -165,7 +165,7 @@
   components:
   - type: LightBulb
     bulb: Bulb
-    color: "#ba473f"
+    color: "#fac192" # erida edit
     lightEnergy: 0.5
     lightRadius: 5
     lightSoftness: 3
@@ -182,9 +182,9 @@
   components:
   - type: LightBulb
     bulb: Bulb
-    color: "#ff9833" # 2200k color temp
-    lightEnergy: 1
-    lightRadius: 6
+    color: "#fac192" # erida edit
+    lightEnergy: 1.0 # erida edit
+    lightRadius: 6 # erida edit
     lightSoftness: 3
   - type: Tag
     tags:
@@ -199,7 +199,7 @@
   components:
   - type: LightBulb
     bulb: Bulb
-    color: "#FFD1A3" # 4000K color temp
+    color: "#fac192" # erida edit
     lightEnergy: 0.3 # old incandescents just arent as bright
     lightRadius: 6
     lightSoftness: 1.1
@@ -223,7 +223,7 @@
   components:
   - type: LightBulb
     bulb: Bulb
-    color: "#CCFF60"
+    color: "#fac192" # erida edit
     lightEnergy: 0.45
     lightRadius: 1.5
     lightSoftness: 3
@@ -239,10 +239,10 @@
   description: A light fixture.
   components:
   - type: LightBulb
-    color: "#FFE4CE" # 5000K color temp
-    lightEnergy: 0.6 # Erida
-    lightRadius: 8 # Erida
-    lightSoftness: 1
+    color: "#FFE0B0" # erida edit
+    lightEnergy: 0.8 # erida edit
+    lightRadius: 8 # erida edit
+    lightSoftness: 1.2 # erida edit
     PowerUse: 25
 
 - type: entity
@@ -252,7 +252,7 @@
   description: An aging light fixture.
   components:
   - type: LightBulb
-    color: "#FFDABB" # old fluorescents are yellower-4500K temp
+    color: "#fafaeb" # erida edit
     lightEnergy: 0.45 # Erida
     lightRadius: 8 # Erida
     lightSoftness: 1
@@ -275,10 +275,10 @@
   id: LedLightTube
   components:
   - type: LightBulb
-    color: "#EEEEFF"
-    lightEnergy: 0.9 # Erida
-    lightRadius: 15
-    lightSoftness: 0.9
+    color: "#fae5c9" # erida edit
+    lightEnergy: 0.95 # erida edit
+    lightRadius: 15 # erida edit
+    lightSoftness: 1.1 # erida edit
     BurningTemperature: 350
     PowerUse: 12
 
@@ -289,10 +289,10 @@
   id: ExteriorLightTube
   components:
   - type: LightBulb
-    color: "#B4FCF0"
-    lightEnergy: 4 # Erida
-    lightRadius: 12
-    lightSoftness: 0.5
+    color: "#facd7f" # erida edit
+    lightEnergy: 2.5 # erida edit
+    lightRadius: 10 # erida edit
+    lightSoftness: 0.7 # erida edit
     BurningTemperature: 350
     PowerUse: 100
 
@@ -303,10 +303,10 @@
   id: SodiumLightTube
   components:
   - type: LightBulb
-    color: "#FFAF38"
-    lightEnergy: 3 # Erida
-    lightRadius: 10
-    lightSoftness: 0.5
+    color: "#fae5c9" # erida edit
+    lightEnergy: 1.5 # erida edit
+    lightRadius: 10 # erida edit
+    lightSoftness: 0.7 # erida edit
     BurningTemperature: 350
     PowerUse: 100
 
@@ -318,9 +318,9 @@
   abstract: true
   components:
   - type: LightBulb
-    lightEnergy: 2 # Erida
-    lightRadius: 8
-    lightSoftness: 0.5
+    lightEnergy: 1.2 # erida edit
+    lightRadius: 8 # erida edit
+    lightSoftness: 0.7 # erida edit
     BurningTemperature: 350
     PowerUse: 60
 
@@ -330,7 +330,7 @@
   id: LightTubeCrystalCyan
   components:
   - type: LightBulb
-    color: "#47f8ff"
+    color: "#7DE1E1" # erida edit
   - type: Construction
     graph: CyanLight
     node: icon
@@ -345,7 +345,7 @@
   id: LightTubeCrystalBlue
   components:
   - type: LightBulb
-    color: "#39a1ff"
+    color: "#6496FA" # erida edit
   - type: Construction
     graph: BlueLight
     node: icon
@@ -360,7 +360,7 @@
   id: LightTubeCrystalYellow
   components:
   - type: LightBulb
-    color: "#ffde46"
+    color: "#E1E17D" # erida edit
   - type: Construction
     graph: YellowLight
     node: icon
@@ -375,7 +375,7 @@
   id: LightTubeCrystalPink
   components:
   - type: LightBulb
-    color: "#ff66cc"
+    color: "#E17DE1" # erida edit
   - type: Construction
     graph: PinkLight
     node: icon
@@ -390,7 +390,7 @@
   id: LightTubeCrystalOrange
   components:
   - type: LightBulb
-    color: "#ff8227"
+    color: "#FA9632" # erida edit
   - type: Construction
     graph: OrangeLight
     node: icon
@@ -423,7 +423,7 @@
   id: LightTubeCrystalRed
   components:
   - type: LightBulb
-    color: "#fb4747"
+    color: "#FF4B4B" # erida edit
   - type: Construction
     graph: RedLight
     node: icon
@@ -438,7 +438,7 @@
   id: LightTubeCrystalGreen
   components:
   - type: LightBulb
-    color: "#52ff39"
+    color: "#64C864" # erida edit
   - type: Construction
     graph: GreenLight
     node: icon
@@ -456,7 +456,7 @@
   abstract: true
   components:
   - type: LightBulb
-    color: "#47f8ff"
+    color: "#7DE1E1" # erida edit
     lightEnergy: 0.8 # Erida
     lightRadius: 6
     lightSoftness: 0.5
@@ -470,7 +470,7 @@
   id: LightBulbCrystalCyan
   components:
   - type: LightBulb
-    color: "#47f8ff"
+    color: "#7DE1E1" # erida edit
   - type: Construction
     graph: CyanLightBulb
     node: icon
@@ -485,7 +485,7 @@
   id: LightBulbCrystalBlue
   components:
   - type: LightBulb
-    color: "#39a1ff"
+    color: "#6496FA" # erida edit
   - type: Construction
     graph: BlueLightBulb
     node: icon
@@ -500,7 +500,7 @@
   id: LightBulbCrystalYellow
   components:
   - type: LightBulb
-    color: "#ffde46"
+    color: "#E1E17D" # erida edit
   - type: Construction
     graph: YellowLightBulb
     node: icon
@@ -515,7 +515,7 @@
   id: LightBulbCrystalPink
   components:
   - type: LightBulb
-    color: "#ff66cc"
+    color: "#E17DE1" # erida edit
   - type: Construction
     graph: PinkLightBulb
     node: icon
@@ -530,7 +530,7 @@
   id: LightBulbCrystalOrange
   components:
   - type: LightBulb
-    color: "#ff8227"
+    color: "#FA9632" # erida edit
   - type: Construction
     graph: OrangeLightBulb
     node: icon
@@ -563,7 +563,7 @@
   id: LightBulbCrystalRed
   components:
   - type: LightBulb
-    color: "#fb4747"
+    color: "#FF4B4B" # erida edit
   - type: Construction
     graph: RedLightBulb
     node: icon
@@ -578,7 +578,7 @@
   id: LightBulbCrystalGreen
   components:
   - type: LightBulb
-    color: "#52ff39"
+    color: "#64C864" # erida edit
   - type: Construction
     graph: GreenLightBulb
     node: icon

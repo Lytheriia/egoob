@@ -222,6 +222,12 @@ ui-options-function-move-stored-item = Move stored item
 ui-options-function-rotate-stored-item = Rotate stored item
 ui-options-function-save-item-location = Save item location
 ui-options-static-storage-ui = Lock storage window to hotbar
+# erida edit
+ui-options-storage-limit = Maximum open storage windows
+ui-options-storage-limit-one = One window
+ui-options-storage-limit-two = Two windows
+ui-options-storage-limit-three = Three windows
+ui-options-storage-limit-unlimited = Unlimited
 
 ui-options-function-smart-equip-backpack = Smart-equip to backpack
 ui-options-function-smart-equip-belt = Smart-equip to belt

@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: soundCollection
+  id: GuardianShot
+  files:
+  - /Audio/Weapons/Guns64/Shotguns/v51_1.ogg
+  - /Audio/Weapons/Guns64/Shotguns/v51_2.ogg
+  - /Audio/Weapons/Guns64/Shotguns/v51_3.ogg
+  - /Audio/Weapons/Guns64/Shotguns/v51_4.ogg

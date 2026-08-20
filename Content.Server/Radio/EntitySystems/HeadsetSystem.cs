@@ -10,6 +10,8 @@ using Content.Shared.Radio.EntitySystems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 
 namespace Content.Server.Radio.EntitySystems;
 
@@ -19,6 +21,7 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly LanguageSystem _language = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!; // Goobstation
+    [Dependency] private SharedAudioSystem _audio = default!; // Erida
 
     public override void Initialize()
     {
@@ -104,6 +107,12 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
         }
     }
 
+    // Erida start
+    private static readonly SoundSpecifier DefaultOnSound =
+        new SoundPathSpecifier("/Audio/_Erida/Radio/common.ogg", AudioParams.Default.WithVolume(-6).WithMaxDistance(2));
+
+    // Erida end
+
     private void OnHeadsetReceive(EntityUid uid, HeadsetComponent component, ref RadioReceiveEvent args)
     {
         // TODO: change this when a code refactor is done
@@ -127,6 +136,8 @@ public sealed class HeadsetSystem : SharedHeadsetSystem
                 Message = canUnderstand ? args.OriginalChatMsg : args.LanguageObfuscatedChatMsg
             };
             _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
+
+            _audio.PlayPvs(args.Channel.OnSendSound ?? DefaultOnSound, uid); // Erida radio
         }
         // Einstein Engines - Language end
     }

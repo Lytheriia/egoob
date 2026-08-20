@@ -21,6 +21,11 @@ public abstract partial class SharedBorgSystem
         SubscribeLocalEvent<SelectableBorgModuleComponent, BorgModuleUninstalledEvent>(OnSelectableUninstalled);
         SubscribeLocalEvent<SelectableBorgModuleComponent, BorgModuleActionSelectedEvent>(OnSelectableAction);
 
+        // erida edit
+        SubscribeLocalEvent<ComponentBorgModuleComponent, BorgModuleInstalledEvent>(OnComponentModuleInstalled);
+        SubscribeLocalEvent<ComponentBorgModuleComponent, BorgModuleUninstalledEvent>(OnComponentModuleUninstalled);
+        // erida edit end
+
         SubscribeLocalEvent<ItemBorgModuleComponent, ComponentStartup>(OnProvideItemStartup);
         SubscribeLocalEvent<ItemBorgModuleComponent, BorgModuleSelectedEvent>(OnItemModuleSelected);
         SubscribeLocalEvent<ItemBorgModuleComponent, BorgModuleUnselectedEvent>(OnItemModuleUnselected);
@@ -133,6 +138,19 @@ public abstract partial class SharedBorgSystem
             SelectModule((chassis, chassisComp), module.Owner);
         }
     }
+
+    // erida edit
+    private void OnComponentModuleInstalled(Entity<ComponentBorgModuleComponent> ent, ref BorgModuleInstalledEvent args)
+    {
+        EntityManager.AddComponents(args.ChassisEnt, ent.Comp.Components);
+    }
+
+    private void OnComponentModuleUninstalled(Entity<ComponentBorgModuleComponent> ent,
+        ref BorgModuleUninstalledEvent args)
+    {
+        EntityManager.RemoveComponents(args.ChassisEnt, ent.Comp.Components);
+    }
+    // erida edit end
 
     private void OnProvideItemStartup(Entity<ItemBorgModuleComponent> module, ref ComponentStartup args)
     {

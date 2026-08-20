@@ -36,13 +36,13 @@
     - type: Unrevivable
       cloneable: true
 
-# - type: trait
-#   id: Uncloneable
-#   name: trait-uncloneable-name
-#   description: trait-uncloneable-desc
-#   category: Medical
-#   effects:
-#   - !type:AddCompsEffect
-#     components:
-#     - type: Unrevivable
-#       cloneable: false
+- type: trait
+  id: LayerHiding
+  name: trait-layers-hiding-name
+  description: trait-layers-hiding-desc
+  category: Medical
+  effects:
+    - !type:AddHiddenLayersEffect
+      layers:
+      - Tail
+      - Snout

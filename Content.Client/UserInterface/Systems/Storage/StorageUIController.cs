@@ -24,6 +24,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Client.UserInterface.Systems.Storage;
 
@@ -128,13 +129,14 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
                 child.SetPositionInParent(invisibleIndex);
             };
 
+            // erida edit
             if (hotbar != null)
             {
-                hotbar.DoubleStorageContainer.Visible = _openStorageLimit == 2;
-                hotbar.SingleStorageContainer.Visible = _openStorageLimit != 2;
+                hotbar.DoubleStorageContainer.Visible = _openStorageLimit >= 2;
+                hotbar.SingleStorageContainer.Visible = _openStorageLimit < 2;
             }
 
-            if (_openStorageLimit == 2)
+            if (_openStorageLimit >= 2)
             {
                 if (hotbar?.LeftStorageContainer.Children.Any(c => c.Visible) == false) // we're comparing booleans because it's bool? and not bool from the optional chaining
                 {
@@ -166,6 +168,18 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
             else if (_ui.TryGetPosition(sBui.Owner, StorageComponent.StorageUiKey.Key, out var pos))
             {
                 window.Open(pos);
+            }
+            // erida edit
+            else if (UIManager.GetActiveUIWidgetOrNull<HotbarGui>() is { } hotbar)
+            {
+                window.Measure(Vector2Helpers.Infinity);
+                window.Open();
+                var size = window.DesiredSize;
+                var rootSize = UIManager.WindowRoot.Size;
+                var position = new Vector2(
+                    (rootSize.X - size.X) / 2,
+                    hotbar.GlobalPosition.Y - size.Y - 10);
+                LayoutContainer.SetPosition(window, position);
             }
             // Open at the default position.
             else

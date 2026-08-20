@@ -45,3 +45,17 @@ public sealed class BorgRemoveModuleBuiMessage(NetEntity module) : BoundUserInte
     /// </summary>
     public NetEntity Module = module;
 }
+
+// erida edit
+/// <summary>
+/// Send when a player uses the borg BUI to open the station atmos alerts console remotely.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class BorgOpenAtmosConsoleMessage : BoundUserInterfaceMessage;
+
+/// <summary>
+/// Send when a player uses the borg BUI to open the station power monitoring console remotely.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class BorgOpenPowerConsoleMessage : BoundUserInterfaceMessage;
+// erida edit end

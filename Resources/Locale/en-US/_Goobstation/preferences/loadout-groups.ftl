@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+﻿# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 DarkenedSynergy <70016079+DarkenedSynergy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 Theapug <159912420+Teapug@users.noreply.github.com>
@@ -25,6 +25,7 @@ loadout-group-bso-mask = Blueshield Officer mask
 loadout-group-bso-outer = Blueshield Officer armor
 loadout-group-bso-neck = Blueshield Officer neck
 loadout-group-bso-shoes = Blueshield Officer shoes
+loadout-group-bso-eyes = Blueshield Officer eyes
 
 loadout-group-nct-head = Nanotrasen Career Trainer head
 loadout-group-nct-backpack = Nanotrasen Career Trainer backpack

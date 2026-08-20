@@ -5,6 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 cqc-fail-notself = Вы не можете никого обучить при помощи { CAPITALIZE($manual) }.
+cqc-fail-used = Вы уже использовали { CAPITALIZE($manual) }.
 cqc-fail-changeling = Мы вышли за пределы использования искусства.
 cqc-fail-knowanother = Вы уже знаете другое боевое искусство.
 cqc-fail-already = Вы уже знаете всё о боевом искусстве.

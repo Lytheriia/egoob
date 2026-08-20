@@ -107,10 +107,10 @@ public abstract class SharedStorageSystem : EntitySystem
     private const string QuickInsertUseDelayID = "quickInsert";
     private const string OpenUiUseDelayID = "storage";
 
-    /// <summary>
-    /// How many storage windows are allowed to be open at once.
-    /// </summary>
-    private int _openStorageLimit = -1;
+    private const int DefaultStorageLimit = 1;
+
+    // erida edit
+    private readonly Dictionary<EntityUid, int> _playerStorageLimits = new();
 
     protected readonly List<string> CantFillReasons = [];
 
@@ -129,12 +129,14 @@ public abstract class SharedStorageSystem : EntitySystem
         _userQuery = GetEntityQuery<UserInterfaceUserComponent>();
         _prototype.PrototypesReloaded += OnPrototypesReloaded;
 
-        Subs.CVar(_cfg, CCVars.StorageLimit, OnStorageLimitChanged, true);
-
         Subs.BuiEvents<StorageComponent>(StorageComponent.StorageUiKey.Key, subs =>
         {
             subs.Event<BoundUIClosedEvent>(OnBoundUIClosed);
         });
+
+        // erida edit
+        SubscribeNetworkEvent<StorageLimitChangedMessage>(OnStorageLimitChangedMessage);
+        SubscribeLocalEvent<PlayerDetachedEvent>(OnPlayerDetached);
 
         SubscribeLocalEvent<StorageComponent, ComponentRemove>(OnRemove);
         SubscribeLocalEvent<StorageComponent, MapInitEvent>(OnMapInit);
@@ -199,9 +201,23 @@ public abstract class SharedStorageSystem : EntitySystem
         NestedStorage = obj;
     }
 
-    private void OnStorageLimitChanged(int obj)
+    // erida edit
+    private void OnStorageLimitChangedMessage(StorageLimitChangedMessage msg, EntitySessionEventArgs args)
     {
-        _openStorageLimit = obj;
+        if (args.SenderSession.AttachedEntity is not { } player)
+            return;
+
+        _playerStorageLimits[player] = msg.Limit;
+    }
+
+    private void OnPlayerDetached(PlayerDetachedEvent ev)
+    {
+        _playerStorageLimits.Remove(ev.Entity);
+    }
+
+    private int GetStorageLimit(EntityUid actor)
+    {
+        return _playerStorageLimits.GetValueOrDefault(actor, DefaultStorageLimit);
     }
 
     private void OnRemove(Entity<StorageComponent> entity, ref ComponentRemove args)
@@ -378,11 +394,12 @@ public abstract class SharedStorageSystem : EntitySystem
             OpenStorageUIInternal(uid, actor, storageComp, silent: true);
             _nestedCheck = false;
         }
+        // erida edit
         else
         {
             // If you need something more sophisticated for multi-UI you'll need to code some smarter
             // interactions.
-            if (_openStorageLimit == 1)
+            if (GetStorageLimit(actor) == 1)
                 UI.CloseUserUis<StorageComponent.StorageUiKey>(actor);
 
             OpenStorageUIInternal(uid, actor, storageComp, silent: silent);
@@ -816,16 +833,21 @@ public abstract class SharedStorageSystem : EntitySystem
         UpdateAppearance((ent.Owner, ent.Comp, null));
     }
 
+    // erida edit
     private void OnBoundUIAttempt(Entity<StorageComponent> ent, ref BoundUserInterfaceMessageAttempt args)
     {
         if (args.UiKey is not StorageComponent.StorageUiKey.Key ||
-            _openStorageLimit == -1 ||
             _nestedCheck ||
             args.Message is not OpenBoundInterfaceMessage)
             return;
 
         var uid = args.Target;
         var actor = args.Actor;
+        var limit = GetStorageLimit(actor);
+
+        if (limit == -1)
+            return;
+
         var count = 0;
 
         if (_userQuery.TryComp(actor, out var userComp))
@@ -842,7 +864,7 @@ public abstract class SharedStorageSystem : EntitySystem
 
                     count++;
 
-                    if (count >= _openStorageLimit)
+                    if (count >= limit)
                     {
                         args.Cancel();
                     }

@@ -42,6 +42,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
         base.Initialize();
 
         InitializeTransponder();
+        InitializeMonitoring(); // erida edit
     }
 
     public override bool CanPlayerBeBorged(ICommonSession session)

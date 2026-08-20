@@ -13,6 +13,8 @@ borg-ui-no-brain = Мозг отсутствует
 borg-ui-remove-battery = Извлечь
 borg-ui-modules-label = Модули:
 borg-ui-module-counter = { $actual }/{ $max }
+borg-ui-atmos-monitor = Атмос-тревоги
+borg-ui-power-monitor = Питание
 # Transponder
 borg-transponder-disabled-popup = Мозг вылетает из верхушки { $name }!
 borg-transponder-disabling-popup = Ваш транспондер начинает отсоединять вас от шасси!

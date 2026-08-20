@@ -69,6 +69,21 @@
   groupBy: "cecloak"
 
 - type: loadout
+  id: ChiefEngineerCloak # Erida edit
+  equipment:
+    neck: ClothingNeckCloakCe
+  groupBy: "cecloak"
+
+- type: loadout
+  id: ChiefEngineerMantle # Erida edit
+  equipment:
+    neck: ClothingNeckMantleCE
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCE
+  groupBy: "cemantle"
+
+- type: loadout
   id: ClothingNeckCloakGreenCe # Goobstation
   equipment:
     neck: ClothingNeckCloakGreenCe # Goobstation

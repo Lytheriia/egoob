@@ -67,11 +67,12 @@ public sealed partial class CCVars
         CVarDef.Create("control.storage_window_title", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
-    /// How many storage windows are allowed to be open at once.
-    /// Recommended that you utilise this in conjunction with <see cref="StaticStorageUI"/>
+    /// How many storage windows the local player is allowed to have open at once.
+    /// -1 disables the limit. This is a per-player client setting.
     /// </summary>
+    // erida edit
     public static readonly CVarDef<int> StorageLimit =
-        CVarDef.Create("control.storage_limit", 1, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("control.storage_limit", 1, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
     /// Whether or not storage can be opened recursively.

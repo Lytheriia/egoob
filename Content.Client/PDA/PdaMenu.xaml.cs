@@ -11,6 +11,8 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
+using Robust.Shared.Configuration;
+using Content.Shared.CCVar;
 
 namespace Content.Client.PDA
 {
@@ -20,6 +22,8 @@ namespace Content.Client.PDA
         [Dependency] private readonly IClipboardManager _clipboard = null!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
+        [Dependency] private readonly IConfigurationManager _cfg = default!; // Lua
+
         private readonly ClientGameTicker _gameTicker;
 
         public const int HomeView = 0;
@@ -34,7 +38,7 @@ namespace Content.Client.PDA
         private string _stationName = Loc.GetString("comp-pda-ui-unknown");
         private string _alertLevel = Loc.GetString("comp-pda-ui-unknown");
         private string _instructions = Loc.GetString("comp-pda-ui-unknown");
-        
+
 
         private int _currentView;
 
@@ -122,12 +126,23 @@ namespace Content.Client.PDA
                 _clipboard.SetText((stationTime.ToString("hh\\:mm\\:ss")));
             };
 
+            // Erida start
+            DateTimeButton.OnPressed += _ =>
+            {
+                var currentYear = _cfg.GetCVar(CCVars.CurrentYear);
+                var dateTime = DateTime.UtcNow.AddHours(3);
+                var time = dateTime.ToString("HH:mm:ss");
+                var date = dateTime.ToString("dd.MM") + $".{currentYear}";
+                _clipboard.SetText($"{time} {date}");
+            };
+            // Erida end
+
             StationAlertLevelInstructionsButton.OnPressed += _ =>
             {
                 _clipboard.SetText(_instructions);
             };
 
-            
+
 
 
             HideAllViews();
@@ -167,12 +182,20 @@ namespace Content.Client.PDA
             _stationName = state.StationName ?? Loc.GetString("comp-pda-ui-unknown");
             StationNameLabel.SetMarkup(Loc.GetString("comp-pda-ui-station",
                 ("station", _stationName)));
-            
+
 
             var stationTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
                 ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+
+            // Erida start
+            var currentYear = _cfg.GetCVar(CCVars.CurrentYear);
+            var dateTime = DateTime.UtcNow.AddHours(3);
+            var time = dateTime.ToString("HH:mm:ss");
+            var date = dateTime.ToString("dd.MM") + $".{currentYear}";
+            DateTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-datetime", ("time", time), ("date", date)));
+            // Erida end
 
             var alertLevel = state.PdaOwnerInfo.StationAlertLevel;
             var alertColor = state.PdaOwnerInfo.StationAlertColor;
@@ -347,6 +370,14 @@ namespace Content.Client.PDA
 
             StationTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-station-time",
                 ("time", stationTime.ToString("hh\\:mm\\:ss"))));
+
+            // Erida start
+            var currentYear = _cfg.GetCVar(CCVars.CurrentYear);
+            var dateTime = DateTime.UtcNow.AddHours(3);
+            var time = dateTime.ToString("HH:mm:ss");
+            var date = dateTime.ToString("dd.MM") + $".{currentYear}";
+            DateTimeLabel.SetMarkup(Loc.GetString("comp-pda-ui-datetime", ("time", time), ("date", date)));
+            // Erida end
         }
     }
 }

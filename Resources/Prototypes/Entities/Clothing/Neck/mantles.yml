@@ -35,6 +35,17 @@
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckMantleCE # Erida edit
+  name: ent-ClothingNeckMantleCE
+  description: ent-ClothingNeckMantleCE.desc
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/cemantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/cemantle.rsi
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleCMO
   name: chief medical officer's mantle
   description: For a CMO that has been in enough medbays to know that more PPE means less central command dry cleaning visits when the shift is over.

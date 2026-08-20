@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ ClothingUniformSkirtBase, BaseBlueShieldContraband]
+  id: ClothingUniformJumpskirtBlueShield
+  name: ent-ClothingUniformJumpskirtBlueShield
+  description: ent-ClothingUniformJumpskirtBlueShield.desc
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/blueskirt.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/blueskirt.rsi
+
+- type: entity
+  parent: [ClothingUniformSkirtBase, BaseBlueShieldContraband]
+  id: ClothingUniformJumpskirtBlueShieldTurtleneck
+  name: ent-ClothingUniformJumpskirtBlueShieldTurtleneck
+  description: ent-ClothingUniformJumpskirtBlueShieldTurtleneck.desc
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/blueskirt-alt.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Uniforms/Jumpskirt/blueskirt-alt.rsi

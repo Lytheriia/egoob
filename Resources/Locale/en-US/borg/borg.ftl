@@ -30,6 +30,8 @@ borg-ui-no-brain = No brain present
 borg-ui-remove-battery = Remove
 borg-ui-modules-label = Modules:
 borg-ui-module-counter = {$actual}/{$max}
+borg-ui-atmos-monitor = Atmos Alerts
+borg-ui-power-monitor = Power Monitor
 
 # Transponder
 borg-transponder-disabled-popup = A brain shoots out the top of {$name}!

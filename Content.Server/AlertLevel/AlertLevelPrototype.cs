@@ -62,7 +62,8 @@ public sealed partial class AlertLevelDetail
     /// <summary>
     /// The color to turn emergency lights on this station when they are active.
     /// </summary>
-    [DataField("emergencyLightColor")] public Color EmergencyLightColor { get; private set; } = Color.FromHex("#FF4020");
+    /// erida edit
+    [DataField("emergencyLightColor")] public Color EmergencyLightColor { get; private set; } = Color.FromHex("#FF3232");
 
     /// <summary>
     /// Will this alert level force emergency lights on for the station that's active?

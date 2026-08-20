@@ -53,6 +53,7 @@
     eyes: ClothingEyesGlassesMeson
     ears: ClothingHeadsetAltEngineering # Goobstation
     belt: ClothingBeltUtilityEngineering
+    neck: ClothingNeckCloakCe # Erida edit
   storage:
     back:
     - Flash

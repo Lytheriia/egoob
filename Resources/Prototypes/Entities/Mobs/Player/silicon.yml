@@ -710,6 +710,9 @@
       borg_brain:
       - PositronicBrain
       borg_module:
+      # erida edit
+      - BorgModulePrying
+      # erida edit end
       - BorgModuleTool
       - BorgModuleFireExtinguisher
       - BorgModuleConstruction
@@ -748,6 +751,9 @@
       borg_brain:
         - PositronicBrain
       borg_module:
+        # erida edit
+        - BorgModulePrying
+        # erida edit end
         - BorgModuleTool
         - BorgModuleFireExtinguisher
   - type: ItemSlots
@@ -783,6 +789,9 @@
       borg_brain:
       - PositronicBrain
       borg_module:
+      # erida edit
+      - BorgModulePrying
+      # erida edit end
       - BorgModuleTool
       - BorgModuleFireExtinguisher
       - BorgModuleCleaning
@@ -820,6 +829,9 @@
       borg_brain:
       - PositronicBrain
       borg_module:
+      # erida edit
+      - BorgModulePrying
+      # erida edit end
       - BorgModuleTool
       - BorgModuleFireExtinguisher
       - BorgModuleChemical
@@ -858,6 +870,9 @@
       borg_brain:
       - PositronicBrain
       borg_module:
+      # erida edit
+      - BorgModulePrying
+      # erida edit end
       - BorgModuleTool #No fire extinguisher, traversal is better
       - BorgModuleMining
       - BorgModuleTraversal

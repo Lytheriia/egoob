@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+﻿# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 DarkenedSynergy <70016079+DarkenedSynergy@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
 # SPDX-FileCopyrightText: 2024 Theapug <159912420+Teapug@users.noreply.github.com>
@@ -23,6 +23,7 @@ loadout-group-bso-mask = ОСЩ, маска
 loadout-group-bso-outer = ОСЩ, броня
 loadout-group-bso-neck = ОСЩ, шея
 loadout-group-bso-shoes = ОСЩ, обувь
+loadout-group-bso-eyes = ОСЩ, глаза
 loadout-group-nct-head = НNT, голова
 loadout-group-nct-backpack = НNT, рюкзак
 loadout-group-nct-jumpsuit = НNT, комбинезон

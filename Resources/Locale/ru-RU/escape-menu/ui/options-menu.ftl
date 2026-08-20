@@ -162,6 +162,12 @@ ui-options-function-move-stored-item = Переместить хранящийс
 ui-options-function-rotate-stored-item = Повернуть хранящийся объект
 ui-options-function-save-item-location = Сохранить расположение объекта
 ui-options-static-storage-ui = Закрепить интерфейс хранилища на хотбаре
+# erida edit
+ui-options-storage-limit = Максимум открытых окон хранилища
+ui-options-storage-limit-one = Одно окно
+ui-options-storage-limit-two = Два окна
+ui-options-storage-limit-three = Три окна
+ui-options-storage-limit-unlimited = Без ограничений
 ui-options-function-smart-equip-backpack = Умная экипировка в рюкзак
 ui-options-function-smart-equip-belt = Умная экипировка на пояс
 ui-options-function-open-backpack = Открыть рюкзак

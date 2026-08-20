@@ -3,12 +3,17 @@
 using System.Linq;
 using System.Numerics;
 using Content.Client.Animations;
+using Content.Shared.CCVar;
 using Content.Shared.Hands;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Storage.Events;
 using Robust.Client.Player;
+// erida edit
+using Robust.Shared.Configuration;
 using Robust.Shared.GameStates;
 using Robust.Shared.Map;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 namespace Content.Client.Storage.Systems;
@@ -17,6 +22,8 @@ public sealed class StorageSystem : SharedStorageSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+    // erida edit
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly EntityPickupAnimationSystem _entityPickupAnimation = default!;
 
     private Dictionary<EntityUid, ItemStorageLocation> _oldStoredItems = new();
@@ -30,6 +37,16 @@ public sealed class StorageSystem : SharedStorageSystem
         SubscribeLocalEvent<StorageComponent, ComponentHandleState>(OnStorageHandleState);
         SubscribeNetworkEvent<PickupAnimationEvent>(HandlePickupAnimation);
         SubscribeAllEvent<AnimateInsertingEntitiesEvent>(HandleAnimatingInsertingEntities);
+
+        // erida edit
+        _cfg.OnValueChanged(CCVars.StorageLimit, _ => SendStorageLimit());
+        SubscribeLocalEvent<LocalPlayerAttachedEvent>(_ => SendStorageLimit());
+    }
+
+    // erida edit
+    private void SendStorageLimit()
+    {
+        RaiseNetworkEvent(new StorageLimitChangedMessage { Limit = _cfg.GetCVar(CCVars.StorageLimit) });
     }
 
     private void OnStorageHandleState(EntityUid uid, StorageComponent component, ref ComponentHandleState args)

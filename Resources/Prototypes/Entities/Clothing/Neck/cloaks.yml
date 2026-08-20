@@ -57,6 +57,17 @@
 
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
+  id: ClothingNeckCloakCe # Erida edit
+  name: ent-ClothingNeckCloakCe
+  description: ent-ClothingNeckCloakCe.desc
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/Cloaks/ce.rsi
+  - type: StealTarget
+    stealGroup: HeadCloak
+
+- type: entity
+  parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingCloakCmo
   name: chief medical officer's cloak
   description: A sterile blue cloak with a green cross, radiating with a sense of duty and willingness to help others.

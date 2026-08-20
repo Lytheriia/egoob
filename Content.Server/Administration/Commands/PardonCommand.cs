@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MIT
 
-﻿using Content.Server.Database;
+using Content.Server._Erida.Discord;
+using Content.Server.Database;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
 
@@ -10,6 +11,7 @@ namespace Content.Server.Administration.Commands
     public sealed class PardonCommand : LocalizedCommands
     {
         [Dependency] private readonly IServerDbManager _dbManager = default!;
+        [Dependency] private readonly EridaWebhooks _webhooks = default!; // Erida
 
         public override string Command => "pardon";
 
@@ -52,7 +54,12 @@ namespace Content.Server.Administration.Commands
                 return;
             }
 
-            await _dbManager.AddUnbanAsync(new UnbanDef(banId, player?.UserId, DateTimeOffset.Now));
+            // Erida start
+            var unbanDef = new UnbanDef(banId, player?.UserId, DateTimeOffset.Now);
+            await _dbManager.AddUnbanAsync(unbanDef);
+
+            _webhooks.SendUnban(unbanDef, ban);
+            // Erida end
 
             shell.WriteLine(Loc.GetString($"cmd-pardon-success", ("id", banId)));
         }

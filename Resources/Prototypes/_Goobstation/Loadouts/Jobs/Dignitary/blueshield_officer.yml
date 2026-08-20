@@ -175,3 +175,58 @@
   id: SnowjacksBso
   equipment:
     shoes: ClothingShoesBootsWinterSnowjackBso
+
+# Backmen - Blueshield gear port
+# Hats
+- type: loadout
+  id: BlueshieldOfficerBeretBlackErida
+  equipment:
+    head: ClothingHeadHatBlackBeretBlueShield
+
+- type: loadout
+  id: BlueshieldOfficerBeretLightErida
+  equipment:
+    head: ClothingHeadHatLightBeretBlueShield
+
+# Jumpsuits
+- type: loadout
+  id: BlueshieldOfficerSuitErida
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBlueShield
+
+- type: loadout
+  id: BlueshieldOfficerSkirtErida
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlueShield
+
+- type: loadout
+  id: BlueshieldOfficerTurtleneckErida
+  equipment:
+    jumpsuit: ClothingUniformBlueShieldTurtleneck
+
+- type: loadout
+  id: BlueshieldOfficerSkirtTurtleneckErida
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlueShieldTurtleneck
+
+# Eyes
+- type: loadout
+  id: BlueshieldOfficerGlassesErida
+  equipment:
+    eyes: ClothingEyesGlassesBlueShield
+
+- type: loadout
+  id: BlueshieldOfficerVisorErida
+  equipment:
+    eyes: ClothingEyesBlueshieldVisor
+
+# Outer
+- type: loadout
+  id: BlueshieldOfficerArmorErida
+  equipment:
+    outerClothing: ClothingOuterArmorBlueshield
+
+- type: loadout
+  id: BlueshieldOfficerCoatErida
+  equipment:
+    outerClothing: ClothingOuterCoatArmorBlueShield

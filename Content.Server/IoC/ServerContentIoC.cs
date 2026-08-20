@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Server._CorvaxGoob.TTS;
+using Content.Server._Erida.Discord;
 using Content.Server._Goobstation.Antag;
 using Content.Server._Orion.ServerProtection;
 using Content.Server._Orion.ServerProtection.Chat;
@@ -89,6 +90,7 @@ internal static class ServerContentIoC
         deps.Register<DiscordLink>();
         deps.Register<DiscordChatLink>();
         deps.Register<TTSManager>(); // CorvaxGoob-TTS
+        deps.Register<EridaWebhooks>(); // Erida
         deps.Register<LastRolledAntagManager>(); // Goobstation - antag pity
         deps.Register<LinkAccountManager>(); // RMC - Patreon
         deps.Register<ServerProtectionPunishmentSystem>(); // Orion

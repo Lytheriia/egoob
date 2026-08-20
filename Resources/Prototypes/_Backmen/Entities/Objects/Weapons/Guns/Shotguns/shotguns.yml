@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  name: ent-WeaponShotgunGuardian
+  parent: BaseWeaponShotgun
+  id: WeaponShotgunGuardian
+  suffix: Shotgun
+  description: ent-WeaponShotgunGuardian.desc
+  components:
+  - type: Sprite
+    sprite: _Erida/Objects/Weapons/Gunsx64/Shotguns/guard-17/big.rsi
+  - type: Item
+    sprite: _Erida/Objects/Weapons/Gunsx64/Shotguns/guard-17/tiny.rsi
+  - type: Clothing
+    sprite: _Erida/Objects/Weapons/Gunsx64/Shotguns/guard-17/tiny.rsi
+  - type: BallisticAmmoProvider
+    capacity: 10 # Erida-edit 12 -> 10
+  - type: Wieldable
+  - type: UseDelay
+    delay: 0.4
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 1.6 # Erida-edit - 2 -> 1.6
+    cameraRecoilScalar: 3
+    soundGunshot:
+      collection: GuardianShot

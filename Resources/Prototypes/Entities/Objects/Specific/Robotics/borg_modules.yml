@@ -455,6 +455,25 @@
         color: "#FF00CC"
 
 # generic modules
+# erida edit
+- type: entity
+  id: BorgModulePrying
+  parent: [ BaseBorgModule ]
+  name: prying module
+  description: A universal cyborg module which allows the unit to pry open doors.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-tools
+  - type: ComponentBorgModule
+    components:
+    - type: Prying
+      speedModifier: 1.5
+      useSound:
+        path: /Audio/Items/jaws_pry.ogg
+# erida edit end
+
 - type: entity
   id: BorgModuleCable
   parent: [ BaseBorgModule, BaseProviderBorgModule ]
@@ -695,6 +714,16 @@
     sprite: _Erida/Objects/Materials/Sheets/other.rsi
     state: generic_materials
 
+# erida edit
+- type: entity
+  id: BorgModuleConstructionGasTankPlaceholder
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Tanks/plasma.rsi
+    state: icon
+# erida edit end
+
 - type: entity
   id: BorgModuleConstruction
   parent: [ BaseBorgModuleEngineering, BaseProviderBorgModule ]
@@ -784,6 +813,14 @@
     - item: GasAnalyzer
     - item: HolofanProjector # Goobstation
     - item: GeigerCounter
+    # erida edit
+    - hand:
+        emptyRepresentative: BorgModuleConstructionGasTankPlaceholder
+        emptyLabel: borg-slot-construction-gas-tank
+        whitelist:
+          components:
+          - GasTank
+    # erida edit end
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: rcd-module }
 

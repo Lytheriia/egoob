@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseBlueShieldContraband]
+  id: ClothingBeltBlueshieldWebbing
+  name: ent-ClothingBeltBlueshieldWebbing
+  description: ent-ClothingBeltBlueshieldWebbing.desc
+  components:
+  - type: Sprite
+    sprite: _Erida/Clothing/Belt/bswebbing.rsi
+  - type: Clothing
+    sprite: _Erida/Clothing/Belt/bswebbing.rsi
+  - type: ExplosionResistance # Erida-edit
+    damageCoefficient: 0.1

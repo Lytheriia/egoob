@@ -34,7 +34,7 @@
     state: base
   - type: PointLight
     mask: /Textures/Effects/LightMasks/double_cone.png
-    color: "#FFE4CE"
+    color: "#fae5c9" # erida edit
     energy: 5
     radius: 10
     softness: 1

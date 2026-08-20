@@ -3,6 +3,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
+using Content.Server._Erida.Discord;
 using Content.Shared.Database;
 using Content.Shared.Roles;
 using Robust.Shared.Network;
@@ -121,7 +122,7 @@ public interface IBanManager
 /// </summary>
 /// <seealso cref="CreateServerBanInfo"/>
 /// <seealso cref="CreateRoleBanInfo"/>
-[Access(typeof(BanManager), Other = AccessPermissions.Execute)]
+[Access(typeof(BanManager), typeof(EridaWebhooks), Other = AccessPermissions.Execute)] // Erida add webhooks
 public abstract class CreateBanInfo
 {
     [Access(Other = AccessPermissions.Read)]

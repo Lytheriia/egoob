@@ -14,6 +14,9 @@
     - BorgModuleScience #until sciborgs are added
 
   defaultModules:
+  # erida edit
+  - BorgModulePrying
+  # erida edit end
   - BorgModuleTool
   - BorgModuleInflatable
   - BorgModuleArtifact
@@ -48,6 +51,9 @@
     - BorgModuleEngineering
 
   defaultModules:
+  # erida edit
+  - BorgModulePrying
+  # erida edit end
   - BorgModuleTool
   - BorgModuleConstruction
   - BorgModuleRCD
@@ -86,6 +92,9 @@
     - BorgModuleCargo
 
   defaultModules:
+  # erida edit
+  - BorgModulePrying
+  # erida edit end
   - BorgModuleTool
   - BorgModuleMining
   - BorgModuleTraversal
@@ -131,6 +140,9 @@
     - BorgModuleJanitor
 
   defaultModules:
+  # erida edit
+  - BorgModulePrying
+  # erida edit end
   - BorgModuleCleaning
   - BorgModuleCustodial
 
@@ -168,6 +180,9 @@
     - BorgModuleMedical
 
   defaultModules:
+  # erida edit
+  - BorgModulePrying
+  # erida edit end
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
@@ -226,6 +241,9 @@
     - BorgModuleService
 
   defaultModules:
+  # erida edit
+  - BorgModulePrying
+  # erida edit end
   - BorgModuleMusique
   - BorgModuleService
   # - BorgModuleClowning # goobedit
