@@ -44,6 +44,7 @@ public sealed class FootprintSystem : EntitySystem
     public const string PuddleSolution = "puddle";
 
     private float _minimumPuddleSize;
+    private bool _isEnabled; // Erida add
 
     public override void Initialize()
     {
@@ -54,6 +55,7 @@ public sealed class FootprintSystem : EntitySystem
         _noFootprintsQuery = GetEntityQuery<NoFootprintsComponent>();
 
         Subs.CVar(_configuration, GoobCVars.MinimumPuddleSizeForFootprints, value => _minimumPuddleSize = value, true);
+        Subs.CVar(_configuration, GoobCVars.IsFootprintEnabled, value => _isEnabled = value, true); // Erida add
     }
 
     private void OnFootprintClean(Entity<FootprintComponent> entity, ref FootprintCleanEvent e)
@@ -63,6 +65,9 @@ public sealed class FootprintSystem : EntitySystem
 
     private void OnMove(Entity<FootprintOwnerComponent> entity, ref MoveEvent e)
     {
+        if (!_isEnabled)
+            return;
+
         if (_noFootprintsQuery.HasComp(entity))
             return;
 
@@ -162,6 +167,9 @@ public sealed class FootprintSystem : EntitySystem
 
     private void FootprintInteraction(Entity<FootprintOwnerComponent> entity, Entity<MapGridComponent> grid, Vector2i tile, EntityCoordinates coordinates, Angle rotation, bool standing)
     {
+        if (!_isEnabled)
+            return;
+
         if (!_solution.TryGetSolution(entity.Owner, FootprintOwnerSolution, out var solution, out _))
             return;
 
@@ -187,7 +195,7 @@ public sealed class FootprintSystem : EntitySystem
         if (!_solution.EnsureSolutionEntity(footprint.Value.Owner, FootprintSolution, out _, out var footprintSolution, MaxFootprintVolumeOnTile))
             return;
 
-        var color = solution.Value.Comp.Solution.GetColor(_prototype).WithAlpha((float)volume / (float)(standing ? entity.Comp.MaxFootprintVolume : entity.Comp.MaxBodyprintVolume) / 2f);
+        var color = solution.Value.Comp.Solution.GetColor(_prototype).WithAlpha((float) volume / (float) (standing ? entity.Comp.MaxFootprintVolume : entity.Comp.MaxBodyprintVolume) / 2f);
 
         _solution.TryTransferSolution(footprintSolution.Value, solution.Value.Comp.Solution, volume);
 

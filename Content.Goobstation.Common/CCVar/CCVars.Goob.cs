@@ -698,5 +698,8 @@ public sealed partial class GoobCVars
     public static readonly CVarDef<int> ParticleGlobalBudget =
         CVarDef.Create("particles.global_budget", 8000, CVar.CLIENTONLY | CVar.ARCHIVE);
 
+    // Erida add
+    public static readonly CVarDef<bool> IsFootprintEnabled = CVarDef.Create("footprints.enabled", true, CVar.SERVER | CVar.SERVER);
+
     #endregion
 }
