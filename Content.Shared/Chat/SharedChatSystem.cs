@@ -561,8 +561,7 @@ public abstract partial class SharedChatSystem : EntitySystem
         string? sender = null,
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,
-        Color? colorOverride = null,
-        EntityUid? user = null) // Erida-edit
+        Color? colorOverride = null)
     { }
 }
 

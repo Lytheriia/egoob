@@ -264,7 +264,6 @@ namespace Content.Server.Database
             }
 
             var barkVoice = profile.BarkVoice ?? SharedHumanoidAppearanceSystem.DefaultBarkVoice; // Goob Station - Barks
-            var voice = profile.Voice ?? SharedHumanoidAppearanceSystem.DefaultVoice; // Erida TTS
 
             return new HumanoidCharacterProfile(
                 profile.CharacterName,

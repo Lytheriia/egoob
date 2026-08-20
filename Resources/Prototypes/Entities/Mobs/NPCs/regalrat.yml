@@ -199,8 +199,6 @@
   - type: GuideHelp
     guides:
     - MinorAntagonists
-  - type: TTS # Corvax-TTS
-    voice: Monolith2
 
 
 - type: entity
@@ -371,8 +369,6 @@
     color: "#808080"
     activateSound: null
     deactivateSound: null
-  - type: TTS # Corvax-TTS
-    voice: Monolith2
 
 - type: entityTable
   id: RatKingLoot

@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Server._Erida.TTS;
 using Content.Server._Goobstation.Antag;
 using Content.Server._Orion.ServerProtection;
 using Content.Server._Orion.ServerProtection.Chat;
@@ -93,6 +92,5 @@ internal static class ServerContentIoC
         deps.Register<ServerProtectionPunishmentSystem>(); // Orion
         deps.Register<ChatProtectionSystem>(); // Orion
         deps.Register<EmoteProtectionSystem>(); // Orion
-        deps.Register<TTSManager>(); // Corvax-TTS
     }
 }

@@ -78,7 +78,6 @@
   - LanguageKnowledge
   - ForeignerTrait
   # Einstein Engines - Language end
-  - TTS # Erida-edit
   blacklist:
     components:
     - AttachedClothing # helmets, which are part of the suit
