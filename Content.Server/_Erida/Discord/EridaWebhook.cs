@@ -28,6 +28,11 @@ public sealed partial class EridaWebhooks : IPostInjectInit
     {
         _sawmill = Logger.GetSawmill("discord");
 
+        // Inject faster, then CCVar. so check is it registered
+        // Dont add another if's. 1 should be enough
+        if (!_cfg.IsCVarRegistered(CCVars.DiscordBanWebhook.Name))
+            return;
+
         _cfg.OnValueChanged(CCVars.DiscordBanWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierBan = wi), true);
     }
