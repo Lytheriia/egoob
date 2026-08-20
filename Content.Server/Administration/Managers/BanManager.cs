@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._Erida.Discord;
 using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
@@ -41,6 +42,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
     [Dependency] private readonly IEntitySystemManager _systems = default!;
     [Dependency] private readonly ITaskManager _taskManager = default!;
     [Dependency] private readonly UserDbDataManager _userDbData = default!;
+    [Dependency] private readonly EridaWebhooks _webhooks = default!; // Erida edit
 
     private ISawmill _sawmill = default!;
 
@@ -129,6 +131,11 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
 
         await _db.AddBanAsync(banDef);
 
+
+        // Erida edit
+        // PLS DO SHIT LIKE LOGS ONLY AFTER MAIN CODE IN FREE TIME.
+        // WHY KICK SHOULD WAIT WHEN WE WILL SEND LOG
+        KickMatchingConnectedPlayers(banDef, "newly placed ban");
         if (_cfg.GetCVar(CCVars.ServerBanResetLastReadRules))
         {
             // Reset their last read rules. They probably need a refresher!
@@ -171,7 +178,7 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
         _sawmill.Info(logMessage);
         _chat.SendAdminAlert(logMessage);
 
-        KickMatchingConnectedPlayers(banDef, "newly placed ban");
+        _webhooks.SendBan(banInfo, banDef); // Erida edit
     }
 
     private NoteSeverity GetSeverityForServerBan(CreateBanInfo banInfo, CVarDef<string> defaultCVar)
@@ -260,6 +267,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             if (_playerManager.TryGetSessionById(userId, out var session))
                 SendRoleBans(session);
         }
+
+        _webhooks.SendBan(banInfo, banDef); // Erida
     }
 
     private async Task<(BanDef Ban, DateTimeOffset? Expires)> CreateBanDef(
@@ -398,6 +407,8 @@ public sealed partial class BanManager : IBanManager, IPostInjectInit
             }
 
         }
+
+        _webhooks.SendUnban(new UnbanDef(banId, unbanningAdmin, unbanTime), ban); // Erida
 
         return $"Pardoned ban with id {banId}";
     }
