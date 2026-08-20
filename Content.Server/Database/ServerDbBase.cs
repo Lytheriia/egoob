@@ -223,6 +223,13 @@ namespace Content.Server.Database
             if (Enum.TryParse<Gender>(profile.Gender, true, out var genderVal))
                 gender = genderVal;
 
+            // CorvaxGoob-TTS-Start
+            var ttsVoice = profile.TTSVoice;
+            if (string.IsNullOrEmpty(ttsVoice))
+                ttsVoice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
+            // CorvaxGoob-TTS-End
+
+
             // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
             var markingsRaw = profile.Markings?.Deserialize<List<string>>();
 
@@ -285,7 +292,7 @@ namespace Content.Server.Database
                 profile.Height, // Goobstation: port EE height/width sliders
                 profile.Width, // Goobstation: port EE height/width sliders
                 profile.CustomSpecies, // Erida
-                voice,
+                profile.TTSVoice,
                 profile.Age,
                 sex,
                 gender,
@@ -335,7 +342,7 @@ namespace Content.Server.Database
             profile.NSFWOOCFlavorText = humanoid.NsfwOOCFlavorText;
             profile.NSFWTagsFlavorText = humanoid.NsfwTagsFlavorText;
             // Orion-End
-            profile.Voice = humanoid.Voice; // Corvax-voice
+            profile.TTSVoice = humanoid.TTSVoice; // Corvax-voice
             profile.Species = humanoid.Species;
             profile.Height = humanoid.Height; // Goobstation: port EE height/width sliders
             profile.Width = humanoid.Width; // Goobstation: port EE height/width sliders

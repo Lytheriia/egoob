@@ -26,6 +26,7 @@ using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Sequence;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
+using Content.Shared._CorvaxGoob.TTS;
 using Robust.Shared.Enums;
 
 namespace Content.Shared.Humanoid;
@@ -50,6 +51,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     [Dependency] private readonly GrammarSystem _grammarSystem = default!;
     [Dependency] private readonly IdentitySystem _identity = default!;
 
+    // CorvaxGoob-TTS-Start
+    public const string DefaultVoice = "Garithos";
+    public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
+    {
+        {Sex.Male, "Garithos"},
+        {Sex.Female, "Maiev"},
+        {Sex.Unsexed, "Myron"},
+    };
+    // CorvaxGoob-TTS-End
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
     public static readonly ProtoId<BarkPrototype> DefaultBarkVoice = "Alto"; // Goob Station - Barks
 
@@ -80,11 +90,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         yamlStream.Load(reader);
 
         var root = yamlStream.Documents[0].RootNode;
-        var dataNode = root.ToDataNode();
-        if (dataNode is MappingDataNode mapping)
-            NormalizeEridaProfile(mapping); // Erida - Profile import compat
-
-        var export = _serManager.Read<HumanoidProfileExport>(dataNode, notNullableOverride: true);
+        var export = _serManager.Read<HumanoidProfileExport>(root.ToDataNode(), notNullableOverride: true);
 
         /*
          * Add custom handling here for forks / version numbers if you care.
@@ -173,10 +179,10 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
     {
-        // Goob Station - Identity Fix
-        // Fix for incorrect pronouns PR #5999
+        // CorvaxGoob
+        // Fix for incorrect pronouns PR #564
         var identity = ("user", Identity.Entity(uid, EntityManager));
-        var species = ("species", GetSpeciesRepresentation(component.Species, component.CustomSpecies).ToLower());
+        var species = ("species", GetSpeciesRepresentation(component.Species).ToLower());
         var age = ("age", GetAgeRepresentation(component.Species, component.Age));
 
         // WWDP EDIT
@@ -599,7 +605,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         EnsureDefaultMarkings(uid, humanoid);
-        SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
+        SetTTSVoice(uid, profile.TTSVoice, humanoid); // CorvaxGoob-TTS
+        // CorvaxGoob-Revert : DB conflicts
+        // SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
@@ -609,13 +617,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         humanoid.Age = profile.Age;
 
+        // CorvaxGoob-Clearing
         // begin Goobstation: port EE height/width sliders
         var species = _proto.Index(humanoid.Species);
 
-        if (profile.Height <= 0 || profile.Width <= 0)
-            SetScale(uid, new Vector2(species.DefaultWidth, species.DefaultHeight), true, humanoid);
-        else
-            SetScale(uid, new Vector2(profile.Width, profile.Height), true, humanoid);
+        SetScale(uid, new Vector2(species.DefaultWidth, species.DefaultHeight), true, humanoid);
 
         _heightAdjust.SetScale(uid, new Vector2(humanoid.Width, humanoid.Height));
         // end Goobstation: port EE height/width sliders
@@ -656,6 +662,18 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         if (sync)
             Dirty(uid, humanoid);
     }
+
+    // CorvaxGoob-TTS-Start
+    // ReSharper disable once InconsistentNaming
+    public void SetTTSVoice(EntityUid uid, string voiceId, HumanoidAppearanceComponent humanoid)
+    {
+        if (!TryComp<TTSComponent>(uid, out var comp))
+            return;
+
+        humanoid.Voice = voiceId;
+        comp.VoicePrototypeId = voiceId;
+    }
+    // CorvaxGoob-TTS-End
 
     private void EnsureDefaultMarkings(EntityUid uid, HumanoidAppearanceComponent? humanoid)
     {
@@ -714,7 +732,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         EnsureComp<SpeechSynthesisComponent>(uid, out var comp);
         comp.VoicePrototypeId = voicePrototypeId;
-        humanoid.BarkVoice = voicePrototypeId;
+        // humanoid.BarkVoice = voicePrototypeId; // CorvaxGoob-Revert : DB conflicts
         Dirty(uid, comp);
     }
     #endregion
@@ -723,18 +741,15 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
-    public string GetSpeciesRepresentation(string speciesId, string customSpecies) // Erida added customSpecies
+    public string GetSpeciesRepresentation(string speciesId)
     {
-        if (!_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
+        if (_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
         {
-            Log.Error("Tried to get representation of unknown species: {speciesId}");
-            return Loc.GetString("humanoid-appearance-component-unknown-species");
+            return Loc.GetString(species.Name);
         }
 
-        if (string.IsNullOrEmpty(customSpecies))
-            return Loc.GetString(species.Name);
-        else
-            return customSpecies;
+        Log.Error("Tried to get representation of unknown species: {speciesId}");
+        return Loc.GetString("humanoid-appearance-component-unknown-species");
     }
 
     public string GetAgeRepresentation(string species, int age)

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared.Humanoid;
 using Content.Shared.Speech;
 using Content.Shared.StatusIcon; // Goobstation
 using Robust.Shared.Prototypes;
@@ -40,6 +41,12 @@ public sealed partial class VoiceMaskComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId Action = "ActionChangeVoiceMask";
+
+    // CorvaxGoob-TTS-Start
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public string VoiceId = SharedHumanoidAppearanceSystem.DefaultVoice;
+    // CorvaxGoob-TTS-End
 
     /// <summary>
     ///     Reference to the action.

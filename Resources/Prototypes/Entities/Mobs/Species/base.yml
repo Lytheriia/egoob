@@ -353,6 +353,7 @@
     - Parasite
   - type: ObraDinnBody # Goobstation
   # </Goobstation>
+  - type: TTS # Erida 
 
 - type: entity
   save: false

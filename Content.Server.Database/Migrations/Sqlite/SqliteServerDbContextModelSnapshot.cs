@@ -1291,15 +1291,15 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
 
+                    b.Property<string>("TTSVoice")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("ttsvoice");
+
                     b.Property<string>("TagsFlavorText")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("tags_flavor_text");
-
-                    b.Property<string>("Voice")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("voice");
 
                     b.Property<float>("Width")
                         .HasColumnType("REAL")
