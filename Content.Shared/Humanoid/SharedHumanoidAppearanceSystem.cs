@@ -55,9 +55,9 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     public const string DefaultVoice = "Garithos";
     public static readonly Dictionary<Sex, string> DefaultSexVoice = new()
     {
-        {Sex.Male, "Garithos"},
-        {Sex.Female, "Maiev"},
-        {Sex.Unsexed, "Myron"},
+        { Sex.Male, "Aidar" },
+        { Sex.Female, "Kseniya" },
+        { Sex.Unsexed, "Baya" },
     };
     // CorvaxGoob-TTS-End
     public static readonly ProtoId<SpeciesPrototype> DefaultSpecies = "Human";
@@ -90,8 +90,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         yamlStream.Load(reader);
 
         var root = yamlStream.Documents[0].RootNode;
-        var export = _serManager.Read<HumanoidProfileExport>(root.ToDataNode(), notNullableOverride: true);
+        var dataNode = root.ToDataNode();
+        if (dataNode is MappingDataNode mapping)
+            NormalizeEridaProfile(mapping); // Erida - Profile import compat
 
+        var export = _serManager.Read<HumanoidProfileExport>(dataNode, notNullableOverride: true);
         /*
          * Add custom handling here for forks / version numbers if you care.
          */
@@ -182,7 +185,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         // CorvaxGoob
         // Fix for incorrect pronouns PR #564
         var identity = ("user", Identity.Entity(uid, EntityManager));
-        var species = ("species", GetSpeciesRepresentation(component.Species).ToLower());
+        var species = ("species", GetSpeciesRepresentation(component.Species, component.CustomSpecies).ToLower());
         var age = ("age", GetAgeRepresentation(component.Species, component.Age));
 
         // WWDP EDIT
@@ -606,8 +609,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         EnsureDefaultMarkings(uid, humanoid);
         SetTTSVoice(uid, profile.TTSVoice, humanoid); // CorvaxGoob-TTS
-        // CorvaxGoob-Revert : DB conflicts
-        // SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
+        SetBarkVoice(uid, profile.BarkVoice, humanoid); // Goob Station - Barks
 
         humanoid.Gender = profile.Gender;
         if (TryComp<GrammarComponent>(uid, out var grammar))
@@ -622,6 +624,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         var species = _proto.Index(humanoid.Species);
 
         SetScale(uid, new Vector2(species.DefaultWidth, species.DefaultHeight), true, humanoid);
+
+        // Erida start
+        humanoid.Height = profile.Height;
+        humanoid.Width = profile.Width;
+        // Erida end
 
         _heightAdjust.SetScale(uid, new Vector2(humanoid.Width, humanoid.Height));
         // end Goobstation: port EE height/width sliders
@@ -732,7 +739,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
 
         EnsureComp<SpeechSynthesisComponent>(uid, out var comp);
         comp.VoicePrototypeId = voicePrototypeId;
-        // humanoid.BarkVoice = voicePrototypeId; // CorvaxGoob-Revert : DB conflicts
+        humanoid.BarkVoice = voicePrototypeId;
         Dirty(uid, comp);
     }
     #endregion
@@ -741,15 +748,18 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
-    public string GetSpeciesRepresentation(string speciesId)
+    public string GetSpeciesRepresentation(string speciesId, string customSpecies) // Erida added customSpecies
     {
-        if (_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
+        if (!_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
         {
-            return Loc.GetString(species.Name);
+            Log.Error("Tried to get representation of unknown species: {speciesId}");
+            return Loc.GetString("humanoid-appearance-component-unknown-species");
         }
 
-        Log.Error("Tried to get representation of unknown species: {speciesId}");
-        return Loc.GetString("humanoid-appearance-component-unknown-species");
+        if (string.IsNullOrEmpty(customSpecies))
+            return Loc.GetString(species.Name);
+        else
+            return customSpecies;
     }
 
     public string GetAgeRepresentation(string species, int age)
