@@ -1,20 +1,20 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: ent-HypoBlueShield
-  parent: BaseItem
-  description: ent-HypoBlueShield.desc
   id: HypoBlueShield
+  name: hypospray "Blue Shield"
+  parent: BaseItem
+  description: A sterile injector for rapid administration of drugs to patients.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Specific/Medical/hypospray_blueshield.rsi
     state: hypoblueshield
   - type: Item
     sprite: _Erida/Objects/Specific/Medical/hypospray_blueshield.rsi
-  - type: Solution
-    id: hypospray
-    solution:
-      maxVol: 15
+  - type: SolutionContainerManager
+    solutions:
+      hypospray:
+        maxVol: 15
   - type: RefillableSolution
     solution: hypospray
   - type: ExaminableSolution
