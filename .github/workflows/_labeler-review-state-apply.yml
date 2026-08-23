@@ -63,8 +63,8 @@ jobs:
         with:
           pr_number: ${{ steps.review_event_pr.outputs.output }}
           evaluations: approved
-          pass_labels: "S: Approved"
-          pass_labels_cleanup: "S: Needs Review,S: Awaiting Changes"
+          pass_labels: "Approved"
+          pass_labels_cleanup: "Needs Review,Awaiting Changes"
 
       - name: Add awaiting changes label
         if: >-
@@ -73,7 +73,7 @@ jobs:
         uses: step-security/action-add-labels@v1.1.1
         with:
           number: ${{ steps.review_event_pr.outputs.output }}
-          labels: "S: Awaiting Changes"
+          labels: "Awaiting Changes"
 
       - name: Add needs review label
         if: >-
@@ -82,7 +82,7 @@ jobs:
         uses: step-security/action-add-labels@v1.1.1
         with:
           number: ${{ steps.review_event_pr.outputs.output }}
-          labels: "S: Needs Review"
+          labels: "Needs Review"
 
       - name: Remove stale review labels after requested changes
         if: >-
@@ -92,8 +92,8 @@ jobs:
         with:
           number: ${{ steps.review_event_pr.outputs.output }}
           labels: |
-            S: Needs Review
-            S: Approved
+            Needs Review
+            Approved
 
       - name: Remove stale review labels while review is required
         if: >-
@@ -103,5 +103,5 @@ jobs:
         with:
           number: ${{ steps.review_event_pr.outputs.output }}
           labels: |
-            S: Awaiting Changes
-            S: Approved
+            Awaiting Changes
+            Approved

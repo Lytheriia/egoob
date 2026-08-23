@@ -80,7 +80,7 @@ jobs:
         uses: step-security/action-add-labels@v1.1.1
         with:
           number: ${{ steps.pr.outputs.number }}
-          labels: "S: Needs Review"
+          labels: "Needs Review"
 
       - name: Remove stale review state labels
         if: steps.pr.outputs.proceed == 'true'
@@ -88,5 +88,5 @@ jobs:
         with:
           number: ${{ steps.pr.outputs.number }}
           labels: |
-            S: Awaiting Changes
-            S: Approved
+            Awaiting Changes
+            Approved

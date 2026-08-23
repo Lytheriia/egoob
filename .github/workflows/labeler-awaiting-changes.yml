@@ -23,12 +23,12 @@ jobs:
         uses: step-security/action-add-labels@v1.1.1
         with:
           number: ${{ github.event.pull_request.number }}
-          labels: "S: Awaiting Changes"
+          labels: "Awaiting Changes"
 
       - name: Remove stale review state labels
         uses: step-security/action-remove-labels@v1.3.1
         with:
           number: ${{ github.event.pull_request.number }}
           labels: |
-            S: Needs Review
-            S: Approved
+            Needs Review
+            Approved
