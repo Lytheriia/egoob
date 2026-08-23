@@ -3,8 +3,8 @@
 - type: entity
   parent: [ClothingOuterArmorBlueshield, ClothingOuterStorageBase, BaseBlueShieldContraband]
   id: ClothingOuterCoatArmorBlueShield
-  name: ent-ClothingOuterCoatArmorBlueShield
-  description: ent-ClothingOuterCoatArmorBlueShield.desc
+  name: armored overcoat officer "Blueshield"
+  description: An armored overcoat produced for elite Blueshield officers.
   components:
   - type: Sprite
     sprite: _Erida/Clothing/OuterClothing/Coats/bluecoat.rsi

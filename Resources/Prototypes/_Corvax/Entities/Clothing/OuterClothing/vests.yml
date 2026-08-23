@@ -3,8 +3,8 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterVestArmorMedSec # Erida edit
-  name: ent-ClothingOuterVestArmorMedSec
-  description: ent-ClothingOuterVestArmorMedSec.desc
+  name: security medic armor vest
+  description: A security medic's armor vest, with little pockets for little things.
   components:
   - type: Sprite
     sprite: _Corvax/Clothing/OuterClothing/Vests/armor_sec_med.rsi

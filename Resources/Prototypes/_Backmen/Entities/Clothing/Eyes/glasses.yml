@@ -3,8 +3,8 @@
 - type: entity
   parent: [ClothingEyesBase, ShowSecurityIcons, BaseBlueShieldContraband]
   id: ClothingEyesGlassesBlueShield
-  name: ent-ClothingEyesGlassesBlueShield
-  description: ent-ClothingEyesGlassesBlueShield.desc
+  name: officer "Blueshield" glasses
+  description: Improved security glasses, in blue coloring and with a built-in health scanner.
   components:
   - type: Sprite
     sprite: _Erida/Clothing/Eyes/Glasses/blueglasses.rsi
@@ -21,8 +21,8 @@
 - type: entity
   parent: ClothingEyesGlassesBlueShield
   id: ClothingEyesBlueshieldVisor
-  name: ent-ClothingEyesBlueshieldVisor
-  description: ent-ClothingEyesBlueshieldVisor.desc
+  name: officer "Blueshield" visor
+  description: Improved security technical visor, in blue coloring and built-in health scanner included.
   components:
   - type: Sprite
     sprite: _Erida/Clothing/Eyes/Glasses/bluevisor.rsi

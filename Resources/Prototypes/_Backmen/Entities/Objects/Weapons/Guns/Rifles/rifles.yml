@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: ent-WeaponRifleUTAPM1
+  name: UTAP Mark 1
   parent: BaseWeaponRifle
   id: WeaponRifleUTAPM1
-  suffix: Automat
-  description: ent-WeaponRifleUTAPM1.desc
+  suffix: Automatic
+  description: An assault rifle manufactured by "Interdyne", a lightweight Mark II variant, often used by private security organizations.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Weapons/Gunsx64/Rifles/utap-mark1/big.rsi

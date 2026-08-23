@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: ent-WeaponShotgunGuardian
+  name: Guardian-17
   parent: BaseWeaponShotgun
   id: WeaponShotgunGuardian
   suffix: Shotgun
-  description: ent-WeaponShotgunGuardian.desc
+  description: The U-Type Guardian shotgun, manufactured by "Interdyne". Its receiver is made from advanced composite materials, making it lightweight and easy to handle.
   components:
   - type: Sprite
     sprite: _Erida/Objects/Weapons/Gunsx64/Shotguns/guard-17/big.rsi

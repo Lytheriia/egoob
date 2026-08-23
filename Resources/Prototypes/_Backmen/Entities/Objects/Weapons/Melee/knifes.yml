@@ -1,10 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  name: ent-CombatKnifeSpetsnaz
-  parent: CombatKnife
   id: CombatKnifeSpetsnaz
-  description: ent-CombatKnifeSpetsnaz.desc
+  parent: CombatKnife
+  name: Tactical Knife
+  description: A knife designed for special operations operatives. Sharp!
   components:
   - type: EmitSoundOnLand
     sound:

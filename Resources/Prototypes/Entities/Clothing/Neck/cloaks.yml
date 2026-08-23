@@ -58,8 +58,8 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckCloakCe # Erida edit
-  name: ent-ClothingNeckCloakCe
-  description: ent-ClothingNeckCloakCe.desc
+  name: chief engineer's cloak
+  description: A dark green cloak with light blue ornaments, given to those who proved themselves to master the precise art of engineering.
   components:
   - type: Sprite
     sprite: Clothing/Neck/Cloaks/ce.rsi

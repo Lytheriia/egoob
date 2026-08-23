@@ -3,8 +3,8 @@
 - type: entity
   parent: [ClothingUniformBase, BaseBlueShieldContraband]
   id: ClothingUniformJumpsuitBlueShield
-  name: ent-ClothingUniformJumpsuitBlueShield
-  description: ent-ClothingUniformJumpsuitBlueShield.desc
+  name: officer "Blueshield"'s jumpsuit
+  description: A jumpsuit specifically for a Blueshield officers.
   components:
   - type: Sprite
     sprite: _Erida/Clothing/Uniforms/jumpsuit/bluesuit.rsi
@@ -14,8 +14,8 @@
 - type: entity
   parent: [ClothingUniformBase, BaseBlueShieldContraband]
   id: ClothingUniformBlueShieldTurtleneck
-  name: ent-ClothingUniformBlueShieldTurtleneck
-  description: ent-ClothingUniformBlueShieldTurtleneck.desc
+  name: officer "Blueshield"'s turtleneck
+  description: A turtleneck specifically for a Blueshield officers.
   components:
   - type: Sprite
     sprite: _Erida/Clothing/Uniforms/jumpsuit/bluesuit-alt.rsi

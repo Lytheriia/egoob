@@ -36,8 +36,8 @@
 - type: entity
   parent: [ClothingNeckBase, BaseCommandContraband]
   id: ClothingNeckMantleCE # Erida edit
-  name: ent-ClothingNeckMantleCE
-  description: ent-ClothingNeckMantleCE.desc
+  name: chief engineer's green cloak
+  description: A green cloak with yellow and blue adornments, given to those who proved themselves to master the precise art of engineering.
   components:
   - type: Sprite
     sprite: Clothing/Neck/mantles/cemantle.rsi
@@ -108,4 +108,4 @@
   - type: Sprite
     sprite: _Erida/Clothing/Neck/mantles/mantle.rsi
   - type: Clothing
-    sprite: _Erida/Clothing/Neck/mantles/mantle.rsi 
+    sprite: _Erida/Clothing/Neck/mantles/mantle.rsi
