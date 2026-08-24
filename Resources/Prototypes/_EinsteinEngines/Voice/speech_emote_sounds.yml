@@ -82,7 +82,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: SlimeMaleScreams
+      collection: ShadowkinScreams # Erida 
     Laugh:
       collection: MaleLaugh
     Sneeze:
@@ -130,7 +130,7 @@
     variation: 0.125
   sounds:
     Scream:
-      collection: SlimeFemaleScreams
+      collection: ShadowkinScreams # Erida
     Laugh:
       collection: MaleLaugh
     Sneeze:

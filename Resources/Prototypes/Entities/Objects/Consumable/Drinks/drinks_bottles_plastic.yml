@@ -23,6 +23,7 @@
   - type: Tag
     tags:
     - DrinkBottle # Needed to fit in the soda dispenser, needs a better name
+    - MolotovConstruction # Erida
   - type: Construction #Goob content
     graph: MolotovConstruction
     node: start

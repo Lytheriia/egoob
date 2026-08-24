@@ -19,6 +19,7 @@
 - type: stack
   parent: BaseSmallStack
   id: Gauze
+  maxCount: 15 # Erida
   name: stack-gauze
   icon: { sprite: "/Textures/_Erida/Objects/Specific/Medical/medical.rsi", state: gauze }
   spawn: Gauze
