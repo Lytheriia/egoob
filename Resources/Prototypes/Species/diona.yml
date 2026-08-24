@@ -23,8 +23,6 @@
     Head: MobDionaHead
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobDionaChest
     Groin: MobDionaGroin
     Eyes: MobDionaEyes
@@ -47,12 +45,6 @@
       points: 10
       required: false
     HeadSide:
-      points: 10
-      required: false
-    UndergarmentTop:
-      points: 10
-      required: false
-    UndergarmentBottom:
       points: 10
       required: false
     Chest:

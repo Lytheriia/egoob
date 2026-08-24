@@ -23,8 +23,6 @@
     Head: MobReptilianHead
     Face: MobHumanoidAnyMarking # Goob?
     Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobReptilianChest
     Groin: MobReptilianGroin
     HeadTop: MobHumanoidAnyMarking
@@ -62,12 +60,6 @@
       required: false
     HeadSide:
       points: 10 # WWDP-Edit
-      required: false
-    UndergarmentTop:
-      points: 10
-      required: false
-    UndergarmentBottom:
-      points: 10
       required: false
     Chest:
       points: 10

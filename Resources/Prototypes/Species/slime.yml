@@ -21,8 +21,6 @@
     HeadSide: MobHumanoidAnyMarking
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobSlimeChest
     Groin: MobSlimeGroin
     Eyes: MobHumanoidEyes
@@ -34,6 +32,8 @@
     RLeg: MobSlimeRLeg
     LFoot: MobSlimeLFoot
     RFoot: MobSlimeRFoot
+    HeadTop: MobHumanoidAnyMarking # Erida
+    Tail: MobHumanoidAnyMarking # Erida
 
 - type: markingPoints
   id: MobSlimeMarkingLimits
@@ -54,12 +54,6 @@
       points: 10
       required: false
     Chest:
-      points: 10
-      required: false
-    UndergarmentBottom: # Goob
-      points: 10
-      required: false
-    UndergarmentTop: # Goob
       points: 10
       required: false
     RightLeg:

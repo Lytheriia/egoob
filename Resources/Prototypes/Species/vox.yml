@@ -25,8 +25,6 @@
     Snout: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobVoxChest
     Groin: MobVoxGroin
     Eyes: MobVoxEyes
@@ -67,12 +65,6 @@
       points: 10
       required: true
       defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
-    UndergarmentTop:
-      points: 10
-      required: false
-    UndergarmentBottom:
-      points: 10
-      required: false
     Chest:
       points: 10
       required: false

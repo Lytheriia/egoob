@@ -18,8 +18,6 @@
     requiredLegs: 2
   - type: HumanoidAppearance
     species: Vox
-    undergarmentTop: UndergarmentTopTanktopVox
-    undergarmentBottom: UndergarmentBottomBoxersVox
     markingsDisplacement: # Goobstation?
       Hair:
         sizeMaps:
@@ -318,8 +316,6 @@
   components:
   - type: HumanoidAppearance
     species: Vox
-    undergarmentTop: UndergarmentTopTanktopVox
-    undergarmentBottom: UndergarmentBottomBoxersVox
     markingsDisplacement: # Goobstation?
       Hair:
         sizeMaps:

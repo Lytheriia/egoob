@@ -33,8 +33,6 @@
     Hair: MobHumanoidAnyMarking # Erida
     FacialHair: MobHumanoidAnyMarking # Erida
     Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobMothChest
     Groin: MobMothGroin # Goob
     HeadTop: MobHumanoidAnyMarking
@@ -80,12 +78,6 @@
       points: 10
       required: false
     Head:
-      points: 10
-      required: false
-    UndergarmentTop:
-      points: 10
-      required: false
-    UndergarmentBottom:
       points: 10
       required: false
     Chest:

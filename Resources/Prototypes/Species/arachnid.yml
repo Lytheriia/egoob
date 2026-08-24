@@ -23,8 +23,6 @@
     TailOversuit: MobHumanoidAnyMarking # floof
     Head: MobArachnidHead
     Snout: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobArachnidChest
     Groin: MobArachnidGroin
     Hair: MobHumanoidAnyMarking # imp, arachnid hair arachnid hair!
@@ -66,12 +64,6 @@
       defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:
       points: 100
-      required: false
-    UndergarmentBottom:
-      points: 10
-      required: false
-    UndergarmentTop:
-      points: 10
       required: false
     RightLeg:
       points: 10

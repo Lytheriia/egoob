@@ -37,8 +37,6 @@
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
-    UndergarmentBottom: MobHumanoidAnyMarking
-    UndergarmentTop: MobHumanoidAnyMarking
     Chest: MobYowieChest
     Groin: MobYowieGroin
     Eyes: MobHumanoidEyes
@@ -76,12 +74,6 @@
       required: false
     Chest:
       points: 100
-      required: false
-    UndergarmentBottom:
-      points: 10
-      required: false
-    UndergarmentTop:
-      points: 10
       required: false
     RightLeg:
       points: 10
