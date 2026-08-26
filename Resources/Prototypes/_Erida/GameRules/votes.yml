@@ -43,6 +43,11 @@
         action: GameModeStart
         gamePresetProto: SecretPlusMid
 
+    - label: secretplus-lowpop-title
+      answerData:
+        action: GameModeStart
+        gamePresetProto: SecretPlusLowpop
+
 - type: autoVotes
   id: GameRuleGreenshift
   title: autovote-gamerules-title
@@ -57,7 +62,7 @@
         action: GameModeStart
         gamePresetProto: TheGhost
 
-    - label: secretplus-lowpop-title
+    - label: greenshift-title
       answerData:
         action: GameModeStart
-        gamePresetProto: SecretPlusLowpop
+        gamePresetProto: Greenshift
