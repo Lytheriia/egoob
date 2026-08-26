@@ -6,7 +6,6 @@ using Robust.Shared.Configuration;
 
 namespace Content.Shared._Erida.CCVar;
 
-[CVarDefs]
 public sealed partial class ECCVars
 {
     public static readonly CVarDef<bool> ShouldPromoteAllFlags =

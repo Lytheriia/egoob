@@ -14,20 +14,12 @@ namespace Content.Server._Erida.Discord;
 
 public sealed partial class EridaWebhooks
 {
-    public static readonly string NOT_FOUND = Loc.GetString("ban-webhook-unknown-error");
     public static readonly int UnbanColor = 2263842; // Dark green
 
     public static readonly Dictionary<BanType, int> BanTypeColor = new()
     {
         { BanType.Server, 16646146 }, // Red
         { BanType.Role, 3512539 }, // Blue
-    };
-
-    private static WebhookEmbedField EmbedSpacer => new()
-    {
-        Name = "\u200b",
-        Value = "\u200b",
-        Inline = true,
     };
 
     public void SendBan(CreateBanInfo banInfo, BanDef banDef)
@@ -187,18 +179,6 @@ public sealed partial class EridaWebhooks
         }
     }
 
-    private async Task<string> GetAdminName(NetUserId? id)
-    {
-        if (id is not { } admin)
-            return Loc.GetString("ban-webhook-unknown");
-
-        if (_playerManager.TryGetPlayerData(admin, out var adminData))
-            return adminData.UserName;
-
-        var locatedData = await _playerLocator.LookupIdAsync(admin);
-        return locatedData?.Username ?? Loc.GetString("ban-webhook-unknown");
-    }
-
     private string GetRoleName(BanRoleDef roleDef)
     {
         return roleDef.RoleType switch
@@ -211,15 +191,5 @@ public sealed partial class EridaWebhooks
                                 : roleDef.RoleId,
             _ => roleDef.ToString(),
         };
-    }
-
-    private string CodeBlockedSmall(string value)
-    {
-        return $"``{value}``";
-    }
-
-    private string CodeBlocked(string value)
-    {
-        return $"```{value}```";
     }
 }

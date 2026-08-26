@@ -1,11 +1,11 @@
 # System localization
 
 erida-webhook-server-name = МК: Эрида [18+]
+erida-webhook-unknown = Неизвестно
 
 ban-webhook-unknown-error = NotFound
-ban-webhook-unknown = Неизвестно
 
-# Typed strings
+# Titles
 
 ban-webhook-role-ban-role = 🚨 Бан ролей
 ban-webhook-role-ban-server = 🚨 Серверный бан

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Server._Erida.Discord;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Shared.Administration;
 using Content.Shared.Players.PlayTimeTracking;
@@ -145,6 +146,7 @@ public sealed class PlayTimeAddRoleCommand : IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly PlayTimeTrackingManager _playTimeTracking = default!;
+    [Dependency] private readonly EridaWebhooks _webhooks = default!; // Erida edit
 
     public string Command => "playtime_addrole";
     public string Description => Loc.GetString("cmd-playtime_addrole-desc");
@@ -168,6 +170,7 @@ public sealed class PlayTimeAddRoleCommand : IConsoleCommand
         var role = args[1];
 
         var m = PlayTimeCommandUtilities.CountMinutes(args[2]);
+        var timeSpan = TimeSpan.FromMinutes(m); // Erida edit
 
         _playTimeTracking.AddTimeToTracker(player, role, TimeSpan.FromMinutes(m));
         var time = _playTimeTracking.GetPlayTimeForTracker(player, role);
@@ -175,6 +178,12 @@ public sealed class PlayTimeAddRoleCommand : IConsoleCommand
             ("username", userName),
             ("role", role),
             ("time", time)));
+
+        // Erida start
+        Dictionary<string, TimeSpan> pairs = new() { { role, timeSpan } };
+        if (shell.Player != null)
+            _webhooks.SendTimeChangedMessage(shell.Player.UserId, player.UserId, pairs);
+        // Erida end
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
