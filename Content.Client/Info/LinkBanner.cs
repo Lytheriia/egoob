@@ -10,6 +10,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
+using Robust.Client.Console;
 
 namespace Content.Client.Info
 {
@@ -58,6 +59,15 @@ namespace Content.Client.Info
                 guidebookController.ToggleGuidebook();
             };
             buttons.AddChild(guidebookButton);
+
+            // Erida start
+            var pollsButton = new Button() { Text = Loc.GetString("server-info-polls-button") };
+            pollsButton.OnPressed += _ =>
+            {
+                IoCManager.Resolve<IClientConsoleHost>().ExecuteCommand("polls");
+            };
+            buttons.AddChild(pollsButton);
+            // Erida end
 
             var changelogButton = new ChangelogButton();
             changelogButton.OnPressed += args => UserInterfaceManager.GetUIController<ChangelogUIController>().ToggleWindow();

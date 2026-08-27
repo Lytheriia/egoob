@@ -7,3 +7,5 @@ server-info-forum-button = Форум
 server-info-telegram-button = Telegram
 server-info-report-button = Сообщить об ошибке
 server-info-credits-button = Авторы
+
+server-info-polls-button = Опросы
