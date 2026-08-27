@@ -28,6 +28,7 @@ public sealed partial class EridaWebhooks : IPostInjectInit
     private WebhookIdentifier? _webhookIdentifierBan;
     private WebhookIdentifier? _webhookIdentifierPlayTime;
     private WebhookIdentifier? _webhookIdentifierTokens;
+    private WebhookIdentifier? _webhookIdentifierPermissions;
 
     public void PostInject()
     {
@@ -46,6 +47,9 @@ public sealed partial class EridaWebhooks : IPostInjectInit
 
         _cfg.OnValueChanged(ECCVars.DiscordTokensWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierTokens = wi), true);
+
+        _cfg.OnValueChanged(ECCVars.DiscordTokensPermissions,
+            CreateWebhookHandler(wi => _webhookIdentifierPermissions = wi), true);
     }
 
     private Action<string> CreateWebhookHandler(Action<WebhookIdentifier?> setIdentifier)
@@ -87,9 +91,18 @@ public sealed partial class EridaWebhooks : IPostInjectInit
         { WebhookType.PlayTimeAdd, ColorToDiscordInt(Color.FromHex("#009455")) },
         { WebhookType.PlayTimeRem, ColorToDiscordInt(Color.FromHex("#007041")) },
         { WebhookType.PlayTimeSet, ColorToDiscordInt(Color.FromHex("#3d9a73")) },
+
         { WebhookType.CoinsAdd, ColorToDiscordInt(Color.FromHex("#009E98")) },
         { WebhookType.CoinsRem, ColorToDiscordInt(Color.FromHex("#00706C")) },
-        { WebhookType.CoinsSet, ColorToDiscordInt(Color.FromHex("#0d3937")) }
+        { WebhookType.CoinsSet, ColorToDiscordInt(Color.FromHex("#0d3937")) },
+
+        { WebhookType.AdminRoleAdd, ColorToDiscordInt(Color.FromHex("#711300")) },
+        { WebhookType.AdminRoleRem, ColorToDiscordInt(Color.FromHex("#a61c00")) },
+        { WebhookType.AdminRoleUpdate, ColorToDiscordInt(Color.FromHex("#bb1f00")) },
+
+        { WebhookType.AdminAdd, ColorToDiscordInt(Color.FromHex("#711300")) },
+        { WebhookType.AdminRem, ColorToDiscordInt(Color.FromHex("#a61c00")) },
+        { WebhookType.AdminUpdate, ColorToDiscordInt(Color.FromHex("#bb1f00")) }
     };
 
     private enum WebhookType : byte
@@ -97,9 +110,18 @@ public sealed partial class EridaWebhooks : IPostInjectInit
         PlayTimeAdd,
         PlayTimeRem,
         PlayTimeSet,
+
         CoinsAdd,
         CoinsRem,
-        CoinsSet
+        CoinsSet,
+
+        AdminRoleAdd,
+        AdminRoleRem,
+        AdminRoleUpdate,
+
+        AdminAdd,
+        AdminRem,
+        AdminUpdate
     }
 
     #endregion

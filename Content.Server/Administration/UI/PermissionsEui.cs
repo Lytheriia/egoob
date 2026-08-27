@@ -11,6 +11,7 @@ using Robust.Server.Player;
 using Robust.Shared.Network;
 using DbAdminRank = Content.Server.Database.AdminRank;
 using static Content.Shared.Administration.PermissionsEuiMsg;
+using Content.Server._Erida.Discord;
 
 
 namespace Content.Server.Administration.UI
@@ -21,6 +22,7 @@ namespace Content.Server.Administration.UI
         [Dependency] private readonly IServerDbManager _db = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private readonly EridaWebhooks _webhooks = default!; // Erida edit
 
         private readonly ISawmill _sawmill;
         private bool _isLoading;
@@ -156,6 +158,8 @@ namespace Content.Server.Administration.UI
             await _db.RemoveAdminRankAsync(rr.Id);
 
             _adminManager.ReloadAdminsWithRank(rr.Id);
+
+            _webhooks.SendRankDeletedMessage(Player.UserId, rank); // Erida edit
         }
 
         private async Task HandleUpdateAdminRank(UpdateAdminRank ur)
@@ -178,6 +182,17 @@ namespace Content.Server.Administration.UI
                 return;
             }
 
+            // Erida start
+            DbAdminRank oldRank = new()
+            {
+                Id = rank.Id,
+                Flags = rank.Flags,
+                Name = rank.Name,
+                Admins = rank.Admins
+
+            };
+            // Erida end
+
             rank.Flags = GenRankFlagList(ur.Flags);
             rank.Name = ur.Name;
 
@@ -187,6 +202,8 @@ namespace Content.Server.Administration.UI
             _sawmill.Info($"{Player} updated admin rank {rank.Name}/{flagText}.");
 
             _adminManager.ReloadAdminsWithRank(ur.Id);
+
+            _webhooks.SendRankChangedMessage(Player.UserId, oldRank, rank); // Erida add
         }
 
         private async Task HandleAddAdminRank(AddAdminRank ar)
@@ -207,6 +224,8 @@ namespace Content.Server.Administration.UI
 
             var flagText = string.Join(' ', AdminFlagsHelper.FlagsToNames(ar.Flags).Select(f => $"+{f}"));
             _sawmill.Info($"{Player} added admin rank {rank.Name}/{flagText}.");
+
+            _webhooks.SendRankCreatedMessage(Player.UserId, rank); // Erida edit
         }
 
         private async Task HandleRemoveAdmin(RemoveAdmin ra)
@@ -233,6 +252,8 @@ namespace Content.Server.Administration.UI
             {
                 _adminManager.ReloadAdmin(player);
             }
+
+            _webhooks.SendAdminDeletedMessage(Player.UserId, admin); // Erida edit
         }
 
         private async Task HandleUpdateAdmin(UpdateAdmin ua)
@@ -254,6 +275,18 @@ namespace Content.Server.Administration.UI
                 _sawmill.Warning($"{Player} tried to modify higher-ranked admin {ua.UserId.ToString()}");
                 return;
             }
+
+            // Erida start
+            Admin oldAdmin = new()
+            {
+                Title = admin.Title,
+                AdminRankId = admin.AdminRankId,
+                Flags = admin.Flags,
+                Suspended = admin.Suspended,
+                AdminRank = admin.AdminRank,
+                UserId = admin.UserId
+            };
+            // Erida
 
             admin.Title = ua.Title;
             admin.AdminRankId = ua.RankId;
@@ -279,6 +312,14 @@ namespace Content.Server.Administration.UI
             {
                 _adminManager.ReloadAdmin(player);
             }
+            // Erida start
+            if (admin.AdminRankId != null)
+                admin.AdminRank = await _db.GetAdminRankAsync(admin.AdminRankId.Value);
+            else
+                admin.AdminRank = null;
+
+            _webhooks.SendAdminChangedMessage(Player.UserId, oldAdmin, admin);
+            // Erida end
         }
 
         private async Task HandleCreateAdmin(AddAdmin ca)
@@ -354,6 +395,13 @@ namespace Content.Server.Administration.UI
             {
                 _adminManager.ReloadAdmin(player);
             }
+
+            // Erida start
+            if (admin.AdminRankId != null)
+                admin.AdminRank = await _db.GetAdminRankAsync(admin.AdminRankId.Value);
+
+            _webhooks.SendAdminAddMessage(Player.UserId, admin);
+            // Erida end
         }
 
         // ReSharper disable once ParameterOnlyUsedForPreconditionCheck.Local

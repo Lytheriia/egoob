@@ -26,4 +26,10 @@ public sealed partial class ECCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordTokensWebhook =
         CVarDef.Create("discord.tokens_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Webhook for all logs with permissions panel
+    /// </summary>
+    public static readonly CVarDef<string> DiscordTokensPermissions =
+        CVarDef.Create("discord.tokens_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }
