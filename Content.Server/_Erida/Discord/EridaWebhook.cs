@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Content.Server.Administration;
 using Content.Server.Database;
 using Content.Server.Discord;
-using Content.Server.Roles;
 using Content.Shared._Erida.CCVar;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -28,6 +27,7 @@ public sealed partial class EridaWebhooks : IPostInjectInit
 
     private WebhookIdentifier? _webhookIdentifierBan;
     private WebhookIdentifier? _webhookIdentifierPlayTime;
+    private WebhookIdentifier? _webhookIdentifierTokens;
 
     public void PostInject()
     {
@@ -43,6 +43,9 @@ public sealed partial class EridaWebhooks : IPostInjectInit
 
         _cfg.OnValueChanged(ECCVars.DiscordPlayTimeWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierPlayTime = wi), true);
+
+        _cfg.OnValueChanged(ECCVars.DiscordTokensWebhook,
+            CreateWebhookHandler(wi => _webhookIdentifierTokens = wi), true);
     }
 
     private Action<string> CreateWebhookHandler(Action<WebhookIdentifier?> setIdentifier)
@@ -85,7 +88,8 @@ public sealed partial class EridaWebhooks : IPostInjectInit
         { WebhookType.PlayTimeRem, ColorToDiscordInt(Color.FromHex("#007041")) },
         { WebhookType.PlayTimeSet, ColorToDiscordInt(Color.FromHex("#3d9a73")) },
         { WebhookType.CoinsAdd, ColorToDiscordInt(Color.FromHex("#009E98")) },
-        { WebhookType.CoinsRem, ColorToDiscordInt(Color.FromHex("#00706C")) }
+        { WebhookType.CoinsRem, ColorToDiscordInt(Color.FromHex("#00706C")) },
+        { WebhookType.CoinsSet, ColorToDiscordInt(Color.FromHex("#0d3937")) }
     };
 
     private enum WebhookType : byte
@@ -94,7 +98,8 @@ public sealed partial class EridaWebhooks : IPostInjectInit
         PlayTimeRem,
         PlayTimeSet,
         CoinsAdd,
-        CoinsRem
+        CoinsRem,
+        CoinsSet
     }
 
     #endregion
@@ -125,6 +130,37 @@ public sealed partial class EridaWebhooks : IPostInjectInit
     private static int ColorToDiscordInt(Color color)
     {
         return (color.RByte << 16) | (color.GByte << 8) | color.BByte;
+    }
+
+    private WebhookEmbed CreateBaseEmbedWithNames(NetUserId adminId, NetUserId targetId)
+    {
+        _playerManager.TryGetPlayerData(targetId, out var target);
+        _playerManager.TryGetPlayerData(adminId, out var admin);
+
+        var targetName = target?.UserName ?? Loc.GetString("erida-webhook-unknown");
+        var adminName = admin?.UserName ?? Loc.GetString("erida-webhook-unknown");
+
+        return new WebhookEmbed()
+        {
+            Title = string.Empty,
+            Fields = [
+                new() { Name = Loc.GetString("playtime-webhook-target"), Value = CodeBlockedSmall(targetName), Inline = true },
+                EmbedSpacer,
+                new() { Name = Loc.GetString("playtime-webhook-admin"), Value = CodeBlockedSmall(adminName), Inline = true },
+            ]
+        };
+    }
+
+    private async void SendMessage(WebhookIdentifier identifier, WebhookPayload payload)
+    {
+        try
+        {
+            await _discord.CreateMessage(identifier, payload);
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Error while sending webhook to Discord: {e}");
+        }
     }
     #endregion
 }

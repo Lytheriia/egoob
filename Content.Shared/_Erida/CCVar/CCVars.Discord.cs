@@ -20,4 +20,10 @@ public sealed partial class ECCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordPlayTimeWebhook =
         CVarDef.Create("discord.playtime_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Webhook for all logs with Balance commands
+    /// </summary>
+    public static readonly CVarDef<string> DiscordTokensWebhook =
+        CVarDef.Create("discord.tokens_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

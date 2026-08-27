@@ -169,14 +169,7 @@ public sealed partial class EridaWebhooks
         else
             payload.Embeds = [embed];
 
-        try
-        {
-            await _discord.CreateMessage(_webhookIdentifierBan!.Value, payload);
-        }
-        catch (Exception e)
-        {
-            _sawmill.Error($"Error while sending ban webhook to Discord: {e}");
-        }
+        SendMessage(_webhookIdentifierBan!.Value, payload);
     }
 
     private string GetRoleName(BanRoleDef roleDef)

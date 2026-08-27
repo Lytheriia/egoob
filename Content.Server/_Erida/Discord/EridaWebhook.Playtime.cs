@@ -42,7 +42,7 @@ public sealed partial class EridaWebhooks
 
     private void SendDifferentTimeChanges(NetUserId adminId, NetUserId targetId, Dictionary<string, TimeSpan> timeData, bool isSet = false)
     {
-        var embed = CreatePlayTimeNamesEmbed(adminId, targetId);
+        var embed = CreateBaseEmbedWithNames(adminId, targetId);
 
         if (isSet)
         {
@@ -65,7 +65,7 @@ public sealed partial class EridaWebhooks
             ]
         };
 
-        SendPlayTimeMessage(payload);
+        SendMessage(_webhookIdentifierPlayTime!.Value, payload);
     }
 
     private void AddRoleColumns(WebhookEmbed embed, Dictionary<string, TimeSpan> timeData)
@@ -107,7 +107,7 @@ public sealed partial class EridaWebhooks
 
     private void SendEqualTimeChanges(NetUserId adminId, NetUserId targetId, Dictionary<string, TimeSpan> timeData, bool isSet = false)
     {
-        var embed = CreatePlayTimeNamesEmbed(adminId, targetId);
+        var embed = CreateBaseEmbedWithNames(adminId, targetId);
 
         if (!isSet)
         {
@@ -160,38 +160,6 @@ public sealed partial class EridaWebhooks
             ]
         };
 
-        SendPlayTimeMessage(payload);
+        SendMessage(_webhookIdentifierPlayTime!.Value, payload);
     }
-
-    private WebhookEmbed CreatePlayTimeNamesEmbed(NetUserId adminId, NetUserId targetId)
-    {
-        _playerManager.TryGetPlayerData(targetId, out var target);
-        _playerManager.TryGetPlayerData(adminId, out var admin);
-
-        var targetName = target?.UserName ?? Loc.GetString("erida-webhook-unknown");
-        var adminName = admin?.UserName ?? Loc.GetString("erida-webhook-unknown");
-
-        return new WebhookEmbed()
-        {
-            Title = string.Empty,
-            Fields = [
-                new() { Name = Loc.GetString("playtime-webhook-target"), Value = CodeBlockedSmall(targetName), Inline = true },
-                EmbedSpacer,
-                new() { Name = Loc.GetString("playtime-webhook-admin"), Value = CodeBlockedSmall(adminName), Inline = true },
-            ]
-        };
-    }
-
-    private async void SendPlayTimeMessage(WebhookPayload payload)
-    {
-        try
-        {
-            await _discord.CreateMessage(_webhookIdentifierPlayTime!.Value, payload);
-        }
-        catch (Exception e)
-        {
-            _sawmill.Error($"Error while sending playtime webhook to Discord: {e}");
-        }
-    }
-
 }
