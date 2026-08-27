@@ -48,7 +48,7 @@ public sealed partial class EridaWebhooks : IPostInjectInit
         _cfg.OnValueChanged(ECCVars.DiscordTokensWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierTokens = wi), true);
 
-        _cfg.OnValueChanged(ECCVars.DiscordPermissions,
+        _cfg.OnValueChanged(ECCVars.DiscordPermissionsWebhook,
             CreateWebhookHandler(wi => _webhookIdentifierPermissions = wi), true);
     }
 

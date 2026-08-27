@@ -30,6 +30,6 @@ public sealed partial class ECCVars
     /// <summary>
     /// Webhook for all logs with permissions panel
     /// </summary>
-    public static readonly CVarDef<string> DiscordPermissions =
+    public static readonly CVarDef<string> DiscordPermissionsWebhook =
         CVarDef.Create("discord.permissions_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

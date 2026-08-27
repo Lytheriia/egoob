@@ -46,10 +46,10 @@ public sealed partial class EridaWebhooks
 
         var fields = new List<WebhookEmbedField>
         {
-            new() { Name = Loc.GetString("ban-webhook-admin"),
-                Value = CodeBlockedSmall(adminName), Inline = true },
             new() { Name = Loc.GetString("permissions-webhook-title-changed"),
-                Value = CodeBlockedSmall(oldRank.Name), Inline = true }
+                Value = CodeBlockedSmall(oldRank.Name), Inline = true },
+            new() { Name = Loc.GetString("ban-webhook-admin"),
+                Value = CodeBlockedSmall(adminName), Inline = true }
         };
 
         if (oldRank.Name != newRank.Name)
@@ -107,10 +107,10 @@ public sealed partial class EridaWebhooks
 
         var fields = new List<WebhookEmbedField>
         {
-            new() { Name = Loc.GetString("ban-webhook-admin"),
-                Value = CodeBlockedSmall(adminName), Inline = true },
             new() { Name = Loc.GetString("permissions-webhook-field-rank-name"),
-                Value = CodeBlockedSmall(rank.Name), Inline = true }
+                Value = CodeBlockedSmall(rank.Name), Inline = true },
+            new() { Name = Loc.GetString("ban-webhook-admin"),
+                Value = CodeBlockedSmall(adminName), Inline = true }
         };
 
         if (!isRemoved)
@@ -181,10 +181,10 @@ public sealed partial class EridaWebhooks
 
         var fields = new List<WebhookEmbedField>
         {
-            new() { Name = Loc.GetString("ban-webhook-admin"),
-                Value = CodeBlockedSmall(adminName), Inline = true },
             new() { Name = Loc.GetString("permissions-webhook-field-target-admin"),
-                Value = CodeBlockedSmall(targetName), Inline = true }
+                Value = CodeBlockedSmall(targetName), Inline = true },
+            new() { Name = Loc.GetString("ban-webhook-admin"),
+                Value = CodeBlockedSmall(adminName), Inline = true }
         };
 
         if (!isRemoved)
@@ -237,10 +237,10 @@ public sealed partial class EridaWebhooks
 
         var fields = new List<WebhookEmbedField>
         {
-            new() { Name = Loc.GetString("ban-webhook-admin"),
-                Value = CodeBlockedSmall(adminName), Inline = true },
             new() { Name = Loc.GetString("permissions-webhook-field-target-admin"),
-                Value = CodeBlockedSmall(targetName), Inline = true }
+                Value = CodeBlockedSmall(targetName), Inline = true },
+            new() { Name = Loc.GetString("ban-webhook-admin"),
+                Value = CodeBlockedSmall(adminName), Inline = true }
         };
 
         if (oldAdmin.Title != newAdmin.Title)
