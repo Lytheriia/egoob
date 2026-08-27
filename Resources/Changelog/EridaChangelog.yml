@@ -1273,3 +1273,24 @@ Entries:
   url: https://github.com/dead-space-server/EridaGoob/pull/32
   avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
   title: '[Fix] Bug fixes'
+- author: Lytheriia
+  changes:
+    - type: Add
+      message: Вебхуки с логами изменений времени,  токенов и прав администрации
+    - type: Add
+      message: Вебхук раундов вновь показывает выбранный режим
+    - type: Add
+      message: 'В главное меню добавлена кнопка опросов '
+    - type: Tweak
+      message: Фелениды не могут стать ГСБ, ОСЩ, ПНТ, Капитаном
+    - type: Tweak
+      message: Понижена частота метеоритов
+    - type: Tweak
+      message: Секрет+лоупоп переехал в динамик, заменившись гриншифтом
+    - type: Remove
+      message: Вырезан спавн шаттлов ЯО и других антагонистов в мирные режимы.
+  id: 107
+  time: '2026-08-27T05:08:35.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/33
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: Minor fixes + logs

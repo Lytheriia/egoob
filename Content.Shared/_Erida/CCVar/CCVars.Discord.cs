@@ -4,13 +4,32 @@
 
 using Robust.Shared.Configuration;
 
-namespace Content.Shared.CCVar;
+namespace Content.Shared._Erida.CCVar;
 
-public sealed partial class CCVars
+[CVarDefs]
+public sealed partial class ECCVars
 {
     /// <summary>
     /// Webhook for sending bans to discord
     /// </summary>
     public static readonly CVarDef<string> DiscordBanWebhook =
         CVarDef.Create("discord.ban_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Webhook for all logs with PlayTime commands
+    /// </summary>
+    public static readonly CVarDef<string> DiscordPlayTimeWebhook =
+        CVarDef.Create("discord.playtime_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Webhook for all logs with Balance commands
+    /// </summary>
+    public static readonly CVarDef<string> DiscordTokensWebhook =
+        CVarDef.Create("discord.tokens_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /// <summary>
+    /// Webhook for all logs with permissions panel
+    /// </summary>
+    public static readonly CVarDef<string> DiscordPermissionsWebhook =
+        CVarDef.Create("discord.permissions_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

@@ -75,6 +75,7 @@ public sealed class GhostRoleTests
                 Logger.Error($"Unexpected ghost entity found: {entMan.ToPrettyString(uid)}");
             }
 
+            await pair.CleanReturnAsync();
             return;
         }
         // Assert.That(entMan.Count<GhostComponent>(), Is.Zero);

@@ -357,7 +357,7 @@ namespace Content.Server.Administration.Managers
             }
             else if (e.NewStatus == SessionStatus.Disconnected)
             {
-                if (_admins.Remove(e.Session, out var reg) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
+                if (_admins.Remove(e.Session, out var reg ) && _cfg.GetCVar(CCVars.AdminAnnounceLogout))
                 {
                     if (reg.Data.Stealth)
                     {
@@ -473,17 +473,14 @@ namespace Content.Server.Administration.Managers
 
                 foreach (var dbFlag in dbData.Flags)
                 {
-                    // Erida add TryNameToFlag
-                    if (!AdminFlagsHelper.TryNameToFlag(dbFlag.Flag, out var flag))
-                        continue;
-
+                    var flag = AdminFlagsHelper.NameToFlag(dbFlag.Flag);
                     if (dbFlag.Negative)
                     {
-                        flags &= ~flag.Value;
+                        flags &= ~flag;
                     }
                     else
                     {
-                        flags |= flag.Value;
+                        flags |= flag;
                     }
                 }
 
@@ -493,7 +490,7 @@ namespace Content.Server.Administration.Managers
                     Active = !dbData.Deadminned,
                 };
 
-                if (dbData.Title != null && _cfg.GetCVar(CCVars.AdminUseCustomNamesAdminRank))
+                if (dbData.Title != null  && _cfg.GetCVar(CCVars.AdminUseCustomNamesAdminRank))
                 {
                     data.Title = dbData.Title;
                 }

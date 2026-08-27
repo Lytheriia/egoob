@@ -59,9 +59,9 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 600 # 10 min
+    minimumTimeUntilFirstEvent: 1200 # 20 min
     minMaxEventTiming:
-      min: 300 # 5 min - Goob Edit
+      min: 1200 # 20 min - Goob Edit
       max: 5400 # 90 min - Goob Edit
     scheduledGameRules: !type:NestedSelector
       tableId: BasicMeteorSwarmEventsTable
@@ -72,9 +72,9 @@
   components:
   - type: GameRule
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 600 # 10 min
+    minimumTimeUntilFirstEvent: 1200 # 20 min
     minMaxEventTiming:
-      min: 300 # 5 min - Goob Edit
+      min: 1200 # 20 min - Goob Edit
       max: 5400 # 90 min - Goob Edit
     scheduledGameRules: !type:NestedSelector
       tableId: MeteorSwarmMildTable

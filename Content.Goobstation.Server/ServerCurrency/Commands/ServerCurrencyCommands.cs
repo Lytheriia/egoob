@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Common.ServerCurrency;
+using Content.Server._Erida.Discord;
 using Content.Server.Administration;
 using Content.Server.Chat.Managers;
 using Content.Shared.Administration;
@@ -121,6 +122,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     public sealed class AddServerCurrencyCommand : IConsoleCommand
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private readonly EridaWebhooks _eridaWebhooks = default!; // Erida edit
 
         public string Command => Loc.GetString("server-currency-add-command");
         public string Description => Loc.GetString("server-currency-add-command-description");
@@ -149,6 +151,9 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
 
             var newCurrency = _currencyMan.Stringify(_currencyMan.AddCurrency(targetPlayer, currency));
             shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
+
+            if (shell.Player != null) // Erida add
+                _eridaWebhooks.SendTokensChangedMessage(shell.Player!.UserId, targetPlayer, currency);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -166,6 +171,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     public sealed class RemoveServerCurrencyCommand : IConsoleCommand
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private readonly EridaWebhooks _eridaWebhooks = default!; // Erida edit
 
         public string Command => Loc.GetString("server-currency-remove-command");
         public string Description => Loc.GetString("server-currency-remove-command-description");
@@ -194,6 +200,9 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
 
             var newCurrency = _currencyMan.Stringify(_currencyMan.RemoveCurrency(targetPlayer, currency));
             shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
+
+            if (shell.Player != null) // Erida add
+                _eridaWebhooks.SendTokensChangedMessage(shell.Player!.UserId, targetPlayer, -currency);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
@@ -211,6 +220,7 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
     public sealed class SetServerCurrencyCommand : IConsoleCommand
     {
         [Dependency] private readonly ICommonCurrencyManager _currencyMan = default!;
+        [Dependency] private readonly EridaWebhooks _eridaWebhooks = default!; // Erida edit
 
         public string Command => Loc.GetString("server-currency-set-command");
         public string Description => Loc.GetString("server-currency-set-command-description");
@@ -240,6 +250,9 @@ namespace Content.Goobstation.Server.ServerCurrency.Commands
             _currencyMan.SetBalance(targetPlayer, currency);
             var newCurrency = _currencyMan.Stringify(currency);
             shell.WriteLine(Loc.GetString("server-currency-command-return", ("player", args[0]), ("balance", newCurrency)));
+
+            if (shell.Player != null) // Erida edit
+                _eridaWebhooks.SendTokensChangedMessage(shell.Player!.UserId, targetPlayer, currency, true);
         }
 
         public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

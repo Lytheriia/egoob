@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Goobstation.Shared.Administration;
+using Content.Server._Erida.Discord;
 using Content.Server.Administration;
 using Content.Server.Administration.Commands;
 using Content.Server.Administration.Managers;
@@ -18,6 +19,7 @@ public sealed class TimeTransferPanelEui : BaseEui
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
     [Dependency] private readonly IServerDbManager _databaseMan = default!;
+    [Dependency] private readonly EridaWebhooks _webhooks = default!; // Erida edit
 
     private readonly ISawmill _sawmill;
 
@@ -71,10 +73,12 @@ public sealed class TimeTransferPanelEui : BaseEui
     {
         var updateList = new List<PlayTimeUpdate>();
 
+        Dictionary<string, TimeSpan> changedData = []; // Erida edit
         foreach (var data in timeData)
         {
             var time = TimeSpan.FromMinutes(PlayTimeCommandUtilities.CountMinutes(data.TimeString));
             updateList.Add(new PlayTimeUpdate(userId, data.PlaytimeTracker, time));
+            changedData.Add(data.PlaytimeTracker, time); // Erida edit
         }
 
         await _databaseMan.UpdatePlayTimes(updateList);
@@ -82,6 +86,8 @@ public sealed class TimeTransferPanelEui : BaseEui
         _sawmill.Info($"{Player.Name} ({Player.UserId} saved {updateList.Count} trackers for {userId})");
 
         SendMessage(new TimeTransferWarningEuiMessage(Loc.GetString("time-transfer-panel-warning-set-success"), Color.LightGreen));
+
+        _webhooks.SendTimeChangedMessage(Player.UserId, userId, changedData, true); // Erida edit
     }
 
     public async void AddTime(NetUserId userId, List<TimeTransferData> timeData)
@@ -97,6 +103,7 @@ public sealed class TimeTransferPanelEui : BaseEui
 
         var updateList = new List<PlayTimeUpdate>();
 
+        Dictionary<string, TimeSpan> changedData = []; // Erida edit
         foreach (var data in timeData)
         {
             var time = TimeSpan.FromMinutes(PlayTimeCommandUtilities.CountMinutes(data.TimeString));
@@ -104,6 +111,7 @@ public sealed class TimeTransferPanelEui : BaseEui
                 time += addTime;
 
             updateList.Add(new PlayTimeUpdate(userId, data.PlaytimeTracker, time));
+            changedData.Add(data.PlaytimeTracker, time); // Erida edit
         }
 
         await _databaseMan.UpdatePlayTimes(updateList);
@@ -111,6 +119,8 @@ public sealed class TimeTransferPanelEui : BaseEui
         _sawmill.Info($"{Player.Name} ({Player.UserId} saved {updateList.Count} trackers for {userId})");
 
         SendMessage(new TimeTransferWarningEuiMessage(Loc.GetString("time-transfer-panel-warning-add-success"), Color.LightGreen));
+
+        _webhooks.SendTimeChangedMessage(Player.UserId, userId, changedData); // Erida edit
     }
 
     public override async void Opened()
