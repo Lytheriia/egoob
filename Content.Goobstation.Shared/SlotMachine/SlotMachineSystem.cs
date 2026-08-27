@@ -43,7 +43,7 @@ namespace Content.Goobstation.Shared.SlotMachine
         /// </summary>
         private void OnEmagged(EntityUid uid, SlotMachineComponent comp, ref GotEmaggedEvent args)
         {
-            if(comp.Emagged)
+            if (comp.Emagged)
                 return;
 
             args.Handled = true;
@@ -55,11 +55,11 @@ namespace Content.Goobstation.Shared.SlotMachine
             comp.BigPrizeAmount = _random.Next(-500, 50000);
             comp.JackPotPrizeAmount = _random.Next(-500, 100000);
 
-            comp.SmallWinChance  = _random.NextFloat(0, 0.6f);
-            comp.MediumWinChance  = _random.NextFloat(0, 0.35f);
-            comp.BigWinChance  = _random.NextFloat(0f, 0.2f);
-            comp.JackPotWinChance  = _random.NextFloat(0, 0.1f);
-            comp.GodPotWinChance =  _random.NextFloat(0, 0.05f);
+            comp.SmallWinChance = _random.NextFloat(0, 0.6f);
+            comp.MediumWinChance = _random.NextFloat(0, 0.35f);
+            comp.BigWinChance = _random.NextFloat(0f, 0.2f);
+            comp.JackPotWinChance = _random.NextFloat(0, 0.1f);
+            comp.GodPotWinChance = _random.NextFloat(0, 0.05f);
 
             // lord have mercy...
             var allProtos = _proto.EnumeratePrototypes<EntityPrototype>().ToList();
@@ -83,11 +83,16 @@ namespace Content.Goobstation.Shared.SlotMachine
             if (!_itemSlots.TryGetSlot(uid, "money", out var slot)
                 || slot.Item == null
                 || !TryComp<StackComponent>(slot.Item.Value, out var stack)
-                || stack.Count < comp.SpinCost)
+                || !comp.NotStaticSpinCost && stack.Count < comp.SpinCost) // Erida edit
             {
                 _popupSystem.PopupPredicted(Loc.GetString("slotmachine-no-money"), uid, uid, PopupType.Small); // No Money
                 return;
             }
+
+            // Erida start
+            var spinCost = comp.NotStaticSpinCost ? stack.Count : comp.SpinCost;
+            comp.PrizeMultiplier = comp.NotStaticSpinCost ? stack.Count / comp.SpinCost : 1;
+            // Erida end
 
             var doAfter =
              new DoAfterArgs(EntityManager, uid, comp.DoAfterTime, new SlotMachineDoAfterEvent(), uid)
@@ -97,7 +102,7 @@ namespace Content.Goobstation.Shared.SlotMachine
                  MultiplyDelay = false,
              };
 
-            _stackSystem.SetCount(stack.Owner, stack.Count - comp.SpinCost, stack);
+            _stackSystem.SetCount(stack.Owner, stack.Count - spinCost, stack); // Erida edit
             Dirty(stack.Owner, stack);
             comp.IsSpinning = true;
 
@@ -137,28 +142,28 @@ namespace Content.Goobstation.Shared.SlotMachine
             if (slot.Item != null)
                 TryComp<StackComponent>(slot.Item.Value, out stack);
 
-            if (_random.Prob(comp.SmallWinChance))
+            if (_random.Prob(comp.SmallWinChance)) // Erida add PrizeMultiply
             {
                 _audio.PlayPredicted(comp.SmallWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.SmallPrizeAmount)), stack, comp.SmallPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", PrizeMultiply(comp.SmallPrizeAmount, comp.PrizeMultiplier))), stack, comp.SmallPrizeAmount);
                 return;
             }
-            if (_random.Prob(comp.MediumWinChance))
+            if (_random.Prob(comp.MediumWinChance)) // Erida add PrizeMultiply
             {
                 _audio.PlayPredicted(comp.MediumWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.MediumPrizeAmount)), stack, comp.MediumPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", PrizeMultiply(comp.MediumPrizeAmount, comp.PrizeMultiplier))), stack, comp.MediumPrizeAmount);
                 return;
             }
-            if (_random.Prob(comp.BigWinChance))
+            if (_random.Prob(comp.BigWinChance)) // Erida add PrizeMultiply
             {
                 _audio.PlayPredicted(comp.BigWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", comp.BigPrizeAmount)), stack, comp.BigPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-normal", ("amount", PrizeMultiply(comp.BigPrizeAmount, comp.PrizeMultiplier))), stack, comp.BigPrizeAmount);
                 return;
             }
-            if (_random.Prob(comp.JackPotWinChance))
+            if (_random.Prob(comp.JackPotWinChance)) // Erida add PrizeMultiply
             {
                 _audio.PlayPredicted(comp.JackPotWinSound, uid, args.User);
-                HandlePrize(uid, Loc.GetString("slotmachine-win-jackpot"), stack, comp.JackPotPrizeAmount);
+                HandlePrize(uid, Loc.GetString("slotmachine-win-jackpot"), stack, PrizeMultiply(comp.JackPotPrizeAmount, comp.PrizeMultiplier));
                 return;
             }
             if (_random.Prob(comp.GodPotWinChance)) // THE GODPOT!!!
@@ -172,6 +177,13 @@ namespace Content.Goobstation.Shared.SlotMachine
 
             _audio.PlayPredicted(comp.LoseSound, uid, args.User); // If nothing then lose
         }
+
+        // Erida start
+        private int PrizeMultiply(int prize, float prizeMultiplier)
+        {
+            return (int) (prize * prizeMultiplier);
+        }
+        // Erida end
         private void HandlePrize(EntityUid uid, string msg, StackComponent? stack, int prize)
         {
             if (stack == null)

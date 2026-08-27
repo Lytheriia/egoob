@@ -63,6 +63,15 @@ public sealed partial class SlotMachineComponent : Component
     [DataField, AutoNetworkedField]
     public int SpinCost = 250;
 
+
+    // Erida start
+    [DataField, AutoNetworkedField]
+    public bool NotStaticSpinCost = false;
+
+    [DataField, AutoNetworkedField]
+    public float PrizeMultiplier = 1;
+    // Erida end
+
     [DataField, AutoNetworkedField]
     public int SmallPrizeAmount = 250;
 

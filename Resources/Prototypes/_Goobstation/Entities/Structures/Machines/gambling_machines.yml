@@ -166,6 +166,7 @@
     bigWinChance: 0
     jackPotWinChance: .10
     godPotWinChance: .001
+    notStaticSpinCost: true # Erida
 
 - type: entity
   id: CoinFlipper
