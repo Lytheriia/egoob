@@ -107,11 +107,11 @@ public sealed class TimeTransferPanelEui : BaseEui
         foreach (var data in timeData)
         {
             var time = TimeSpan.FromMinutes(PlayTimeCommandUtilities.CountMinutes(data.TimeString));
+            changedData.Add(data.PlaytimeTracker, time); // Erida edit
             if (playTimeDict.TryGetValue(data.PlaytimeTracker, out var addTime))
                 time += addTime;
 
             updateList.Add(new PlayTimeUpdate(userId, data.PlaytimeTracker, time));
-            changedData.Add(data.PlaytimeTracker, time); // Erida edit
         }
 
         await _databaseMan.UpdatePlayTimes(updateList);
