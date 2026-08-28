@@ -31,7 +31,7 @@ public sealed partial class HasComponentConditionSystem : EntityConditionSystem<
 
         var hasComp = entHasComp || mindEntHasComp;
 
-        args.Result = hasComp; // erida edit
+        args.Result = hasComp;
     }
 }
 

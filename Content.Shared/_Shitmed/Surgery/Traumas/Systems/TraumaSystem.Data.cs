@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared._Shitmed.Medical.Surgery.Wounds;
 using Content.Goobstation.Maths.FixedPoint;
 
 namespace Content.Shared._Shitmed.Medical.Surgery.Traumas.Systems;
@@ -23,28 +22,6 @@ public partial class TraumaSystem
         { BoneSeverity.Damaged, 0.6 },
         { BoneSeverity.Cracked, 0.8 },
         { BoneSeverity.Broken, 1 },
-    };
-
-    private readonly Dictionary<WoundableSeverity, FixedPoint2> _boneTraumaChanceMultipliers = new()
-    {
-        { WoundableSeverity.Healthy, 0 },
-        { WoundableSeverity.Minor, 0.01 },
-        { WoundableSeverity.Moderate, 0.04 },
-        { WoundableSeverity.Severe, 0.12 },
-        { WoundableSeverity.Critical, 0.21 },
-        { WoundableSeverity.Mangled, 0.21 },
-        { WoundableSeverity.Severed, 0 },
-    };
-
-    private readonly Dictionary<WoundableSeverity, FixedPoint2> _boneDamageMultipliers = new()
-    {
-        { WoundableSeverity.Healthy, 0 },
-        { WoundableSeverity.Minor, 0.4 },
-        { WoundableSeverity.Moderate, 0.6 },
-        { WoundableSeverity.Severe, 0.9 },
-        { WoundableSeverity.Critical, 1.25 },
-        { WoundableSeverity.Mangled, 1.6 }, // Fun.
-        { WoundableSeverity.Severed, 0 },
     };
 
     #endregion

@@ -40,6 +40,7 @@
         - !type:HereticOrGhoulCondition
           guidebookComponentName: reagent-comp-condition-heretic-or-ghoul
       - !type:CleanBloodstream
+        excluded: EldritchEssence
         cleanseRate: 3
         conditions:
         - !type:HereticOrGhoulCondition

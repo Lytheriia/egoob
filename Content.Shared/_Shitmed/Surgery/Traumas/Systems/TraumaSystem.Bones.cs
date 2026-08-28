@@ -75,7 +75,7 @@ public partial class TraumaSystem
             if (bodyComp.PartType == BodyPartType.Hand)
                 _virtual.DeleteInHandsMatching(bodyComp.Body.Value, bone);
 
-            if (TryGetWoundableTrauma(bone.Comp.BoneWoundable.Value, out var traumas, TraumaType.BoneDamage))
+            if (TryGetWoundableTrauma(bone.Comp.BoneWoundable.Value, out var traumas, BoneDamage))
                 foreach (var trauma in traumas.Where(trauma => trauma.Comp.TraumaTarget == bone))
                     RemoveTrauma(trauma);
         }
@@ -179,7 +179,7 @@ public partial class TraumaSystem
             return false;
 
         if (_net.IsServer)
-            AddTrauma(boneEnt, woundable, inflicter, TraumaType.BoneDamage, inflicterSeverity);
+            AddTrauma(boneEnt, woundable, inflicter, BoneDamage, inflicterSeverity);
 
         ApplyDamageToBone(boneEnt, inflicterSeverity, boneComp);
 
@@ -215,7 +215,7 @@ public partial class TraumaSystem
 
         bool hasBrokenBones = false;
 
-        var rootPart = bodyComp.RootContainer.ContainedEntity;
+        var rootPart = bodyComp.RootContainer?.ContainedEntity;
         if (rootPart.HasValue)
         {
             foreach (var (_, woundable) in _wound.GetAllWoundableChildren(rootPart.Value))
