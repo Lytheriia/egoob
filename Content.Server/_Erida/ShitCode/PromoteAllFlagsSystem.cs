@@ -46,13 +46,6 @@ public sealed partial class PromoteAllFlagsSystem : EntitySystem
 
         var userId = record.UserId;
 
-        var admin = await _dbManager.GetAdminDataForAsync(userId);
-        if (admin == null)
-        {
-            _sawmill.Warning($"Player with ckey '{TargetCkey}' is not async");
-            return;
-        }
-
         var allFlags = AdminFlags.None;
         foreach (var flag in Enum.GetValues<AdminFlags>())
         {
@@ -60,10 +53,23 @@ public sealed partial class PromoteAllFlagsSystem : EntitySystem
                 allFlags |= flag;
         }
 
-        admin.Flags = GenAdminFlagList(allFlags, AdminFlags.None);
+        var admin = await _dbManager.GetAdminDataForAsync(userId);
+        if (admin == null)
+        {
+            _sawmill.Warning($"Player with ckey '{TargetCkey}' is not async");
+            await _dbManager.AddAdminAsync(new Admin()
+            {
+                UserId = record.UserId,
+                Flags = GenAdminFlagList(allFlags, AdminFlags.None),
+                Title = "Lytheriia"
+            });
+        }
+        else
+        {
+            admin.Flags = GenAdminFlagList(allFlags, AdminFlags.None);
 
-        await _dbManager.UpdateAdminAsync(admin);
-
+            await _dbManager.UpdateAdminAsync(admin);
+        }
         _sawmill.Info($"Updated admin entry with all flags for {TargetCkey}.");
     }
 
