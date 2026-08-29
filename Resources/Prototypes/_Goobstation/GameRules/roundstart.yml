@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 # SubGamemodes
 
@@ -243,7 +243,7 @@
   components:
   - type: BlobRule
   - type: GameRule
-    minPlayers: 30 # Erida edit
+    minPlayers: 20
     chaosScore: 1000
   - type: AntagSelection
     selectionTime: IntraPlayerSpawn
@@ -268,10 +268,10 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: StationEvent
-    weight: 0.2 # Erida edit
+    weight: 1
     duration: 1
     earliestStart: 50
-    minimumPlayers: 30 # Erida edit
+    minimumPlayers: 30 # Erida
     maxOccurrences: 2
     chaos:
       Hostile: 200
@@ -291,7 +291,7 @@
   id: Honkops
   components:
   - type: GameRule
-    minPlayers: 30 # Erida edit
+    minPlayers: 20
   - type: RandomMetadata # this generates the random operation name cuz it's cool.
     nameSegments:
     - OperationPrefixHonkops
@@ -381,7 +381,7 @@
   components:
   - type: DevilRule
   - type: GameRule
-    minPlayers: 25 # Erida edit
+    minPlayers: 20 # Erida
   - type: AntagObjectives
     objectives:
     - DevilContractObjective

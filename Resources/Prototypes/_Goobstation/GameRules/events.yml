@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   id: TidemindDevelop
@@ -23,10 +23,10 @@
   - type: GameRule
     chaosScore: 150
   - type: StationEvent
-    weight: 1.5 # Uncommon (Erida edit)
+    weight: 4.5 # Uncommon
     earliestStart: 30
     reoccurrenceDelay: 30
-    minimumPlayers: 30 # Erida edit
+    minimumPlayers: 30 # Erida
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0

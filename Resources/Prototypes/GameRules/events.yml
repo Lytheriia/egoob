@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entityTable
   id: BasicCalmEventsTable
@@ -29,7 +29,7 @@
     - id: VentClog
     - id: TidemindDevelop # Goobstation - Tidemind
     - id: MothroachSpawn # DeltaV
-    # - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm (Erida edit)
+    - id: DerelictCyborgSyndicateSpawn # Goobstation - usually calm
     - id: MalignRiftSpawn # DeltaV
     - id: FloorGoblinMidRound # Goobstation
     - id: ClownGoblinMigration # Goobstation - New Midrounds
@@ -91,7 +91,7 @@
         - id: DerelictMedicalCyborgSpawn
         - id: DerelictMiningCyborgSpawn
     - !type:GroupSelector # Other Borgs
-      weight: 5 # Erida edit
+      weight: 15
       children:
         - id: DerelictSyndicateAssaultCyborgSpawn
 
@@ -252,11 +252,11 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 0.5 # Goobstation - was 3 (Erida edit)
+    weight: 2 # Goobstation - was 3
     earliestStart: 30 # Goobstation was 45
     #recorruenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
-    minimumPlayers: 60 # Erida edit
+    minimumPlayers: 50
     duration: null
     chaos: # Goobstation
       Hostile: 20
@@ -294,12 +294,12 @@
   id: NinjaSpawn
   components:
   - type: StationEvent
-    weight: 1.5 # Goobstation - was 6 (Erida edit)
+    weight: 3 # Goobstation - was 6
     duration: null
     earliestStart: 30 # Goobstation - was 45
     #reoccurrenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
-    minimumPlayers: 40 # Erida edit
+    minimumPlayers: 30
     chaos: # Goobstation
       Hostile: 20
       Friend: 20
@@ -367,11 +367,11 @@
   id: ParadoxCloneSpawn
   components:
   - type: StationEvent
-    weight: 2.5 # Erida edit
+    weight: 5
     duration: null
     earliestStart: 20
     reoccurrenceDelay: 20
-    minimumPlayers: 25 # Erida edit
+    minimumPlayers: 15
     eventType: Chaotic # Goobstation
   # Goobstation
   - type: GameRule
@@ -679,8 +679,8 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 45 # DeltaV - was 20
-    minimumPlayers: 40 # DeltaV - was 20 (Erida edit)
-    weight: 1.5 # Goobstation - was 1.5 (Erida edit)
+    minimumPlayers: 30 # DeltaV - was 20
+    weight: 3 # Goobstation - was 1.5
     duration: 30 # DeltaV: was 60, used as a delay now
     chaos: # Goobstation
       Hostile: 20
@@ -700,8 +700,8 @@
   components:
   - type: StationEvent
     earliestStart: 60 # Goobstation - was 90 (impossible on goob)
-    minimumPlayers: 50 # Erida edit
-    weight: 0.2 # Zombies was happening basically every single survival round, so now it's super rare (Erida edit)
+    minimumPlayers: 40
+    weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
     occursDuringRoundEnd: false
     chaos: # Goobstation
@@ -745,8 +745,8 @@
   components:
   - type: StationEvent
     earliestStart: 35
-    weight: 0.5 # Goobstation - was 5.5 (Erida edit)
-    minimumPlayers: 60 # Goobstation - was 20 (Erida edit)
+    weight: 2.5 # Goobstation - was 5.5
+    minimumPlayers: 50 # Goobstation - was 20
     duration: 720 # Goobstation - required for custom nuke music. 720s to ensure loneop can hear the music and still have space for other midrounds incase of failure
     chaos: # Goobstation
       Hostile: 200
@@ -795,8 +795,8 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 4 # Erida edit
-    minimumPlayers: 20 # Erida edit
+    weight: 8
+    minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
     startAnnouncement: station-event-communication-interception
     startAudio:
@@ -1050,10 +1050,10 @@
   - type: GameRule # Goob
     chaosScore: 150
   - type: StationEvent
-    weight: 1 # Erida edit
+    weight: 2.5
     earliestStart: 25
     reoccurrenceDelay: 20
-    minimumPlayers: 25 # Erida edit
+    minimumPlayers: 15
     duration: null
   - type: SpaceSpawnRule
     spawnDistance: 0
