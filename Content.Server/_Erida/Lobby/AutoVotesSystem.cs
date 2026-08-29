@@ -163,11 +163,12 @@ public sealed partial class AutoVotesSystem : EntitySystem
 
             foreach (var option in protoData.Options)
             {
-                if (option.AnswerData.Action == AutoVoteOptionAction.GameModeStart
-                    && _previousGamerules.Count != 0
-                    && protoData.Options.Count > 1
-                    && option.AnswerData.GamePresetProto!.Value.Id == _previousGamerules[_previousGamerules.Count - 1])
-                    continue;
+                // Neednt that now
+                // if (option.AnswerData.Action == AutoVoteOptionAction.GameModeStart
+                //     && _previousGamerules.Count != 0
+                //     && protoData.Options.Count > 1
+                //     && option.AnswerData.GamePresetProto!.Value.Id == _previousGamerules[_previousGamerules.Count - 1])
+                //     continue;
 
                 options.Options.Add((Loc.GetString(option.Label), option));
             }
