@@ -194,7 +194,7 @@
         Heat: 0.85
         Radiation: 0.01
   - type: Clothing
-    sprite: _Erida/Clothing/OuterClothing/Suits/rad.rsi
+    sprite: Clothing/OuterClothing/Suits/rad.rsi
   - type: ZombificationResistance # Goobstation - Zombies
     zombificationResistanceCoefficient: 0.50
   - type: GroupExamine

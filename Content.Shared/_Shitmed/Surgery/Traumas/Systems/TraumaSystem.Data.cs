@@ -8,21 +8,16 @@ public partial class TraumaSystem
 {
     #region Data
 
-    private readonly Dictionary<BoneSeverity, FixedPoint2> _boneThresholds = new()
-    {
-        { BoneSeverity.Normal, 40 },
-        { BoneSeverity.Damaged, 25 },
-        { BoneSeverity.Cracked, 10 },
-        { BoneSeverity.Broken, 0 },
-    };
-
-    private readonly Dictionary<BoneSeverity, FixedPoint2> _bonePainModifiers = new()
-    {
-        { BoneSeverity.Normal, 0.4 },
-        { BoneSeverity.Damaged, 0.6 },
-        { BoneSeverity.Cracked, 0.8 },
-        { BoneSeverity.Broken, 1 },
-    };
+    /// <summary>
+    /// Sorted in descending order by threshold value.
+    /// </summary>
+    private static readonly KeyValuePair<BoneSeverity, FixedPoint2>[] BoneThresholds =
+    [
+        new(BoneSeverity.Normal, 40),
+        new(BoneSeverity.Damaged, 25),
+        new(BoneSeverity.Cracked, 10),
+        new(BoneSeverity.Broken, 0),
+    ];
 
     #endregion
 }
