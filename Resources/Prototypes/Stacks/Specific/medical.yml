@@ -8,6 +8,7 @@
   name: stack-ointment
   icon: { sprite: "/Textures/_Erida/Objects/Specific/Medical/medical.rsi", state: ointment }
   spawn: Ointment
+  maxCount: 15 # Erida fix
 
 - type: stack
   parent: BaseSmallStack
@@ -15,6 +16,7 @@
   name: stack-aloe-cream
   icon: { sprite: "/Textures/_Erida/Objects/Specific/Hydroponics/aloe.rsi", state: cream }
   spawn: AloeCream
+  maxCount: 15 # Erida fix
 
 - type: stack
   parent: BaseSmallStack
@@ -30,6 +32,7 @@
   name: stack-brutepack
   icon: { sprite: "/Textures/_Erida/Objects/Specific/Medical/medical.rsi", state: gauze }
   spawn: Brutepack
+  maxCount: 15 # Erida fix
 
 - type: stack
   parent: BaseSmallStack
@@ -37,6 +40,7 @@
   name: stack-bloodpack
   icon: { sprite: "/Textures/_Erida/Objects/Specific/Medical/medical.rsi", state: bloodpack }
   spawn: Bloodpack
+  maxCount: 15 # Erida fix
 
 - type: stack
   parent: BaseSmallStack
@@ -51,4 +55,4 @@
   name: stack-regenerative-mesh
   icon: {sprite: "/Textures/_Erida/Objects/Specific/Medical/medical.rsi", state: regenerative-mesh}
   spawn: RegenerativeMesh
-
+  maxCount: 15 # Erida fix

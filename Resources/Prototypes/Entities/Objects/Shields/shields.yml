@@ -622,7 +622,7 @@
     - type: ItemToggleSize
       activatedSize: Huge
     - type: Sprite
-      sprite: _Erida/Objects/Weapons/Melee/teleriot_shield.rsi
+      sprite: Objects/Weapons/Melee/teleriot_shield.rsi
       layers:
         - state: teleriot-icon
         - state: teleriot-on
@@ -630,7 +630,7 @@
           map: [ "shield" ]
     - type: Item
       size: Small
-      sprite: _Erida/Objects/Weapons/Melee/teleriot_shield.rsi
+      sprite: Objects/Weapons/Melee/teleriot_shield.rsi
       heldPrefix: teleriot
     - type: UseDelay
       delay: 0.5

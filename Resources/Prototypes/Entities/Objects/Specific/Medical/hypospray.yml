@@ -192,12 +192,12 @@
   description: A single-dose, non-refillable medipen.
   components:
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: firstaid
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Item
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     inhandVisuals:
       left:
       - state: base-needle-inhand-left
@@ -248,7 +248,7 @@
   description: A rapid and safe way to heal minor damage, stop bleeding, and stabilize patients for personnel without advanced medical knowledge. # goobstation
   components:
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: medipen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -292,7 +292,7 @@
         color: "#573d9e"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: penacid
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -329,7 +329,7 @@
         color: "#c73333"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: bicpen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -370,7 +370,7 @@
         color: "#427485"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: dermpen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -409,7 +409,7 @@
         color: "#e3832f"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: arithpen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -446,7 +446,7 @@
         color: "#c7be5d"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: punctpen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -483,7 +483,7 @@
         color: "#c7a45d"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: pyrapen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -520,7 +520,7 @@
         color: "#5d81c7"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: dexpen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -557,7 +557,7 @@
         color: "#a84597"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: hypovolemic
       map: [ "enum.SolutionContainerLayers.Fill" ]
@@ -601,7 +601,7 @@
       - state: base-colorB-inhand-right
         color: "#c62933"
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: stimpen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -640,7 +640,7 @@
       - state: base-colorB-inhand-right
         color: "#c62933"
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: microstimpen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -677,7 +677,7 @@
         color: "#5bcaca"
       - state: base-colorB-inhand-right
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: morphen
       map: ["enum.SolutionContainerLayers.Fill"]
@@ -751,7 +751,7 @@
   description: A non-refillable medipen containing multiple doses of weh.
   components:
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: medipen
       map: [ "enum.SolutionContainerLayers.Fill" ]

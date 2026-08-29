@@ -501,7 +501,7 @@
   description: A non-refillable medipen containing multiple doses of "Braaaains".
   components:
   - type: Sprite
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: medipen
       map: [ "enum.SolutionContainerLayers.Fill" ]

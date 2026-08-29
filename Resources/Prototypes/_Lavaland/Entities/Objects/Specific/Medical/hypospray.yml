@@ -7,7 +7,7 @@
   description: A cocktail of powerful healing chemicals. Slowly heals damage and stabilizes body temperature. You can overdose on these if you use more than one in quick succession.
   components:
   - type: Sprite
-    sprite: /Textures/_Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: /Textures/Objects/Specific/Medical/medipen.rsi
     layers:
     - state: survivalpen
       map: [ "enum.SolutionContainerLayers.Fill" ]

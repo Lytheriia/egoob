@@ -55,7 +55,7 @@
     size: Tiny
   - type: Sprite
     # <Goobstation>
-    sprite: _Erida/Objects/Specific/Medical/medipen.rsi
+    sprite: Objects/Specific/Medical/medipen.rsi
     layers:
     - state: salpen
   - type: Appearance
