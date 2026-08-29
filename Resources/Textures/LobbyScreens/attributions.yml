@@ -63,11 +63,10 @@
   copyright: "GetOutMarutak,aka.Snicket on Discord/github/Cara/Ko-fi"
   source: "https://github.com/space-wizards/space-station-14"
 
-- type: lobbyBackground
-  id: TooManyCooks
-  background: /Textures/LobbyScreens/TooManyCooks.webp
-  name: Too Many Cooks
-  artist: orangealligator
+- files: ["TooManyCooks.webp"]
+  license: "CC-BY-NC-SA-3.0"
+  copyright: "@orangealligator on discord"
+  source: "https://discord.gg/goobstation"
 
 - files: ["suboptimal.webp"]
   license: "CC-BY-NC-SA-3.0"
