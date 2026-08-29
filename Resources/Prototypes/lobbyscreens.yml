@@ -1,167 +1,82 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+- type: lobbyBackground
+  id: Warden
+  background: /Textures/LobbyScreens/warden.webp
+  title: lobby-state-background-warden-title
+  artist: lobby-state-background-warden-artist
 
 - type: lobbyBackground
-  id: cqcm
-  background: /Textures/LobbyScreens/cqcm.webp
-  name: CQCM
-  artist: blooodyspy
+  id: InvisibleWall
+  background: /Textures/LobbyScreens/invisiblewall.webp
+  title: lobby-state-background-invisiblewall-title
+  artist: lobby-state-background-invisiblewall-artist
 
 - type: lobbyBackground
-  id: mime2
-  background: /Textures/LobbyScreens/mime2.webp
-  name: Mime.
-  artist: .cheeki
+  id: Pharmacy
+  background: /Textures/LobbyScreens/pharmacy.webp
+  title: lobby-state-background-pharmacy-title
+  artist: lobby-state-background-pharmacy-artist
 
 - type: lobbyBackground
-  id: cargopoker
-  background: /Textures/LobbyScreens/cargopoker.webp
-  name: Cargo Poker Night
-  artist: _Chorinea_
+  id: SSXIV
+  background: /Textures/LobbyScreens/ssxiv.webp
+  title: lobby-state-background-SSXIV-title
+  artist: lobby-state-background-SSXIV-artist
 
 - type: lobbyBackground
-  id: suboptimal
-  background: /Textures/LobbyScreens/suboptimal.webp
-  name: Suboptimal
-  artist: 4vvv
+  id: Susstation
+  background: /Textures/LobbyScreens/susstation.webp
+  title: lobby-state-background-susstation-title
+  artist: lobby-state-background-susstation-artist
 
 - type: lobbyBackground
-  id: uristvshiero
-  background: /Textures/LobbyScreens/uristvshiero.webp
-  name: Human Urist vs Hierophant
-  artist: 51fishstack
+  id: SkellyVsTheRev
+  background: /Textures/LobbyScreens/skellyvstherev.webp
+  title: lobby-state-background-skellyvstherev-title
+  artist: lobby-state-background-skellyvstherev-artist
 
 - type: lobbyBackground
-  id: tuffthragg
-  background: /Textures/LobbyScreens/tuffthragg.webp
-  name: Tuff Thragg
-  artist: Arraydeess
+  id: Doomed
+  background: /Textures/LobbyScreens/doomed.webp
+  title: lobby-state-background-doomed-title
+  artist: lobby-state-background-doomed-artist
 
 - type: lobbyBackground
-  id: spacedragon
-  background: /Textures/LobbyScreens/spacedragon.webp
-  name: Space Dragon
-  artist: asardonicsailor
+  id: Blueprint
+  background: /Textures/LobbyScreens/blueprint.webp
+  title: lobby-state-background-blueprint-title
+  artist: lobby-state-background-blueprint-artist
 
 - type: lobbyBackground
-  id: medbayexperience
-  background: /Textures/LobbyScreens/medbayexperience.webp
-  name: Medbay Experience
-  artist: bloomyex
+  id: Behonker
+  background: /Textures/LobbyScreens/behonker.webp
+  title: lobby-state-background-behonker-title
+  artist: lobby-state-background-behonker-artist
 
 - type: lobbyBackground
-  id: fuckyoudeath
-  background: /Textures/LobbyScreens/fuckyoudeath.webp
-  name: Fuck You, Death
-  artist: boiwab
+  id: TerminalStation
+  background: /Textures/LobbyScreens/terminalstation.webp
+  title: lobby-state-background-terminalstation-title
+  artist: lobby-state-background-terminalstation-artist
 
 - type: lobbyBackground
-  id: thatfuckingratthatihate
-  background: /Textures/LobbyScreens/thatfuckingratthatihate.webp
-  name: That Fucking Rat That I Hate
-  artist: bright1905
+  id: JustAWeekAway
+  background: /Textures/LobbyScreens/justaweekaway.webp
+  title: lobby-state-background-justaweekaway-title
+  artist: lobby-state-background-justaweekaway-artist
 
 - type: lobbyBackground
-  id: whiskeyechowhiskeytime
-  background: /Textures/LobbyScreens/whiskeyechowhiskeytime.webp
-  name: Whiskey Echo Whiskey Time
-  artist: brizby
+  id: JaniShootout
+  background: /Textures/LobbyScreens/janishootout.webp
+  title: lobby-state-background-janishootout-title
+  artist: lobby-state-background-janishootout-artist
 
 - type: lobbyBackground
-  id: theantags
-  background: /Textures/LobbyScreens/theantags.webp
-  name: The Antags
-  artist: cattom.
-
-- type: lobbyBackground
-  id: thewalkingzed
-  background: /Textures/LobbyScreens/thewalkingzed.webp
-  name: The Walking Zed
-  artist: cattom.
-
-- type: lobbyBackground
-  id: screamemoji
-  background: /Textures/LobbyScreens/screamemoji.webp
-  name: Scream Emoji
-  artist: chknnug
-
-- type: lobbyBackground
-  id: pathofkino
-  background: /Textures/LobbyScreens/pathofkino.webp
-  name: Path of Kino
-  artist: dlooodyspy
-
-- type: lobbyBackground
-  id: drMothroach
-  background: /Textures/LobbyScreens/drMothroach.webp
-  name: Dr. Mothroach
-  artist: dr.cerb
-
-- type: lobbyBackground
-  id: 1000_research_assistants
-  background: /Textures/LobbyScreens/1000_research_assistants.webp
-  name: 1000 Research Assistants
-  artist: fanciest_british_frog
-
-- type: lobbyBackground
-  id: honkhonk
-  background: /Textures/LobbyScreens/honkhonk.webp
-  name: Honk Honk
-  artist: feathergothic
-
-- type: lobbyBackground
-  id: weregoingtohell
-  background: /Textures/LobbyScreens/We'reGoingToHell.webp
-  name: We're Going to Hell
-  artist: i.void.destroyer
-
-- type: lobbyBackground
-  id: GloryToNanoTrasen
-  background: /Textures/LobbyScreens/GloryToNanoTrasen.webp
-  name: Glory to Nano Trasen, what a stupid quote
-  artist: iron_diamond
-
-- type: lobbyBackground
-  id: ClownSpider
-  background: /Textures/LobbyScreens/ClownSpider.webp
-  name: Clown Spider
-  artist: mr.fisher
-
-- type: lobbyBackground
-  id: SpaceStation64
-  background: /Textures/LobbyScreens/SpaceStation64.webp
-  name: Space Station 64
-  artist: mr.fisher
-
-- type: lobbyBackground
-  id: JustAnotherShift
-  background: /Textures/LobbyScreens/JustAnotherShift.webp
-  name: Just Another Shift
-  artist: frflyffufox
-
-- type: lobbyBackground
-  id: aCalmEvac
-  background: /Textures/LobbyScreens/aCalmEvac.webp
-  name: A Calm Evac
-  artist: navi__.
-
-- type: lobbyBackground
-  id: ChitnidsDiscoverFire
-  background: /Textures/LobbyScreens/ChitnidsDiscoverFire.webp
-  name: Chitnids Discovering Fire
-  artist: olivehojoe
-
-- type: lobbyBackground
-  id: Get_Off_MrHonker's_Wild_Ride
-  background: /Textures/LobbyScreens/Get_Off_MrHonker's_Wild_Ride.webp
-  name: I Want to Get Off Mr. Honker's Wild Ride
-  artist: onetruehudson
-
-- type: lobbyBackground
-  id: AnythingButYourJob
-  background: /Textures/LobbyScreens/AnythingButYourJob.webp
-  name: Anything But Your Actual Job
-  artist: orangealligator
+  id: ReclaimerNuke
+  background: /Textures/LobbyScreens/reclaimer-nuke.webp
+  title: lobby-state-background-reclaimernuke-title
+  artist: lobby-state-background-reclaimernuke-artist
 
 - type: lobbyBackground
   id: TooManyCooks
@@ -170,202 +85,16 @@
   artist: orangealligator
 
 - type: lobbyBackground
-  id: Anyone_know_what_blew_up
-  background: /Textures/LobbyScreens/Anyone_know_what_blew_up.webp
-  name: Does Anyone Know What Blew Up?
-  artist: orchard.
+  id: suboptimal
+  background: /Textures/LobbyScreens/suboptimal.webp
+  name: Suboptimal
+  artist: 4vvv
 
 - type: lobbyBackground
-  id: PunPunWasTheEnemyAllAlong
-  background: /Textures/LobbyScreens/PunPunWasTheEnemyAllAlong.webp
-  name: Pun Pun Was The Enemy All Along
-  artist: orchard.
-
-- type: lobbyBackground
-  id: CriminallyUnderpaidBabysitter
-  background: /Textures/LobbyScreens/CriminallyUnderpaidBabysitter.webp
-  name: Criminally Underpaid Babysitter
-  artist: orchard.
-
-- type: lobbyBackground
-  id: FleshHereticMoneyGang
-  background: /Textures/LobbyScreens/FleshHereticMoneyGang.webp
-  name: Flesh Heretic Money Gang
-  artist: Pinkabee
-
-- type: lobbyBackground
-  id: NormalNanotrasenMoment
-  background: /Textures/LobbyScreens/NormalNanotrasenMoment.webp
-  name: Normal Nanotrasen Moment
-  artist: pistos2225
-
-- type: lobbyBackground
-  id: Memories
-  background: /Textures/LobbyScreens/Memories.webp
-  name: Memories
-  artist: redmon2225
-
-- type: lobbyBackground
-  id: Standoff
-  background: /Textures/LobbyScreens/Standoff.webp
-  name: Standoff
-  artist: rtx420
-
-- type: lobbyBackground
-  id: ThreeBrizbyMoon
-  background: /Textures/LobbyScreens/ThreeBrizbyMoon.webp
-  name: Three Brizby Moon
-  artist: singularjames
-
-- type: lobbyBackground
-  id: AFriendlyGameOfCards
-  background: /Textures/LobbyScreens/AFriendlyGameOfCards.webp
-  name: A Friendly Game of Cards
-  artist: stradfarian
-
-- type: lobbyBackground
-  id: AngrySecoff
-  background: /Textures/LobbyScreens/AngrySecoff.webp
-  name: Angry Sec Off
-  artist: sup0380
-
-- type: lobbyBackground
-  id: Cargonia
-  background: /Textures/LobbyScreens/Cargonia.webp
-  name: Cargonia
-  artist: suportik
-
-- type: lobbyBackground
-  id: ButNobodyCared
-  background: /Textures/LobbyScreens/ButNobodyCared.webp
-  name: But Nobody Cared
-  artist: synthetic_086
-
-- type: lobbyBackground
-  id: Sa-Tider-o_Gojo
-  background: /Textures/LobbyScreens/Sa-Tider-o_Gojo.webp
-  name: Sa-Tider-o_Gojo
-  artist: theninetails_
-
-- type: lobbyBackground
-  id: Bingle
-  background: /Textures/LobbyScreens/Bingle.webp
-  name: Bingle
-  artist: yellownes
-
-- type: lobbyBackground
-  id: CEMoneyStack
-  background: /Textures/LobbyScreens/CEMoneyStack.webp
-  name: CE Money Stack
-  artist: zymshok
-
-- type: lobbyBackground
-  id: MushroomAnnihilator
-  background: /Textures/LobbyScreens/MushroomAnnihilator.webp
-  name: Mango Flavored Mushroom Annihilator
-  artist: zymshok
-
-- type: lobbyBackground
-  id: MyZaDiskGotStolen
-  background: /Textures/LobbyScreens/MyZaDiskGotStolen.webp
-  name: My Za Disk Got Stolen
-  artist: zymshok
-
-- type: lobbyBackground
-  id: cqcm1
-  background: /Textures/LobbyScreens/cqcm1.webp
-  name: CQCM 1
-  artist: blooodyspy
-
-- type: lobbyBackground
-  id: cqcm2
-  background: /Textures/LobbyScreens/cqcm2.webp
-  name: CQCM 2
-  artist: blooodyspy
-
-- type: lobbyBackground
-  id: cqcm3
-  background: /Textures/LobbyScreens/cqcm3.webp
-  name: CQCM 3
-  artist: blooodyspy
-
-- type: lobbyBackground
-  id: goob
-  background: /Textures/LobbyScreens/goob.webp
-  name: Goob
-  artist: Diebeck
-
-- type: lobbyBackground
-  id: GoobNukie
-  background: /Textures/LobbyScreens/GoobNukie.webp
-  name: Goob Nukie
-  artist: Cheeki
-
-- type: lobbyBackground
-  id: grandtheftgoob
-  background: /Textures/LobbyScreens/grandtheftgoob.webp
-  name: Grand Theft Goob
-  artist: Piras314
-
-- type: lobbyBackground
-  id: greytideworldwide
-  background: /Textures/LobbyScreens/greytideworldwide.webp
-  name: Greytide Worldwide
-  artist: Piras314
-
-- type: lobbyBackground
-  id: heretic
-  background: /Textures/LobbyScreens/heretic.webp
-  name: Heretic
-  artist: Cheeki
-
-- type: lobbyBackground
-  id: mime
-  background: /Textures/LobbyScreens/mime.webp
-  name: Mime
-  artist: Diebeck
-
-- type: lobbyBackground
-  id: tideractivities
-  background: /Textures/LobbyScreens/tideractivities.webp
-  name: Tider Activities
+  id: spacedragon
+  background: /Textures/LobbyScreens/spacedragon.webp
+  name: Space Dragon
   artist: asardonicsailor
-
-- type: lobbyBackground
-  id: moneyspread-bingle
-  background: /Textures/LobbyScreens/binglemoneyspread.webp
-  name: Bingle Flex
-  artist: LFMoth
-
-- type: lobbyBackground
-  id: stargoob
-  background: /Textures/LobbyScreens/StarGoob.webp
-  name: GoobWars
-  artist: Jvne
-
-- type: lobbyBackground
-  id: ling-in-my-vents
-  background: /Textures/LobbyScreens/sec_theres_ling_in_my_vents.webp
-  name: Sec theres ling in my vents
-  artist: blooodyspy
-
-- type: lobbyBackground
-  id: we-all-love-ai
-  background: /Textures/LobbyScreens/we_all_love_ai.webp
-  name: We all love ai
-  artist: blooodyspy
-
-- type: lobbyBackground
-  id: syndi-kek
-  background: /Textures/LobbyScreens/syndi_kek.webp
-  name: Syndi kek
-  artist: blooodyspy
-
-- type: lobbyBackground
-  id: etu-hop
-  background: /Textures/LobbyScreens/fuckingkillHoPalready.webp
-  name: E tu, HoP?
-  artist: MsMunde
 
 - type: lobbyBackground
   id: nukies-bridge
@@ -374,7 +103,75 @@
   artist: seyriix
 
 - type: lobbyBackground
+  id: MushroomAnnihilator
+  background: /Textures/LobbyScreens/MushroomAnnihilator.webp
+  name: Mango Flavored Mushroom Annihilator
+  artist: zymshok
+
+- type: lobbyBackground
+  id: heretic
+  background: /Textures/LobbyScreens/heretic.webp
+  name: Heretic
+  artist: Cheeki
+
+- type: lobbyBackground
+  id: etu-hop
+  background: /Textures/LobbyScreens/fuckingkillHoPalready.webp
+  name: E tu, HoP?
+  artist: MsMunde
+
+- type: lobbyBackground
   id: etzils-hungry
   background: /Textures/LobbyScreens/etzilshungry.webp
   name: Etzil's Hungry
   artist: IdiotVibes
+
+- type: lobbyBackground
+  id: aCalmEvac
+  background: /Textures/LobbyScreens/aCalmEvac.webp
+  name: A Calm Evac
+  artist: navi__.
+
+- type: lobbyBackground
+  id: YouLookLonely
+  background: /Textures/LobbyScreens/you-look-lonely.webp
+
+- type: lobbyBackground
+  id: Summer2025DragonLeash
+  background: /Textures/LobbyScreens/summer2025-dragon-leash.webp
+
+- type: lobbyBackground
+  id: SingulordCage
+  background: /Textures/LobbyScreens/singulord-cage.webp
+
+- type: lobbyBackground
+  id: Revenant
+  background: /Textures/LobbyScreens/revenant.webp
+
+- type: lobbyBackground
+  id: NukieWar
+  background: /Textures/LobbyScreens/nukie-war.webp
+
+- type: lobbyBackground
+  id: NewYearParty
+  background: /Textures/LobbyScreens/new-year-party.png
+
+- type: lobbyBackground
+  id: NewYearBar
+  background: /Textures/LobbyScreens/new-year-bar.png
+
+- type: lobbyBackground
+  id: MenAtWork
+  background: /Textures/LobbyScreens/men-at-work.webp
+
+- type: lobbyBackground
+  id: barparty
+  background: /Textures/LobbyScreens/bar_party.webp
+
+- type: lobbyBackground
+  id: dedsquad
+  background: /Textures/LobbyScreens/Epsil.webp
+
+- type: lobbyBackground
+  id: detective
+  background: /Textures/LobbyScreens/detective.webp
