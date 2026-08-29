@@ -1,18 +1,18 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: weightedRandom
   id: GameDirector
   weights:
     Traitor: 0.25
     Changeling: 0.10
-    Nukeops: 0.01 # Erida edit
-    Revolutionary: 0.01 # Erida edit
-    Zombie: 0.008 # Erida edit
+    Nukeops: 0.05
+    Revolutionary: 0.05
+    Zombie: 0.04
     Heretic: 0.11
-    BlobGameMode: 0.01 # Erida edit
-    Wizard: 0.005 # Erida edit
-    CosmicCult: 0.01 # make it semi often so we can test it (Erida edit)
-    Honkops: 0.002 # Erida edit
+    BlobGameMode: 0.05
+    Wizard: 0.025
+    CosmicCult: 0.05 # make it semi often so we can test it
+    Honkops: 0.01
 
 
 - type: incompatibleModes

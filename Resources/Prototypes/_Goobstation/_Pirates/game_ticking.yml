@@ -1,15 +1,15 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   parent: BaseGameRule
   id: SpacePirates
   components:
   - type: StationEvent
-    weight: 0.6 # Erida edit
+    weight: 3
     duration: null
     earliestStart: 20
     reoccurrenceDelay: 60
-    minimumPlayers: 40 # Erida edit
+    minimumPlayers: 30
     chaos:
       Hostile: 60
       Medical: 50

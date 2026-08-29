@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   parent: Traitor
@@ -6,8 +6,8 @@
   components:
   - type: StationEvent
     earliestStart: 30
-    weight: 4 # Erida edit
-    minimumPlayers: 20 # Erida edit
+    weight: 8
+    minimumPlayers: 15
     maxOccurrences: 1
     startAnnouncement: station-event-communication-interception
     startAudio:
@@ -70,9 +70,9 @@
   id: BlobMidround
   components:
   - type: StationEvent
-    weight: 0.2 # Erida edit
+    weight: 1
     earliestStart: 45
-    minimumPlayers: 60 # Erida edit
+    minimumPlayers: 50
     duration: null
     maxOccurrences: 1
     chaos:
@@ -117,10 +117,10 @@
   id: TunnelClownMidround
   components:
   - type: StationEvent
-    weight: 2 # Erida edit
+    weight: 4
     duration: null
     earliestStart: 15
-    minimumPlayers: 30 # Erida edit
+    minimumPlayers: 20
     chaos:
       Hostile: 15
       Combat: 20
@@ -152,10 +152,10 @@
   id: SingulothKnightsMidround
   components:
   - type: StationEvent
-    weight: 0.5 # Erida edit
+    weight: 2.5
     duration: null
     earliestStart: 45
-    minimumPlayers: 60 # Erida edit
+    minimumPlayers: 50
     chaos:
       Hostile: 75
       Combat: 40
@@ -189,10 +189,10 @@
   id: DarkLordMidround
   components:
   - type: StationEvent
-    weight: 0.4 # Erida edit
+    weight: 2
     duration: null
     earliestStart: 30
-    minimumPlayers: 40 # Erida edit
+    minimumPlayers: 30
     chaos:
       Death: 100
       Combat: 85
@@ -254,10 +254,10 @@
   id: MimeAssassinMidround
   components:
   - type: StationEvent
-    weight: 0.8 # Erida edit
+    weight: 4
     duration: null
     earliestStart: 30
-    minimumPlayers: 40 # Erida edit
+    minimumPlayers: 30
     chaos:
       Hostile: 40
       Combat: 50
@@ -293,10 +293,10 @@
   id: DarkPriestMidround
   components:
   - type: StationEvent
-    weight: 0.6 # Erida edit
+    weight: 3
     duration: null
     earliestStart: 30
-    minimumPlayers: 40 # Erida edit
+    minimumPlayers: 30
     chaos:
       Death: 60
     eventType: HostilesSpawn
@@ -343,8 +343,8 @@
     maxDifficulty: 10
   - type: StationEvent
     earliestStart: 35
-    weight: 0.5 # Erida edit
-    minimumPlayers: 60 # Erida edit
+    weight: 2.5
+    minimumPlayers: 50
     duration: 1
     chaos:
       Hostile: 300
@@ -398,10 +398,10 @@
   id: SlasherSpawn
   components:
   - type: StationEvent
-    weight: 0.6 # Erida edit
+    weight: 3
     duration: null
     earliestStart: 30
-    minimumPlayers: 40 # Erida edit
+    minimumPlayers: 30
     chaos:
       Hostile: 40
       Combat: 40
@@ -639,10 +639,10 @@
     gridPath: /Maps/_Goobstation/Shuttles/ShuttleEvent/Legionnaire.yml
   - type: StationEvent
     startAnnouncement: null
-    weight: 0.2 # Erida edit
+    weight: 1
     duration: null
     earliestStart: 30
-    minimumPlayers: 40 # Erida edit
+    minimumPlayers: 30
     chaos:
       Hostile: 40
       Combat: 40

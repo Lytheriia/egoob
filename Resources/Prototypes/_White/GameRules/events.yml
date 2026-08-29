@@ -1,11 +1,11 @@
-﻿- type: entity
+- type: entity
   parent: BaseGameRule
   id: XenomorphsInfestation
   components:
   - type: StationEvent
-    weight: 0.3 # Goobstation - was 7.5 (Erida edit)
+    weight: 1.5 # Goobstation - was 7.5
     duration: null
-    minimumPlayers: 60 # Goobstation - was 20 (Erida edit)
+    minimumPlayers: 50 # Goobstation - was 20
     earliestStart: 30 # Goobstation
     #reoccurrenceDelay: 50 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation

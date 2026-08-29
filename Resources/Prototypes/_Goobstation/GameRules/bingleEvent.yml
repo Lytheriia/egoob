@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   id: BingleSpawn
@@ -6,9 +6,9 @@
   components:
   - type: StationEvent
     earliestStart: 50
-    weight: 0.6 # Erida edit
+    weight: 3
     duration: 50
-    minimumPlayers: 60 # Erida edit
+    minimumPlayers: 50
     chaos: # Goobstation
       Hostile: 200
       Friend: 20

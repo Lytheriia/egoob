@@ -21,24 +21,24 @@
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
         - id: Nukeops
-          weight: 5 # Erida edit
+          weight: 25
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:PlayerCountCondition
-            min: 30 # Erida edit
+            min: 20
         - id: Revolutionary
-          weight: 1 # Erida edit
+          weight: 5
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
         - id: Zombie
-          weight: 1 # Erida edit
+          weight: 5
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:PlayerCountCondition
-            min: 30 # Erida edit
+            min: 20
 #        - id: Wizard # Goob we dont use this
 #          weight: 5
 #          conditions:
@@ -64,28 +64,28 @@
           min: 300 # minimum 5 minutes
         children:
         - id: SleeperAgents
-          weight: 8 # Erida edit
+          weight: 15
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:RoundDurationCondition
             min: 900 # 15 minutes
         - id: DragonSpawn
-          weight: 3 # Erida edit
+          weight: 15
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:RoundDurationCondition
             min: 900 # 15 minutes
         - id: NinjaSpawn
-          weight: 8 # Erida edit
+          weight: 20
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:RoundDurationCondition
             min: 900 # 15 minutes
         - id: ParadoxCloneSpawn
-          weight: 10 # Erida edit
+          weight: 25
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
@@ -93,20 +93,20 @@
           - !type:RoundDurationCondition
             min: 600 # 10 minutes
         - id: ZombieOutbreak
-          weight: 0.5 # Erida edit
+          weight: 2.5
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:PlayerCountCondition
-            min: 30 # Erida edit
+            min: 20
           - !type:RoundDurationCondition
             min: 2700 # 45 minutes
         - id: LoneOpsSpawn
-          weight: 1 # Erida edit
+          weight: 5
           conditions:
           - !type:HasBudgetCondition
           - !type:MaxRuleOccurenceCondition
           - !type:PlayerCountCondition
-            min: 30 # Erida edit
+            min: 20
           - !type:RoundDurationCondition
             min: 2100 # 35 minutes

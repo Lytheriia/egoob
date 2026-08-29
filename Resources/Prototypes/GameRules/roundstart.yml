@@ -1,4 +1,4 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
   id: BaseGameRule
@@ -26,12 +26,12 @@
       prob: 0.5
     - id: Heretic # goob edit
       prob: 0.2
-    - id: Devil # Goob (Erida edit)
-      prob: 0.004
-    - id: Shadowling # Goob (Erida edit)
-      prob: 0.004
-    - id: Xenoborgs # Erida edit
-      prob: 0.01
+    - id: Devil # Goob
+      prob: 0.02
+    - id: Shadowling # Goob
+      prob: 0.02
+    - id: Xenoborgs
+      prob: 0.05
     #- id: SubWizard # Goob
     #  prob: 0.05
 
@@ -45,12 +45,12 @@
       prob: 0.5
     - id: Heretic # goob edit
       prob: 0.2
-    - id: Devil # Goob (Erida edit)
-      prob: 0.004
-    - id: Shadowling # Goob (Erida edit)
-      prob: 0.004
-    - id: Xenoborgs # Erida edit
-      prob: 0.01
+    - id: Devil # Goob
+      prob: 0.02
+    - id: Shadowling # Goob
+      prob: 0.02
+    - id: Xenoborgs
+      prob: 0.05
 
 - type: entity
   parent: BaseGameRule
@@ -148,7 +148,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 30 # Erida edit
+    minPlayers: 20
   - type: LoadMapRule
     mapPath: /Maps/_Goobstation/Nonstations/nukieplanet.yml # goob edit
   - type: AntagSelection
@@ -294,7 +294,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 25 # Erida edit
+    minPlayers: 15
     chaosScore: 1000 # Goobstation - intentionally not per-antag
   - type: RevolutionaryRule
   - type: AntagSelection
@@ -391,7 +391,7 @@
   parent: BaseGameRule
   components:
   - type: GameRule
-    minPlayers: 30 # Erida edit
+    minPlayers: 20
     delay:
       min: 600
       max: 900
