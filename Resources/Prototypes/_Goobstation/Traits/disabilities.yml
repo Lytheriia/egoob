@@ -45,21 +45,21 @@
 #   components:
 #     - type: SocialAnxiety
 
-- type: trait
-  id: DeafTrait
-  name: trait-deaf-name
-  description: trait-deaf-disc
-  category: Disabilities
-  blacklist:
-    components:
-    - BorgChassis
-  components:
-    - type: Deaf
+# - type: trait
+#   id: DeafTrait
+#   name: trait-deaf-name
+#   description: trait-deaf-disc
+#   category: Disabilities
+#   blacklist:
+#     components:
+#     - BorgChassis
+#   components:
+#     - type: Deaf
 
-- type: trait
-  id: PhantomPain
-  name: trait-phantom-pain-name
-  description: trait-phantom-pain-desc
-  category: Disabilities
-  components:
-    - type: PhantomPain
+# - type: trait
+#   id: PhantomPain
+#   name: trait-phantom-pain-name
+#   description: trait-phantom-pain-desc
+#   category: Disabilities
+#   components:
+#     - type: PhantomPain

@@ -197,9 +197,9 @@
   description: It smells like dead rat. Lets you speak like one!
   components:
   - type: Sprite
-    sprite: _Erida/Clothing/Head/Misc/fancycrown.rsi
+    sprite: Clothing/Head/Misc/fancycrown.rsi
   - type: Clothing
-    sprite: _Erida/Clothing/Head/Misc/fancycrown.rsi
+    sprite: Clothing/Head/Misc/fancycrown.rsi
   - type: TypingIndicatorClothing
     proto: regal
   - type: StaticPrice

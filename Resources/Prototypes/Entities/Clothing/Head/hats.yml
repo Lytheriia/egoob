@@ -999,9 +999,9 @@
   description: Somehow I feel I'm not supposed to leave this place.
   components:
   - type: Sprite
-    sprite: _Erida/Clothing/Head/Hats/nursehat.rsi
+    sprite: Clothing/Head/Hats/nursehat.rsi
   - type: Clothing
-    sprite: _Erida/Clothing/Head/Hats/nursehat.rsi
+    sprite: Clothing/Head/Hats/nursehat.rsi
   - type: Tag
     tags:
     - ClothMade
