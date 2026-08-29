@@ -188,7 +188,7 @@ public partial class TraumaSystem
         Entity<TraumaInflicterComponent> woundEnt,
         ref WoundSeverityPointChangedEvent args)
     {
-        if (!_timing.IsFirstTimePredicted
+        if (_net.IsClient
             || HasComp<GodmodeComponent>(args.Component.HoldingWoundable))
             return;
 
@@ -481,16 +481,15 @@ public partial class TraumaSystem
 
         foreach (var ent in _inventory.GetHandOrInventoryEntities(body, SlotFlags.WITHOUT_POCKET))
         {
-            if (!TryComp<ArmorComponent>(ent, out var armour))
+            if (!TryComp<ArmorComponent>(ent, out var armour)
+                || !armour.TraumaDeductions.TryGetValue(traumaType, out var traumaDeduction))
                 continue;
 
-            if (!inflicter.Comp.AllowArmourDeduction.Contains(traumaType) && armour.TraumaDeductions[traumaType] >= 0)
+            if (!inflicter.Comp.AllowArmourDeduction.Contains(traumaType) && traumaDeduction >= 0)
                 continue;
 
             if (armour.ArmorCoverage.Contains(coverage))
-            {
-                deduction += armour.TraumaDeductions[traumaType];
-            }
+                deduction += traumaDeduction;
         }
 
         return deduction;
@@ -574,6 +573,7 @@ public partial class TraumaSystem
                 continue;
 
             containedTraumaComp.TraumaSeverity = severity;
+            Dirty(trauma, containedTraumaComp);
             return trauma;
         }
 
