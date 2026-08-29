@@ -1321,3 +1321,12 @@ Entries:
   url: https://github.com/dead-space-server/EridaGoob/pull/36
   avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
   title: Upstream
+- author: Lytheriia
+  changes:
+    - type: Tweak
+      message: Увеличены шансы на выпадение многих мидраунд антагонистов
+  id: 111
+  time: '2026-08-29T13:34:17.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/38
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: Revert "The end of the end (#19)"
