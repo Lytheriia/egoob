@@ -356,7 +356,7 @@
   parent: FoodEgg
   suffix: Fertilized, Chicken
   components:
-  
+
   - type: TimedSpawner
     prototypes:
     - MobChicken
@@ -393,7 +393,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.2
-        density: 2 # Goob edit
+        density: 100
         mask:
         - SmallMobMask
         layer:
