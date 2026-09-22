@@ -83,5 +83,5 @@ public sealed partial class AlertLevelDetail
     /// </summary>
     [DataField] public bool EmagSelectable { get; private set; }
 
-    [DataField("voice")] public ProtoId<TTSVoicePrototype> VoicePrototypeId = string.Empty;
+    [DataField("voice")] public string VoicePrototypeId = string.Empty;
 }
