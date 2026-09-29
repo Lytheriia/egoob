@@ -132,6 +132,8 @@
   - type: ShowHealthBars
   - type: ShowCriminalRecordIcons
   - type: UniversalLanguageSpeaker
+  - type: DirectionalEmote
+    canHideName: true
   # Erida end
 
 - type: entity
