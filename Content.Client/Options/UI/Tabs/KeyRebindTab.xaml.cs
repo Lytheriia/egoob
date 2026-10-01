@@ -223,6 +223,8 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.PosingRotateNegative);
             AddButton(ContentKeyFunctions.PosingRotatePositive);
             // ADT end
+            AddButton(ContentKeyFunctions.OfferItem); // erida edit
+
             AddHeader("ui-options-header-ui");
             AddButton(ContentKeyFunctions.FocusChat);
             AddButton(ContentKeyFunctions.FocusLocalChat);

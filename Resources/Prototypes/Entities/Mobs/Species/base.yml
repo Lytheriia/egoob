@@ -276,6 +276,7 @@
   abstract: true
   components:
   - type: Absorbable # Goobstation - changelings
+  - type: OfferItem # erida edit
   - type: WraithAbsorbable # Goobstation - wraith
   - type: SSDAutoSendToCryostorage # Erida-edit
   - type: Barotrauma

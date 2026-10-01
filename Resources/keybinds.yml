@@ -702,3 +702,8 @@ binds:
   type: State
   key: Num3
 # Erida end
+# erida edit start
+- function: OfferItem
+  type: State
+  key: H
+# erida edit end

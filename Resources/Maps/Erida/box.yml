@@ -196877,8 +196877,6 @@ entities:
       pos: 4.5,38.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 29438
 - proto: WeaponEnergyTurretSecurityControlPanel
