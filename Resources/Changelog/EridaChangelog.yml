@@ -1788,3 +1788,22 @@ Entries:
   url: https://github.com/dead-space-server/EridaGoob/pull/65
   avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
   title: Aspid
+- author: Wendor
+  changes:
+    - type: Add
+      message: 'Возможность передавать предметы прямо в руки! '
+    - type: Add
+      message: Новые цвета у ламп
+    - type: Add
+      message: Новый режим у "Правосудия".
+    - type: Remove
+      message: Хард-альт режим у "Правосудия"
+    - type: Tweak
+      message: Яркость лампочек
+    - type: Fix
+      message: Шейдеры освещения
+  id: 132
+  time: '2026-10-01T21:57:09.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/66
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: lighting + a couple of minor changes and additions
