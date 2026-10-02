@@ -1807,3 +1807,14 @@ Entries:
   url: https://github.com/dead-space-server/EridaGoob/pull/66
   avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
   title: lighting + a couple of minor changes and additions
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: >-
+        Лидер ОБР теперь имеет в своём стартовом снаряжении селектор вооружения
+        ОБР
+  id: 133
+  time: '2026-10-02T15:30:27.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/67
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Added in ERTLeaderGearEVA ERTSecurityUndeterminedWeapon
