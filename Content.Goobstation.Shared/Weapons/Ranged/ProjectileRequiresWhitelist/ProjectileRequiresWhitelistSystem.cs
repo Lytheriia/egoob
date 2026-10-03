@@ -41,7 +41,8 @@ public sealed class ProjectileRequireWhitelistSystem : EntitySystem
             return;
 
         // stop when a wall is hit
-        if (comp.CollideWithWalls && args.OtherFixture.Hard && args.OtherBody.BodyType is BodyType.Static or BodyType.Dynamic)
+        if (comp.CollideWithWalls && args.OtherFixture.Hard && args.OtherBody.BodyType is BodyType.Static or BodyType.Dynamic
+            && Transform(uid).Anchored) // Erida edit
             return;
 
         // Prevent collision in all other cases

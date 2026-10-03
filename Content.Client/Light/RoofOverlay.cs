@@ -23,6 +23,7 @@ public sealed class RoofOverlay : Overlay
     private readonly SharedMapSystem _mapSystem;
     private readonly SharedRoofSystem _roof = default!;
     private readonly SharedTransformSystem _xformSystem;
+    private readonly TurfSystem _turf; // erida edit
 
     private List<Entity<MapGridComponent>> _grids = new();
 
@@ -39,6 +40,7 @@ public sealed class RoofOverlay : Overlay
         _mapSystem = _entManager.System<SharedMapSystem>();
         _roof = _entManager.System<SharedRoofSystem>();
         _xformSystem = _entManager.System<SharedTransformSystem>();
+        _turf = _entManager.System<TurfSystem>(); // erida edit
 
         ZIndex = ContentZIndex;
     }
@@ -59,6 +61,23 @@ public sealed class RoofOverlay : Overlay
 
         _grids.Clear();
         _mapManager.FindGridsIntersecting(args.MapId, bounds, ref _grids, approx: true, includeMap: true);
+
+        // erida edit: exit
+        var anyRoof = false;
+        foreach (var grid in _grids)
+        {
+            if (_entManager.HasComponent<ImplicitRoofComponent>(grid.Owner) ||
+                _entManager.HasComponent<RoofComponent>(grid.Owner))
+            {
+                anyRoof = true;
+                break;
+            }
+        }
+
+        if (!anyRoof)
+            return;
+        // erida edit end
+
         var lightScale = viewport.LightRenderTarget.Size / (Vector2) viewport.Size;
         var scale = viewport.RenderScale / (Vector2.One / lightScale);
 
@@ -84,6 +103,11 @@ public sealed class RoofOverlay : Overlay
 
                     while (tileEnumerator.MoveNext(out var tileRef))
                     {
+                        // erida edit start
+                        if (_turf.IsSpace(tileRef))
+                            continue;
+                        // erida edit end
+
                         var local = _lookup.GetLocalBounds(tileRef, grid.Comp.TileSize);
                         worldHandle.DrawRect(local, color);
                     }
@@ -115,6 +139,11 @@ public sealed class RoofOverlay : Overlay
                     // Due to stencilling we essentially draw on unrooved tiles
                     while (tileEnumerator.MoveNext(out var tileRef))
                     {
+                        // erida edit start
+                        if (_turf.IsSpace(tileRef))
+                            continue;
+                        // erida edit end
+
                         var color = _roof.GetColor(roofEnt, tileRef.GridIndices);
 
                         if (color == null)

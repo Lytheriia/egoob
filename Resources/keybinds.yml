@@ -694,3 +694,16 @@ binds:
   type: State
   key: E
 # ADT-Tweak-end
+# Erida start
+- function: EditorNextObject
+  type: State
+  key: Num9
+- function: EditorPreviousObject
+  type: State
+  key: Num3
+# Erida end
+# erida edit start
+- function: OfferItem
+  type: State
+  key: H
+# erida edit end

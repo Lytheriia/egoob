@@ -221,6 +221,7 @@
     enabled: false
     radius: 8
     energy: 5
+    color: '#ffe0b7' # Funky
   - type: ItemSlots
     slots:
       cell_slot:

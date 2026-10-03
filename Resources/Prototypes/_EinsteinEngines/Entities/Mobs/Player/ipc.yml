@@ -72,6 +72,7 @@
     unlockOnClick: false
     lockTime: 5
     unlockTime: 5
+  - type: OfferItem # erida edit
   - type: InteractionPopup
     successChance: 1
     interactSuccessString: hugging-success-generic

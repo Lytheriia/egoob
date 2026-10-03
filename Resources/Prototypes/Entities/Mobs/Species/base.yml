@@ -261,6 +261,7 @@
   - type: MindControllable # Goobstation
   - type: VisibleContraband # Goobstation
   - type: MomentumSteering # Goobstation - No steer
+  - type: DirectionalEmote # Erida
 
 - type: entity
   save: false
@@ -275,6 +276,7 @@
   abstract: true
   components:
   - type: Absorbable # Goobstation - changelings
+  - type: OfferItem # erida edit
   - type: WraithAbsorbable # Goobstation - wraith
   - type: SSDAutoSendToCryostorage # Erida-edit
   - type: Barotrauma
@@ -353,7 +355,7 @@
     - Parasite
   - type: ObraDinnBody # Goobstation
   # </Goobstation>
-  - type: TTS # Erida 
+  - type: TTS # Erida
 
 - type: entity
   save: false

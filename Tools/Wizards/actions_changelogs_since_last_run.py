@@ -261,13 +261,19 @@ def get_retry_after(response: requests.Response, retry_attempt: int) -> float:
 
 
 def send_discord_webhook(embed: dict[str, Any], message_name: str) -> None:
-    webhook_url_erida = os.environ.get("DISCORD_WEBHOOK_URL_ERIDA")
+    webhook_urls = [
+        os.environ.get("DISCORD_WEBHOOK_URL_ERIDA"),
+        os.environ.get("DISCORD_WEBHOOK_URL_DEADSPACE"),
+    ]
 
-    if webhook_url_erida:
-        send_with_retry(webhook_url_erida, get_discord_body(embed), message_name)
-
-    if not webhook_url_erida:
+    if not any(webhook_urls):
         raise RuntimeError("No Discord webhooks configured!")
+
+    body = get_discord_body(embed)
+
+    for webhook_url in webhook_urls:
+        if webhook_url:
+            send_with_retry(webhook_url, body, message_name)
 
 
 def changelog_entries_to_embeds(entries: Iterable[ChangelogEntry]) -> list[dict[str, Any]]:

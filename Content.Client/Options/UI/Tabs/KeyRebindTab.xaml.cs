@@ -223,6 +223,8 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(ContentKeyFunctions.PosingRotateNegative);
             AddButton(ContentKeyFunctions.PosingRotatePositive);
             // ADT end
+            AddButton(ContentKeyFunctions.OfferItem); // erida edit
+
             AddHeader("ui-options-header-ui");
             AddButton(ContentKeyFunctions.FocusChat);
             AddButton(ContentKeyFunctions.FocusLocalChat);
@@ -296,6 +298,11 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.EditorGridPlace);
             AddButton(EngineKeyFunctions.EditorLinePlace);
             AddButton(EngineKeyFunctions.EditorRotateObject);
+            // Erida start
+            AddButton(ContentKeyFunctions.EditorNextObject);
+            AddButton(ContentKeyFunctions.EditorPreviousObject);
+            // Erida end
+
             AddButton(ContentKeyFunctions.EditorFlipObject);
             AddButton(ContentKeyFunctions.EditorCopyObject);
 

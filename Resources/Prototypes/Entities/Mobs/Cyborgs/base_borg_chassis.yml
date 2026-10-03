@@ -322,6 +322,7 @@
   - type: MiningPoints # goobstation borgs can claim mining points
   - type: SpeechSynthesis # Corvax-Frontier-Barks
     voice: Borg
+  - type: DirectionalEmote # Erida edit
 
 - type: entity
   abstract: true

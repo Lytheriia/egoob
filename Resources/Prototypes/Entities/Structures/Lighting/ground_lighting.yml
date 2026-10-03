@@ -34,9 +34,9 @@
         - BulletImpassable
   - type: PointLight
     radius: 10
-    energy: 2.5
-    softness: 0.9
-    color: "#fae5c9" # erida edit
+    energy: 0.85 # erida edit
+    softness: 1.8 # erida edit
+    color: "#FFDDB4" # erida edit
   - type: Anchorable
   - type: InteractionOutline
   - type: Damageable
@@ -154,9 +154,9 @@
   - type: PointLight
     enabled: true
     radius: 15
-    energy: 1
-    softness: 0.9
-    color: "#fae5c9" # erida edit
+    energy: 1 # erida edit
+    softness: 1.7 # erida edit
+    color: "#E9EEFF" # erida edit
   - type: PoweredLight
     hasLampOnSpawn: LedLightTube
   - type: AmbientOnPowered

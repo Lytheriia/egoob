@@ -37,9 +37,9 @@
     whitelist:
      components:
       - Clumsy
-  - type: ProjectileThrowOnHit
-    distance: 20
-    speed: 50
+  - type: ProjectileThrowOnHit # Erida edit
+    distance: 10
+    speed: 20
 
 - type: entity
   id: BulletPulse

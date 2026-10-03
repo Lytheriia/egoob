@@ -7,6 +7,6 @@ REM SPDX-License-Identifier: AGPL-3.0-or-later
 cd ../../../
 
 call git submodule update --init --recursive
-call dotnet build -c Debug
+call dotnet build -c DebugOpt
 
 pause

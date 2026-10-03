@@ -1684,3 +1684,173 @@ Entries:
   url: https://github.com/dead-space-server/EridaGoob/pull/60
   avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
   title: '[Tweak] TTS changes'
+- author: Lytheriia
+  changes:
+    - type: Remove
+      message: Shouko временно вырезана из доступных карт
+    - type: Tweak
+      message: Звуки кодов угроз заменены на более длительные
+  id: 128
+  time: '2026-09-23T10:25:13.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/61
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: '[Tweak] New code sounds'
+- author: Lytheriia
+  changes:
+    - type: Fix
+      message: 'Возвращена механика копирования декалей '
+  id: 129
+  time: '2026-09-23T13:41:06.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/62
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: '[Add] Decal copy button'
+- author: Wendor299 and rOmannn299
+  changes:
+    - type: Add
+      message: 'Генератор в техи СБ '
+    - type: Add
+      message: Больше наэлектризованных окон в СБ и в комнатах глав
+    - type: Add
+      message: Заземляющие стержни для Суперматерии
+    - type: Tweak
+      message: >-
+        Ящик имплантов щита разума в оружейной СБ заменен на ящик смешанных
+        имплантов
+    - type: Fix
+      message: Исправлены маяки, которые не отображались на карте (возможно)
+    - type: Fix
+      message: Некорректные названия некоторых маяков заменены на более подходящие
+    - type: Fix
+      message: >-
+        [Фантомная
+        кровь](https://discord.com/channels/1357728304710422680/1550086387506745436).
+        Жидкие лекарства теперь корректно исправляют спрайт персонажа
+  id: 130
+  time: '2026-09-23T13:54:14.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/63
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: Minor fixes + WenderDelta update
+- author: rOmannn299
+  changes:
+    - type: Tweak
+      message: Ремап Аспида
+    - type: Add
+      message: Должность ПНТ, вещи ПНТ в комнату ОСЩ
+    - type: Add
+      message: Шахтерский шаттл и защита от метеоров для него
+    - type: Add
+      message: Законник для ГСБ
+    - type: Add
+      message: Ксенобиология и необходимые предметы для нее
+    - type: Add
+      message: Больше камер для ИИ и СБ
+    - type: Add
+      message: >-
+        Турель СБ в оружейную, Турель командования на мостик, турель
+        командования в хранилище, внешние турели  для ИИ, для всех турелей,
+        кроме турелей ИИ, добавлены консоли управления
+    - type: Add
+      message: Консоль восстановления ИИ
+    - type: Add
+      message: Более прочная защита от метеоров для ИИ
+    - type: Add
+      message: Больше пожарных шлюзов в техи
+    - type: Add
+      message: Сервер вирусологии
+    - type: Add
+      message: Больше ресурсов в техи
+    - type: Add
+      message: Больше веселья в техи! Изменены некоторые секретки и лут в них
+    - type: Add
+      message: Техфабы отделов
+    - type: Tweak
+      message: Оружие на стойках в Оружейной заменено на сейфы
+    - type: Tweak
+      message: Добавлены уточнения к старым маякам, добавлены новые маяки
+    - type: Tweak
+      message: >-
+        Суперматерия заменена на губовскую, суперматерии добавлены заземляющие
+        стержни, добавлена консоль контроля суперматерии
+    - type: Tweak
+      message: >-
+        Гермозатворы в бриге. Теперь многие гермозатворы брига имеют собственные
+        кнопки для локальной активации
+    - type: Fix
+      message: Кресла заменены на спавнеры кресел
+    - type: Fix
+      message: >-
+        Двери инженерного отдела в комнате якоря заменены на защищённые двери
+        командования
+    - type: Fix
+      message: Некорректные камеры, летающие посреди комнат без опоры
+  id: 131
+  time: '2026-09-25T22:31:06.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/65
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: Aspid
+- author: Wendor
+  changes:
+    - type: Add
+      message: 'Возможность передавать предметы прямо в руки! '
+    - type: Add
+      message: Новые цвета у ламп
+    - type: Add
+      message: Новый режим у "Правосудия".
+    - type: Remove
+      message: Хард-альт режим у "Правосудия"
+    - type: Tweak
+      message: Яркость лампочек
+    - type: Fix
+      message: Шейдеры освещения
+  id: 132
+  time: '2026-10-01T21:57:09.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/66
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: lighting + a couple of minor changes and additions
+- author: vanomorodellefake
+  changes:
+    - type: Add
+      message: >-
+        Лидер ОБР теперь имеет в своём стартовом снаряжении селектор вооружения
+        ОБР
+  id: 133
+  time: '2026-10-02T15:30:27.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/67
+  avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
+  title: Added in ERTLeaderGearEVA ERTSecurityUndeterminedWeapon
+- author: rOmannn299
+  changes:
+    - type: Add
+      message: >-
+        Шаттл СБ был значительно усилен, добавлено вооружение для шаттла,
+        добавлены ЭМИ боеприпасы и батареи для лазеров в комнату Пилота под
+        доступами оружейной
+    - type: Add
+      message: Короб с антикварным пистолетом
+    - type: Add
+      message: Измельчитель слаймов и дренажи в ксенобио
+    - type: Add
+      message: Стиральные машины в бриге, на мостике, в туалеты
+    - type: Add
+      message: Аптечка от ожогов бригмедику
+    - type: Add
+      message: Больше шкафов заключенных для генпоп пермабрига
+    - type: Tweak
+      message: Спавнеры в техах, другие незначительные изменения техов
+    - type: Fix
+      message: >-
+        Доступы в комнату журналиста и радиоведущего, все машины радиоведущего
+        теперь связаны между собой
+    - type: Fix
+      message: Некорректные названия некоторых маяков заменены на более подходящие
+    - type: Fix
+      message: >-
+        Некорректная кнопка, направленная в дверь, в комнате детектива
+        исправлена на корректную
+    - type: Fix
+      message: Отсоединенные багованные тайлы были удалены
+  id: 134
+  time: '2026-10-03T00:29:29.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/68
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: Box
