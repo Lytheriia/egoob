@@ -17,6 +17,8 @@ public sealed class DecalCopySystem : EntitySystem
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly InputSystem _inputSystem = default!;
 
+    public Action<bool> UpdateCopyDecalButtons = default!;
+    public Action<string> UpdateSelectedDecalId = default!;
     public Action<Color> UpdateClientColorAction = default!;
     private bool _isActive = false;
 
@@ -40,8 +42,12 @@ public sealed class DecalCopySystem : EntitySystem
                     cleanable: decal.Cleanable
                 );
 
+                UpdateSelectedDecalId.Invoke(decal.Id);
+
                 if (decal.Color != null)
                     UpdateClientColorAction.Invoke(decal.Color.Value);
+
+                SetActive(false);
 
                 return true;
             },
@@ -49,10 +55,6 @@ public sealed class DecalCopySystem : EntitySystem
             {
                 if (!_isActive)
                     return false;
-
-                SetActive(false);
-
-                _decalPlacementSystem.SetActive(true);
 
                 return true;
             }))
@@ -65,11 +67,12 @@ public sealed class DecalCopySystem : EntitySystem
 
                 SetActive(false);
 
-                _decalPlacementSystem.SetActive(true);
-
                 return true;
             }, (session, coords, uid) =>
             {
+                if (!_isActive)
+                    return false;
+
                 return true;
             }))
             // NUM9
@@ -112,10 +115,17 @@ public sealed class DecalCopySystem : EntitySystem
 
         SwitchOverlay(_isActive);
 
-        if (_isActive)
-            _inputManager.Contexts.SetActiveContext("editor");
+        if (!_isActive)
+        {
+            _decalPlacementSystem.SetActive(true);
+        }
         else
-            _inputSystem.SetEntityContextActive();
+        {
+            _decalPlacementSystem.SetActive(false);
+            _inputManager.Contexts.SetActiveContext("editor");
+        }
+
+        UpdateCopyDecalButtons.Invoke(isActive);
     }
 
     private void SwitchOverlay(bool isActive)
