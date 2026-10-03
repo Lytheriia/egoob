@@ -1818,3 +1818,39 @@ Entries:
   url: https://github.com/dead-space-server/EridaGoob/pull/67
   avatar_url: https://avatars.githubusercontent.com/u/53963119?v=4
   title: Added in ERTLeaderGearEVA ERTSecurityUndeterminedWeapon
+- author: rOmannn299
+  changes:
+    - type: Add
+      message: >-
+        Шаттл СБ был значительно усилен, добавлено вооружение для шаттла,
+        добавлены ЭМИ боеприпасы и батареи для лазеров в комнату Пилота под
+        доступами оружейной
+    - type: Add
+      message: Короб с антикварным пистолетом
+    - type: Add
+      message: Измельчитель слаймов и дренажи в ксенобио
+    - type: Add
+      message: Стиральные машины в бриге, на мостике, в туалеты
+    - type: Add
+      message: Аптечка от ожогов бригмедику
+    - type: Add
+      message: Больше шкафов заключенных для генпоп пермабрига
+    - type: Tweak
+      message: Спавнеры в техах, другие незначительные изменения техов
+    - type: Fix
+      message: >-
+        Доступы в комнату журналиста и радиоведущего, все машины радиоведущего
+        теперь связаны между собой
+    - type: Fix
+      message: Некорректные названия некоторых маяков заменены на более подходящие
+    - type: Fix
+      message: >-
+        Некорректная кнопка, направленная в дверь, в комнате детектива
+        исправлена на корректную
+    - type: Fix
+      message: Отсоединенные багованные тайлы были удалены
+  id: 134
+  time: '2026-10-03T00:29:29.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/68
+  avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
+  title: Box
