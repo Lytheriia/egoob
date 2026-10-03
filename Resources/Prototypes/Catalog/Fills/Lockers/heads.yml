@@ -126,6 +126,7 @@
     - id: BoxHoPStamps
     - id: BoxID
     - id: BoxPDA
+    - id: PdaPainterFlatpack # Erida edit
     - id: CigarGoldCase
       prob: 0.25
       # Fuck the HoP they don't deserve fucking cigars.
