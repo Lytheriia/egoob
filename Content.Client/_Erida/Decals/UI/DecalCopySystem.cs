@@ -17,9 +17,9 @@ public sealed class DecalCopySystem : EntitySystem
     [Dependency] private readonly IInputManager _inputManager = default!;
     [Dependency] private readonly InputSystem _inputSystem = default!;
 
-    public Action<bool> UpdateCopyDecalButtons = default!;
-    public Action<string> UpdateSelectedDecalId = default!;
-    public Action<Color> UpdateClientColorAction = default!;
+    public Action<bool>? UpdateCopyDecalButtons;
+    public Action<string>? UpdateSelectedDecalId;
+    public Action<Color>? UpdateClientColorAction;
     private bool _isActive = false;
 
     public override void Initialize()
@@ -42,10 +42,10 @@ public sealed class DecalCopySystem : EntitySystem
                     cleanable: decal.Cleanable
                 );
 
-                UpdateSelectedDecalId.Invoke(decal.Id);
+                UpdateSelectedDecalId?.Invoke(decal.Id);
 
                 if (decal.Color != null)
-                    UpdateClientColorAction.Invoke(decal.Color.Value);
+                    UpdateClientColorAction?.Invoke(decal.Color.Value);
 
                 SetActive(false);
 
@@ -125,7 +125,7 @@ public sealed class DecalCopySystem : EntitySystem
             _inputManager.Contexts.SetActiveContext("editor");
         }
 
-        UpdateCopyDecalButtons.Invoke(isActive);
+        UpdateCopyDecalButtons?.Invoke(isActive);
     }
 
     private void SwitchOverlay(bool isActive)
