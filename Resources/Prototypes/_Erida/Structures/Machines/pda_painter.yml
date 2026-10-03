@@ -25,15 +25,33 @@
     containers:
       PdaPainter-pdaSlot: !type:ContainerSlot
       PdaPainter-cardSlot: !type:ContainerSlot
+      machine_board: !type:Container
+      machine_parts: !type:Container
   - type: ActivatableUI
     key: enum.PdaPainterUiKey.Key
   - type: UserInterface
     interfaces:
       enum.PdaPainterUiKey.Key:
         type: PdaPainterBoundUserInterface
+  - type: ActivatableUIRequiresPower
   - type: ActivatableUIRequiresAccess
+  - type: Machine
+    board: PdaPainterCircuitboard
   - type: AccessReader
     access: [["Captain"], ["HeadOfPersonnel"]]
+
+- type: entity
+  id: PdaPainterCircuitboard
+  parent: BaseMachineCircuitboard
+  name: pda painter machine board
+  description: A machine printed circuit board for a pda painter.
+  components:
+    - type: MachineBoard
+      prototype: PdaPainter
+      stackRequirements:
+        Manipulator: 2
+        Steel: 1
+        Glass: 1
 
 - type: entity
   parent: BaseFlatpack
