@@ -1854,3 +1854,14 @@ Entries:
   url: https://github.com/dead-space-server/EridaGoob/pull/68
   avatar_url: https://avatars.githubusercontent.com/u/178937366?v=4
   title: Box
+- author: Lytheriia
+  changes:
+    - type: Add
+      message: Система покраски ID карт и кпк
+    - type: Add
+      message: Шкаф ГП получил упакованный покрасчик кпк и ID карт
+  id: 135
+  time: '2026-10-03T22:03:24.0000000+00:00'
+  url: https://github.com/dead-space-server/EridaGoob/pull/69
+  avatar_url: https://avatars.githubusercontent.com/u/289052288?v=4
+  title: '[Add] Pda painter'
