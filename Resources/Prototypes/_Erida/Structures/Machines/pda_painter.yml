@@ -1,0 +1,45 @@
+- type: entity
+  id: PdaPainter
+  name: pda painter
+  description: A painting machine for PDAs and ID cards. Insert the item and choose a preset.
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  components:
+  - type: Sprite
+    sprite: _Erida/Structures/Machines/pda.rsi
+    layers:
+    - state: pdapainter
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: PdaPainter
+    pdaSlot:
+      name: pda-painter-slot-pda
+      whitelist:
+        components:
+        - Pda
+    cardSlot:
+      name: pda-painter-slot-card
+      whitelist:
+        components:
+        - IdCard
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      PdaPainter-pdaSlot: !type:ContainerSlot
+      PdaPainter-cardSlot: !type:ContainerSlot
+  - type: ActivatableUI
+    key: enum.PdaPainterUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.PdaPainterUiKey.Key:
+        type: PdaPainterBoundUserInterface
+  - type: ActivatableUIRequiresAccess
+  - type: AccessReader
+    access: [["Captain"], ["HeadOfPersonnel"]]
+
+- type: entity
+  parent: BaseFlatpack
+  id: PdaPainterFlatpack
+  name: Pda Painter Flatpack
+  description: A flatpack used for constructing a pda painter
+  components:
+  - type: Flatpack
+    entity: PdaPainter
