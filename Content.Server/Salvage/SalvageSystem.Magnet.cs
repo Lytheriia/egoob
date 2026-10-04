@@ -35,6 +35,7 @@ public sealed partial class SalvageSystem
         SubscribeLocalEvent<SalvageMagnetTargetComponent, GridSplitEvent>(OnMagnetTargetSplit);
 
         SubscribeLocalEvent<SalvageMagnetComponent, MagnetClaimOfferEvent>(OnMagnetClaim);
+        SubscribeLocalEvent<SalvageMagnetComponent, MagnetCancelOfferEvent>(OnMagnetCancel); // Erida edit
         SubscribeLocalEvent<SalvageMagnetComponent, ComponentStartup>(OnMagnetStartup);
         SubscribeLocalEvent<SalvageMagnetComponent, AnchorStateChangedEvent>(OnMagnetAnchored);
     }
@@ -64,6 +65,37 @@ public sealed partial class SalvageSystem
         }
         TryTakeMagnetOffer();
     }
+
+    // Erida start
+    private void OnMagnetCancel(Entity<SalvageMagnetComponent> ent, ref MagnetCancelOfferEvent args)
+    {
+        var station = _station.GetOwningStation(ent.Owner);
+
+        if (!TryComp(station, out SalvageMagnetDataComponent? dataComp) ||
+            dataComp.EndTime == null ||
+            dataComp.ActiveEntities == null)
+            return;
+
+        Report(ent.Owner, MagnetChannel, "salvage-system-announcement-cancelled");
+        EndMagnetWithCooldown((station.Value, dataComp));
+        CreateMagnetOffers((station.Value, dataComp));
+    }
+
+
+    private void EndMagnetWithCooldown(Entity<SalvageMagnetDataComponent> data)
+    {
+        if (data.Comp.ActiveEntities == null)
+            return;
+
+        EndMagnet(data);
+        CreateMagnetOffers(data);
+
+        data.Comp.EndTime = _timing.CurTime + data.Comp.OfferAfterCanceledCooldown;
+
+        UpdateMagnetUIs(data);
+    }
+    // Erida end
+
 
     private void OnMagnetStartup(EntityUid uid, SalvageMagnetComponent component, ComponentStartup args)
     {
