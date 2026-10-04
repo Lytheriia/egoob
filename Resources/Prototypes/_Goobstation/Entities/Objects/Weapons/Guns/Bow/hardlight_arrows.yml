@@ -97,7 +97,7 @@
       types:
         Heat: 15
   - type: IgniteOnCollide
-    fireStacks: 4
+    fireStacks: 3 # Erida edit
 
 - type: entity
   parent: [BaseHardlightArrow, BaseHardlightEmbeddableArrow]
