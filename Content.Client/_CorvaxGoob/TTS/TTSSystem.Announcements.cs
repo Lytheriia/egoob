@@ -19,6 +19,11 @@ public sealed partial class TTSSystem
 
     private void PlayTTS(byte[] data)
     {
+        // Erida start
+        if (_volume <= 0f || _announcementsVolume <= 0f)
+            return;
+        // Erida end
+
         var filePath = new ResPath($"{_fileIdx++}.ogg");
         _contentRoot.AddOrUpdateFile(filePath, data!);
 
